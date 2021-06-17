@@ -1,13 +1,13 @@
 @Tutorial(time: 20) {
-    @Intro(title: "<#text#>") {
-        <#text#>
+    @Intro(title: "Layout Quiz App") {
+        Layout the quiz app using `VStack`s, `HStack`s, `Text`s and all that.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Creating a Project") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Setting up and creating the Xcode project.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
@@ -27,8 +27,47 @@
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Set the Product Name as **"Quiz"** and ensure that your interface is **SwiftUI** and your life cycle is **SwiftUI App**.
+                @Image(source: "quiz-ch1-basic-s1-configuring project.png", alt: "Configure App")
+            }
+            
+            @Step {
+                You're all set!
+                @Image(source: "quiz-ch1-basic-s1-create project.png", alt: "Project Created")
+            }
+        }
+    }
+    
+    @Section(title: "Understanding the layout") {
+        @ContentAndMedia(layout: horizontal) {
+            This section aims to breakdown the layout of the quiz app to better understand how we can implement this within SwiftUI.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Everything is in a `VStack` to allow for the UI elements to be arranged vertically
+                
+                @Image(source: "quiz-ch1-layout-s2-wireframe.001.png", alt: "App frame")
+            }
+            
+            @Step {
+                Within the `VStack`, there will be a `Text` that will contain the quiz question and a `HStack` that will contain a grid of the quiz options
+                
+                @Image(source: "quiz-ch1-layout-s2-wireframe.002.png", alt: "App frame")
+            }
+            
+            @Step {
+                Within the `HStack`, there will be 2 `VStack`s. This will be used to create a grid layout for the option `Button`s. 
+                
+                @Image(source: "quiz-ch1-layout-s2-wireframe.003.png", alt: "App frame")
+            }
+            
+            @Step {
+                Finally, within the 2 `VStack`s, there are 2 `Button`s which will allow the user to input their option. 
+                
+                @Image(source: "quiz-ch1-layout-s2-wireframe.004.png", alt: "App frame")
             }
         }
     }
