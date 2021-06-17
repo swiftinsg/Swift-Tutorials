@@ -1,4 +1,4 @@
-@Tutorial(time: 20) {
+@Tutorial(time: 25) {
     @Intro(title: "Layout Quiz App") {
         Layout the quiz app using `VStack`s, `HStack`s, `Text`s and all that.
         

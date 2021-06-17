@@ -1,4 +1,4 @@
-@Tutorial(time: 20) {
+@Tutorial(time: 30) {
     @Intro(title: "Showing Score with Sheet") {
         Use a `sheet` to show the user their final quiz score.
         
@@ -13,6 +13,14 @@
         }
         
         @Steps {
+            @Step {
+                This is what your code should look like. If not, refer to the previous section.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s2-0-ContentView.swift") {
+                    @Image(source: "quiz-ch1-sheet-ContentView-Preview.png", alt: "")
+                }
+            }
+            
             @Step {
                 This is the end product of the layout. The "card-styled" top is part of the sheet, it is a system animation.
                 
@@ -35,27 +43,21 @@
     
     @Section(title: "Creating a new View") {
         @ContentAndMedia(layout: horizontal) {
-            This section covers how to create a new `SwiftUI View` file.
+            This section covers how to create a new **SwiftUI View** file.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                This is what your code should look like. If not, refer to the previous section.
-                
-                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s2-0-ContentView.swift")
-            }
-            
-            @Step {
-                Create a new `SwiftUI View` file. In the menubar, go to **File → New → File**.
+                Create a new **SwiftUI View** file. In the menubar, go to **File → New → File**.
                 > Alternatively, you may use ⌘N (Command-N) to create a new file. 
                 
                 @Image(source: "quiz-ch1-sheet-s2-new file.png", alt: "") 
             }
             
             @Step {
-                Select `SwiftUI View`.
+                Select **SwiftUI View**.
                 
                 @Image(source: "shared-new swiftui view.png", alt: "")
             }
@@ -64,7 +66,160 @@
                 Name the new View `"ScoreView"`. 
                 > This `View` will be presented as a `sheet` to show the final score.
                 
-                @Image(source: "quiz-ch1-sheet-s1-saving file.png", alt: "")
+                @Image(source: "quiz-ch1-sheet-s2-saving file.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Laying out ScoreView") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to layout the `ScoreView` based on the wireframe in Section 1. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what you should see in your new `ScoreView.swift` file.
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch1-sheet-s3-0-ScoreView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `Text` in a `VStack`. This is important for later when we add another `Text`.
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch1-sheet-s3-1-ScoreView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Change the `Text` to say `"You got"`
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch1-sheet-s3-2-ScoreView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add another `Text` saying `"2/3"`. 
+                
+                This `Text` will be used to keep track of the user's score.
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch1-sheet-s3-3-ScoreView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s3-3-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Injecting Dependencies") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to add inputs to `ScoreView` to ensure its contents are accurate. 
+            
+            `ScoreView` requires 2 inputs to function:
+            - The user’s score (how many they got correct)
+            - The total number of questions
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Ensure that your `ScoreView.swift` file looks like this. 
+                
+                If not, refer to the previous section.  
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch1-sheet-s4-0-ScoreView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s4-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add the `score` and `totalQuestions` variables to the `ScoreView`. 
+                
+                You will also need to add a sample `score` and `totalQuestions` value in your preview.  
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch1-sheet-s4-1-ScoreView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s4-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Updating the `Text` with the `score` and `totalQuestions`.
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch1-sheet-s4-2-ScoreView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s4-2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Presenting ScoreView") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to present the ScoreView modal as a `sheet`. 
+            
+            In order to do so, there are a few things need to be done:
+            - Keep track of the number that the user got correct
+            - Present it when all the questions are done
+            - Reset to the first question 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Ensure that your `ScoreView.swift` file looks like this. 
+                
+                If not, refer to the previous section.  
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch1-sheet-s5-0-ScoreView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s4-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Also ensure that your `ContentView.swift` file looks like this. 
+                
+                If not, refer to the previous tutorial.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s5-1-ContentView.swift") {
+                    @Image(source: "quiz-ch1-sheet-ContentView-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                In the `ContentView.swift` file, declare a variable, `correctAnswers`, to keep track of the number of correct answers.  
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s5-2-ContentView.swift")
+            }
+            
+            @Step {
+                Increment `correctAnswers` every time the user selects a correct answer.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s5-3-ContentView.swift")
+            }
+            
+            @Step {
+                Declare a `@State` variable, `isModalPresented` to present the modal.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s5-4-ContentView.swift") 
+            }
+            
+            @Step {
+                Present the `ScoreView` using a `sheet`. When it is dismissed, reset the `correctAnswers` to 0.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s5-5-ContentView.swift")
+            }
+            
+            @Step {
+                Finally, present the `ScoreView` when there are no questions left by setting `isModalPresented` to `true`.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s5-6-ContentView.swift") {
+                    @Image(source: "quiz-ch1-sheet-s5-6-Preview.png", alt: "")
+                }
             }
         }
     }
