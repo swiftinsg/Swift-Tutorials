@@ -1,13 +1,41 @@
-@Tutorial(time: 15) {
+@Tutorial(time: 20) {
     @Intro(title: "Showing Score with Sheet") {
         Use a `sheet` to show the user their final quiz score.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
+    @Section(title: "Understanding the Layout") {
+        @ContentAndMedia(layout: horizontal) {
+            This section explains how the interface is built by providing a step-by-step breakdown.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is the end product of the layout. The "card-styled" top is part of the sheet, it is a system animation.
+                
+                @Image(source: "quiz-ch1-sheet-s1-wireframe.001.png", alt: "")
+            }
+            
+            @Step {
+                The `VStack` arranges the `Text`s within it vertically. 
+                
+                @Image(source: "quiz-ch1-sheet-s1-wireframe.002.png", alt: "") 
+            }
+            
+            @Step {
+                There are 2 `Text`s within the VStack. The first just consists of the word "You got", and the second has the user's score. 
+                
+                @Image(source: "quiz-ch1-sheet-s1-wireframe.003.png", alt: "")
+            }
+        }
+    }
+    
     @Section(title: "Creating a new View") {
         @ContentAndMedia(layout: horizontal) {
-            Create a new SwiftUI View that will host the sheet.
+            This section covers how to create a new `SwiftUI View` file.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
@@ -16,13 +44,27 @@
             @Step {
                 This is what your code should look like. If not, refer to the previous section.
                 
-                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s2-0-ContentView.swift")
+                @Code(name: "ContentView.swift", file: "quiz-ch1-sheet-s2-0-ContentView.swift")
             }
             
             @Step {
-                This is what your code should look like. If not, refer to the previous section.
+                Create a new `SwiftUI View` file. In the menubar, go to **File → New → File**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file. 
                 
-                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s2-1-ContentView.swift")
+                @Image(source: "quiz-ch1-sheet-s2-new file.png", alt: "") 
+            }
+            
+            @Step {
+                Select `SwiftUI View`.
+                
+                @Image(source: "shared-new swiftui view.png", alt: "")
+            }
+            
+            @Step {
+                Name the new View `"ScoreView"`. 
+                > This `View` will be presented as a `sheet` to show the final score.
+                
+                @Image(source: "quiz-ch1-sheet-s1-saving file.png", alt: "")
             }
         }
     }
