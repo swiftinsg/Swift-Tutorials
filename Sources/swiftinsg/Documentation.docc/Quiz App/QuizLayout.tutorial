@@ -71,4 +71,62 @@
             }
         }
     }
+    
+    @Section(title: "Implementing Layout") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to build the user interface based on the diagrams above.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what you should see when you start out.
+                
+                @Code(name: "ContentView.swift", file: "shared-ContentView.swift") {
+                    @Image(source: "quiz-ch1-layout-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `Text` in `VStack`.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-layout-s3-2-ContentView.swift") {
+                    @Image(source: "quiz-ch1-layout-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Change `Text` title. This `Text` will be used to show the current question.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-layout-s3-3-ContentView.swift") {
+                    @Image(source: "quiz-ch1-layout-s3-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `HStack` to build the grid. 
+                > A grid involves creating a `HStack` with multiple `VStack`s within it
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-layout-s3-4-ContentView.swift")
+            }
+            
+            @Step {
+                Create a `VStack` with 2 `Button`s to form a column within the grid. 
+                > A grid involves creating a `HStack` with multiple `VStack`s within it
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-layout-s3-5-ContentView.swift") {
+                    @Image(source: "quiz-ch1-layout-s3-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Copy the `VStack` created earlier and paste it again. This completes the grid!
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-layout-s3-6-ContentView.swift") {
+                    @Image(source: "quiz-ch1-layout-s3-6-Preview.png", alt: "")
+                }
+            }
+        }
+    }
 }
