@@ -1,0 +1,29 @@
+@Tutorial(time: 15) {
+    @Intro(title: "Showing Score with Sheet") {
+        Use a `sheet` to show the user their final quiz score.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Creating a new View") {
+        @ContentAndMedia(layout: horizontal) {
+            Create a new SwiftUI View that will host the sheet.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what your code should look like. If not, refer to the previous section.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s2-0-ContentView.swift")
+            }
+            
+            @Step {
+                This is what your code should look like. If not, refer to the previous section.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s2-1-ContentView.swift")
+            }
+        }
+    }
+}

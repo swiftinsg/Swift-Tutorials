@@ -10,6 +10,7 @@
         
         @TutorialReference(tutorial: "doc:QuizLayout")
         @TutorialReference(tutorial: "doc:QuizStruct")
-        @TutorialReference(tutorial: "doc:QuizModals")
+        @TutorialReference(tutorial: "doc:QuizAlert")
+        @TutorialReference(tutorial: "doc:QuizSheet")
     }
 }
