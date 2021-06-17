@@ -28,12 +28,12 @@
             
             @Step {
                 Set the Product Name as **"Quiz"** and ensure that your interface is **SwiftUI** and your life cycle is **SwiftUI App**.
-                @Image(source: "quiz-ch1-basic-s1-configuring project.png", alt: "Configure App")
+                @Image(source: "quiz-ch1-layout-s1-configuring project.png", alt: "Configure App")
             }
             
             @Step {
                 You're all set!
-                @Image(source: "quiz-ch1-basic-s1-create project.png", alt: "Project Created")
+                @Image(source: "quiz-ch1-layout-s1-create project.png", alt: "Project Created")
             }
         }
     }
