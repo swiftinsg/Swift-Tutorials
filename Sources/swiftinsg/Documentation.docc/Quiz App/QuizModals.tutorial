@@ -1,0 +1,58 @@
+@Tutorial(time: 15) {
+    @Intro(title: "Showing Results") {
+        Use `Alert`s and modals to show the user if they got the question right or not and their final score.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Presenting an Alert") {
+        @ContentAndMedia(layout: horizontal) {
+            Use an alert to tell the user if they got it right or wrong and continue to the next question.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what your code should look like. If not, refer to the previous tutorial.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s1-0-ContentView.swift")
+            }
+            
+            @Step {
+                Create a `@State` variable to control whether the alert is presented or not.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s1-1-ContentView.swift")
+            }
+            
+            @Step {
+                Create another `@State` variable to keep track of whether the user got the question correct or not.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s1-2-ContentView.swift")
+            }
+            
+            @Step {
+                Create the alert that updates its content dynamically using a ternary operator. When it gets dismissed, it should increment `currentQuestion` to move to the next question. 
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s1-3-ContentView.swift")
+            }
+            
+            @Step {
+                Create a function to handle when the user taps an option.
+                
+                The `optionNumber` is passed in as a parameter to keep track of which option the user tapped. This function should determine if the option selected is correct or not and presents the alert.
+                > As the answer is always `2`, in this case, a simple `if-else` can be implemented to change the value of the variable `isCorrect`.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s1-4-ContentView.swift")
+            }
+            
+            @Step {
+                Call the `didTapOption(optionNumber: Int)` function whenever a button is pressed, passing in the button number each time.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-modals-s1-5-ContentView.swift") {
+                    @Image(source: "quiz-ch1-modals-s1-5-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+}

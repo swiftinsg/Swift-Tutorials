@@ -84,21 +84,21 @@
             @Step {
                 This is what your `ContentView.swift` file should look like. If not, refer to the previous section.
                 @Code(name: "ContentView.swift", file: "quiz-ch1-struct-s3-0-ContentView.swift") {
-                    @Image(source: "quiz-ch1-struct-s3-0-Preview.swift", alt: "")
+                    @Image(source: "quiz-ch1-struct-s3-0-Preview.png", alt: "")
                 }
             }
             
             @Step {
                 Declare a `@State` variable, `currentQuestion`. This variable will be used to keep track of the current question, thus, it should be set to 0 at the beginning.
                 @Code(name: "ContentView.swift", file: "quiz-ch1-struct-s3-1-ContentView.swift") {
-                    @Image(source: "quiz-ch1-struct-s3-1-Preview.swift", alt: "")
+                    @Image(source: "quiz-ch1-struct-s3-1-Preview.png", alt: "")
                 }
             }
             
             @Step {
                 Updating the `Text` and `Button`s based on the `currentQuestion` variable and the `questions` array.
                 @Code(name: "ContentView.swift", file: "quiz-ch1-struct-s3-2-ContentView.swift") {
-                    @Image(source: "quiz-ch1-struct-s3-2-Preview.swift", alt: "")
+                    @Image(source: "quiz-ch1-struct-s3-2-Preview.png", alt: "")
                 }
             }
         }
