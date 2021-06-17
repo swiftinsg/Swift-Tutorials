@@ -13,4 +13,15 @@
         @TutorialReference(tutorial: "doc:QuizAlert")
         @TutorialReference(tutorial: "doc:QuizSheet")
     }
+    
+<!--    @Chapter(name: "Better Quiz App") {-->
+<!--        Build on top of the first chapter with variable answers, custom-styled buttons with SF Symbols, progress bars and building with custom circular progress views.-->
+<!--        -->
+<!--        @Image(source: <#file#>, alt: "<#accessible description#>")-->
+<!--        -->
+<!--        @TutorialReference(tutorial: "doc:QuizLayout")-->
+<!--        @TutorialReference(tutorial: "doc:QuizStruct")-->
+<!--        @TutorialReference(tutorial: "doc:QuizAlert")-->
+<!--        @TutorialReference(tutorial: "doc:QuizSheet")-->
+<!--    }-->
 }
