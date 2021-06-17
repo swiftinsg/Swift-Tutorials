@@ -1,0 +1,106 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Adding Quizzes") {
+        Using a `struct` to manage quizzes and to add it into the app.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Questions Struct") {
+        @ContentAndMedia(layout: horizontal) {
+            In this section, you will learn how to use a struct to keep track of multiple variables.
+            
+            When creating a struct, we must understand what each question needs. In this case, each question requires the following:
+            - Question Title
+            - First Option
+            - Second Option
+            - Third Option
+            - Forth Option
+            > For simplicity, the correct option will always be the second option.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Create a new `Swift` file. In the menubar, go to **File → New → File**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                @Image(source: "quiz-ch1-struct-s1-new file.png", alt: "Creating new file")
+            }
+            
+            @Step {
+                Select New `Swift` file.
+                @Image(source: "shared-new swift file.png", alt: "New Swift file")
+            }
+            
+            @Step {
+                This is what you should see after you created your new file.
+                @Code(name: "Question.swift", file: "quiz-ch1-struct-s1-0-Question.swift")
+            }
+            
+            @Step {
+                Create a struct, `Question` 
+                @Code(name: "Question.swift", file: "quiz-ch1-struct-s1-1-Question.swift")
+            }
+            
+            @Step {
+                Within each `Question`, add variables for the title and the 4 options.  
+                @Code(name: "Question.swift", file: "quiz-ch1-struct-s1-2-Question.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Adding Questions") {
+        @ContentAndMedia(layout: horizontal) {
+            In this section, you'll learn how to use an array of `Question`s to keep track of questions.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what your `ContentView.swift` file should look like. If not, follow the previous tutorial.
+                @Code(name: "ContentView.swift", file: "quiz-ch1-struct-s2-0-ContentView.swift") {
+                    @Image(source: "quiz-ch1-struct-s2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a variable, `questions`, that will be an array of `Question`s. 
+                @Code(name: "ContentView.swift", file: "quiz-ch1-struct-s2-1-ContentView.swift") {
+                    @Image(source: "quiz-ch1-struct-s2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Displaying Questions") {
+        @ContentAndMedia(layout: horizontal) {
+            In this section, you'll learn how to display the contents of the `questions` array to the user using `@State` variables. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what your `ContentView.swift` file should look like. If not, refer to the previous section.
+                @Code(name: "ContentView.swift", file: "quiz-ch1-struct-s3-0-ContentView.swift") {
+                    @Image(source: "quiz-ch1-struct-s3-0-Preview.swift", alt: "")
+                }
+            }
+            
+            @Step {
+                Declare a `@State` variable, `currentQuestion`. This variable will be used to keep track of the current question, thus, it should be set to 0 at the beginning.
+                @Code(name: "ContentView.swift", file: "quiz-ch1-struct-s3-1-ContentView.swift") {
+                    @Image(source: "quiz-ch1-struct-s3-1-Preview.swift", alt: "")
+                }
+            }
+            
+            @Step {
+                Updating the `Text` and `Button`s based on the `currentQuestion` variable and the `questions` array.
+                @Code(name: "ContentView.swift", file: "quiz-ch1-struct-s3-2-ContentView.swift") {
+                    @Image(source: "quiz-ch1-struct-s3-2-Preview.swift", alt: "")
+                }
+            }
+        }
+    }
+}

@@ -38,7 +38,7 @@
         }
     }
     
-    @Section(title: "Understanding the layout") {
+    @Section(title: "Understanding the Layout") {
         @ContentAndMedia(layout: horizontal) {
             This section aims to breakdown the layout of the quiz app to better understand how we can implement this within SwiftUI.
             
@@ -49,25 +49,25 @@
             @Step {
                 Everything is in a `VStack` to allow for the UI elements to be arranged vertically
                 
-                @Image(source: "quiz-ch1-layout-s2-wireframe.001.png", alt: "App frame")
+                @Image(source: "quiz-ch1-layout-s2-wireframe.001.png", alt: "Wireframe 1")
             }
             
             @Step {
                 Within the `VStack`, there will be a `Text` that will contain the quiz question and a `HStack` that will contain a grid of the quiz options
                 
-                @Image(source: "quiz-ch1-layout-s2-wireframe.002.png", alt: "App frame")
+                @Image(source: "quiz-ch1-layout-s2-wireframe.002.png", alt: "Wireframe 2")
             }
             
             @Step {
                 Within the `HStack`, there will be 2 `VStack`s. This will be used to create a grid layout for the option `Button`s. 
                 
-                @Image(source: "quiz-ch1-layout-s2-wireframe.003.png", alt: "App frame")
+                @Image(source: "quiz-ch1-layout-s2-wireframe.003.png", alt: "Wireframe 3")
             }
             
             @Step {
                 Finally, within the 2 `VStack`s, there are 2 `Button`s which will allow the user to input their option. 
                 
-                @Image(source: "quiz-ch1-layout-s2-wireframe.004.png", alt: "App frame")
+                @Image(source: "quiz-ch1-layout-s2-wireframe.004.png", alt: "Wireframe 4")
             }
         }
     }
