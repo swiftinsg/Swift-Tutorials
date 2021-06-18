@@ -28,24 +28,17 @@
             }
             
             @Step {
-                You can directly copy the symbol by clicking on it and pressing ⌘C or control-click and then pressing copy. 
+                You can directly copy the symbol by clicking on it and pressing ⌘C (Command-C) or control-click and then press **Copy Symbol**. 
                 
-                This is mostly useful when you are prototyping and need to use the symbol as part of a mock-up. 
+                This is useful when you are prototyping and need to use the symbol as part of a mock-up. 
                 
-                @Image(source: "quiz-ch2-button-s1-sf symbols.png", alt: "")
+                @Image(source: "quiz-ch2-button-s1-symbol.png", alt: "")
             }
             
             @Step {
-                When using it within Xcode, it is easier 
+                When using it within Xcode, you will need to copy the symbol name instead. In order to do so, you can use ⌘⇧C (Command-Shift-C) or control-click and press **Copy Name**. 
                 
-                This is mostly useful when you are prototyping and need to use the symbol as part of a mock-up. 
-                
-                @Image(source: "quiz-ch2-button-s1-sf symbols.png", alt: "")
-            }
-            
-            @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                @Image(source: "quiz-ch2-button-s1-name.png", alt: "")
             }
         }
     }
