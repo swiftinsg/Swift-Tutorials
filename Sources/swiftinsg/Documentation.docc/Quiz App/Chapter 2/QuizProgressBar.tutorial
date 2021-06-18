@@ -1,26 +1,39 @@
 @Tutorial(time: 15, projectFiles: "Quiz - Progress Bar.zip") {
     @Intro(title: "Creating a Progress Bar") {
-        Create a Progress Bar 
+        Use a `ProgressView` to 
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Create Progress Bar") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Create a Progress Bar to tell the user how far along the quiz they are. The progress bar should update automatically as the user does the quiz
+            
+            The `ProgressView` has 2 inputs, the `value` and the `total` 
+            - the `value` should be the number of completed questions 
+            - the `total` should be the total number of questions
+            
+            These values can be derived using `currentQuestion` and by counting the number of elements in the `questions` array.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Open the `ContentView.swift` file.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch2-progressbar-s1-0-ContentView.swift") {
+                    @Image(source: "quiz-ch2-progressbar-s1-0-Preview.png", alt: "")
+                }
             }
-            
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Implement ProgressView
+                
+                As `currentQuestion` and `questions.count` are of type `Int`, it needs to cast into a `Double` for this to work.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch2-progressbar-s1-1-ContentView.swift") {
+                    @Image(source: "quiz-ch2-progressbar-s1-1-Preview.png", alt: "")
+                }
             }
         }
     }
