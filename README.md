@@ -21,8 +21,12 @@ Thanks [Ryan The](https://github.com/theboi) for helping with the web set up.
 3. Open [http://localhost:3000/](http://localhost:3000/) with your browser to see the results.
 
 ### Updating DocC
-1. In Xcode, right click on swiftinsg documentation item and press Export 
-2. Delete the `Public` folder (it's at `/Web/Public`)
-3. Add the `.doccarchive` file into the `Web` directory
-4. Rename it to Public (removing the extension, thereby making it a folder).
-    - `swiftinsg.doccarchive` → `Public`
+Run `build.sh` to update the DocC web
+```sh
+$ sh build.sh
+```
+
+#### Errors (and possible solutions)
+- `xcodebuild: error: Unknown build action 'docbuild'.`
+    - Run `xcode-select --switch /Path/To/Xcode.app`. 
+    - Ensure the path leads to Xcode 13.

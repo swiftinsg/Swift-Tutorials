@@ -1,21 +1,46 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 20) {
     @Intro(title: "Customising Buttons") {
-        <#text#>
+        Create custom buttons with SF Symbols.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "SF Symbols") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            *“SF Symbols is a **library of iconography designed to integrate seamlessly with** San Francisco, **the system font for Apple platforms**. Symbols come in nine weights and three scales, and automatically align with text labels. They can be exported and edited in vector graphics editing tools to create custom symbols with shared design characteristics and accessibility features."*
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Install the SF Symbols app from [here](https://developer.apple.com/sf-symbols). 
+                
+                Do **not** install the SF Symbols Beta even though the button is larger and more prominent. Scroll to the bottom and download version 2.1.
+                
+                @Image(source: "quiz-ch2-button-s1-download sf symbols.png", alt: "")
+            }
+            
+            @Step {
+                After installing SF Symbols, this is what the app should look like 
+                
+                @Image(source: "quiz-ch2-button-s1-sf symbols.png", alt: "")
+            }
+            
+            @Step {
+                You can directly copy the symbol by clicking on it and pressing ⌘C or control-click and then pressing copy. 
+                
+                This is mostly useful when you are prototyping and need to use the symbol as part of a mock-up. 
+                
+                @Image(source: "quiz-ch2-button-s1-sf symbols.png", alt: "")
+            }
+            
+            @Step {
+                When using it within Xcode, it is easier 
+                
+                This is mostly useful when you are prototyping and need to use the symbol as part of a mock-up. 
+                
+                @Image(source: "quiz-ch2-button-s1-sf symbols.png", alt: "")
             }
             
             @Step {

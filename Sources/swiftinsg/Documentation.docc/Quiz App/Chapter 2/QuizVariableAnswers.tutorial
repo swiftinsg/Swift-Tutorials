@@ -54,9 +54,7 @@
             }
             
             @Step {
-                Ensure that your `ContentView.swift` file looks like this.
-                
-                Otherwise, refer to the previous section.
+                In the `didTapOption(optionNumber: Int)` function, edit the condition in the if-else statement to compare against the `correctOption` instead of the `2`. 
                 
                 @Code(name: "ContentView.swift", file: "quiz-ch2-variable-s2-1-ContentView.swift")
             }

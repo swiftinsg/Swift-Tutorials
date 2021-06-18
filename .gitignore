@@ -42,4 +42,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-
+# Temp directory
+tmp
