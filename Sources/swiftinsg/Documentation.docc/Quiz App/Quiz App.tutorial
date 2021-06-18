@@ -24,4 +24,8 @@
         @TutorialReference(tutorial: "doc:QuizProgressBar")
         @TutorialReference(tutorial: "doc:QuizCircularProgressView")
     }
+    
+    @Resources {
+        This project is part of the [Swift Accelerator Programme](https://swiftinsg.org/) 2021. 
+    }
 }

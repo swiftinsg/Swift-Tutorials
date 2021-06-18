@@ -1,0 +1,43 @@
+@Tutorial(time: 5, projectFiles: "Flag - Raising.zip") {
+    @Intro(title: "Raising the Flag") {
+        Connect everything together using `@State` variables and change `offset`s to move raise the flag!
+        
+        @Image(source: "flag-ch1-raising-hero.png", alt: "")
+    }
+    
+    @Section(title: "Raise the flag") {
+        @ContentAndMedia(layout: horizontal) {
+            In this section, you will use `@State` variables and `.offset(x: y:)` to set the position of the flag 🇸🇬. 
+            
+            @Image(source: "flag-ch1-raising-s1-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Before you start, your `ContentView.swift` should look like this. If not, refer to the previous tutorial.
+                @Code(name: "ContentView.swift", file: "flag-ch1-layout-s2-6-ContentView.swift") {
+                    @Image(source: "flag-ch1-layout-s2-6-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                The `offset` has an initial value of `20` to allow the base of the flag to align with the flag pole. Every time the button is tapped, the `offset` should decrement by `10`.
+                @Code(name: "ContentView.swift", file: "flag-ch1-raising-s1-0-ContentView.swift")
+            }
+            
+            @Step {
+                Connect the offset to the flag 
+                @Code(name: "ContentView.swift", file: "flag-ch1-raising-s1-1-ContentView.swift") {
+                    @Image(source: "flag-ch1-raising-s1-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                You’ve made yourself a flag raising app! You can customise it as much as you want.  
+                > Here's a retro-styled flag raising app! You can try it out [here](https://github.com/jiachenyee/FlagRaisingRetro). It's a macOS app.
+                
+                @Image(source: "flag-ch1-raising-s1-customise.png", alt: "retro styled flag raising")
+            }
+        }
+    }
+}

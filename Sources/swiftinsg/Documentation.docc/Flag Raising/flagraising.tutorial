@@ -1,0 +1,24 @@
+@Tutorials(name: "Flag Raising") {
+    @Intro(title: "Building a Flag Raising App") {
+        Create a flag raising app in SwiftUI. It was a joke, then it became a recurring joke, then it became curriculum.
+        
+        @Image(source: "flag-hero.png", alt: "Screenshot of flag raising app")
+    }
+    
+    @Chapter(name: "Flag Raising from Nothing") {
+        This is the only chaper. It covers the whole process of building a barebones flag raising app from scratch.
+        
+        @Image(source: "flag-ch1-hero.png", alt: "Chapter icon")
+        
+        @TutorialReference(tutorial: "doc:1-UserInterface")
+        @TutorialReference(tutorial: "doc:2-RaisingTheFlag")
+    }
+    
+    @Resources {
+        This project is part of the [Swift Accelerator Programme](https://swiftinsg.org/) 2021. 
+        
+        @Downloads(destination: "https://cld.tk.sg/yAurb14P") {
+            Download the completed project
+        }
+    }
+}

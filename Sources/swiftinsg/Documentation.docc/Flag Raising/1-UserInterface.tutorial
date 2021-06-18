@@ -1,0 +1,138 @@
+@Tutorial(time: 10, projectFiles: "Flag - Layout.zip") {
+    @Intro(title: "Laying out Flag Raising") {
+        Use `VStack`s, `HStack`s, `Font`s, `Rectangle`s and more to lay out the flag raising app.
+        
+        @Image(source: "flag-ch1-layout-hero.png", alt: "")
+    }
+    
+    @Section(title: "Create a new project") {
+        @ContentAndMedia(layout: horizontal) {
+            In this section, you'll learn how to create a new project. We've done it a bunch of times, it's pretty much the same. 
+        }
+        
+        @Steps {
+            @Step {
+                Press **Create a new Xcode project** when you first launch Xcode 
+                > Alternatively, you could go to the menu bar and use **File → New → Project…** 
+                
+                @Image(source: "shared-new project.png", alt: "Xcode start up screenshot")
+            }
+            
+            @Step {
+                Select **iOS** as the platform and choose **App**.
+                @Image(source: "shared-select app.png", alt: "Xcode template selection screenshot")
+            }
+            
+            @Step {
+                Set your project up with the following… Product Name: **Flag Raising**, Interface: **SwiftUI**, Life Cycle: **SwiftUI**, Language: **Swift**.
+                
+                @Image(source: "flag-ch1-layout-s1-project setup.png", alt: "Xcode project setup")
+            }
+            
+            @Step {
+                Pick a good location for the project and you're done!
+                
+                @Image(source: "flag-ch1-layout-s1-saving project.png", alt: "Xcode interface")
+            }
+        }
+    }
+    
+    @Section(title: "Layout Interface") {
+        @ContentAndMedia(layout: horizontal) {
+            In this section, you will learn how to layout the app's interface. 
+            
+            @Image(source: "flag-ch1-layout-s2-hero.png", alt: "Interface overview")
+        }
+        
+        @Steps {
+            @Step {
+                After creating a new project, you should see this `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "flag-ch1-layout-s2-0-ContentView.swift") {
+                    @Image(source: "flag-ch1-layout-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a giant 🇸🇬 by adding the emoji into a `Text` and giving it a large font size.
+                > You can use ⌘ ⌃ Space (Command-Control-Space) 
+                to get your emoji viewer
+                @Code(name: "ContentView.swift", file: "flag-ch1-layout-s2-1-ContentView.swift") {
+                    @Image(source: "flag-ch1-layout-s2-1-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the flag in a `HStack` so we can place a pole next to it later.
+                @Code(name: "ContentView.swift", file: "flag-ch1-layout-s2-2-ContentView.swift") {
+                    @Image(source: "flag-ch1-layout-s2-1-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Rectangle` with a `width` of `10`
+                @Code(name: "ContentView.swift", file: "flag-ch1-layout-s2-3-ContentView.swift") {
+                    @Image(source: "flag-ch1-layout-s2-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Align the elements of the `HStack` to the `.bottom`, and set the `spacing` to `-10` to bring it closer together.
+                @Code(name: "ContentView.swift", file: "flag-ch1-layout-s2-4-ContentView.swift") {
+                    @Image(source: "flag-ch1-layout-s2-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `VStack` with `.padding()` for us to add the `Button` to raise the flag later.
+                @Code(name: "ContentView.swift", file: "flag-ch1-layout-s2-5-ContentView.swift") {
+                    @Image(source: "flag-ch1-layout-s2-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a button to raise the flag
+                @Code(name: "ContentView.swift", file: "flag-ch1-layout-s2-6-ContentView.swift") {
+                    @Image(source: "flag-ch1-layout-s2-6-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Assessments {
+        @MultipleChoice {
+            What element do you use to arrange your views **horizontally**?
+            
+            @Choice(isCorrect: false) {
+                VStack
+                
+                @Justification(reaction: "Try Again!") {
+                    A VStack stacks elements vertically above one another 
+                }
+            }
+            
+            @Choice(isCorrect: true) {
+                HStack
+                
+                @Justification(reaction: "Good Job!") {
+                    A HStack stacks elements beside one another, horizontally 
+                }
+            }
+            
+            @Choice(isCorrect: false) {
+                ZStack
+                
+                @Justification(reaction: "Try Again!") {
+                    A ZStack stacks elements on top of one another
+                }
+            }
+            
+            @Choice(isCorrect: false) {
+                McGriddles Stack
+                
+                @Justification(reaction: "wait what?!") {
+                    No, it's obviously not McGriddles stack 😋
+                }
+            }
+        }
+    }
+}
