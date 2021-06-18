@@ -15,14 +15,14 @@ DerivedData/
 .pnp.js
 
 # testing
-/coverage
+/Web/coverage
 
 # next.js
-/.next/
-/out/
+/Web/.next/
+/Web/out/
 
 # production
-/build
+/Web/build
 
 # misc
 .DS_Store

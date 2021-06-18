@@ -1,0 +1,65 @@
+@Tutorial(time: 15) {
+    @Intro(title: "Variable Answers") {
+        Keep track of the correct answer using a variable instead of just using 2.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Updating the Struct") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers the modifications that need to be made to the `Question` struct to create variable answers. 
+            
+            In order to create a variable answer, there needs to be a variable within the Question struct to keep track of the correct answer. This variable can the be used, check if the user is correct every time they select an option.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Ensure that your `Question.swift` file looks like this.
+                @Code(name: "Question.swift", file: "quiz-ch2-variable-s1-0-Question.swift")
+            }
+            
+            @Step {
+                Add the `correctOption` property to the struct. This will be an `Int` from 1 to 4 indicating the correct option.
+                @Code(name: "Question.swift", file: "quiz-ch2-variable-s1-1-Question.swift")
+            }
+            
+            @Step {
+                Ensure that your `ContentView.swift` file looks like this.
+                @Code(name: "ContentView.swift", file: "quiz-ch2-variable-s1-2-ContentView.swift")
+            }
+            
+            @Step {
+                Add the `correctOption` parameter to the questions and shuffle some of the options around.
+                @Code(name: "ContentView.swift", file: "quiz-ch2-variable-s1-3-ContentView.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Updating the View") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to update the user interface to be based on the `correctOption` variable instead of just `2`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Ensure that your `ContentView.swift` file looks like this.
+                
+                Otherwise, refer to the previous section.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch2-variable-s2-0-ContentView.swift")
+            }
+            
+            @Step {
+                Ensure that your `ContentView.swift` file looks like this.
+                
+                Otherwise, refer to the previous section.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch2-variable-s2-1-ContentView.swift")
+            }
+        }
+    }
+}
