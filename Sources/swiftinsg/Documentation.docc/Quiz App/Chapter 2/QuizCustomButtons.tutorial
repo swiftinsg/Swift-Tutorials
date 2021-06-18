@@ -63,8 +63,8 @@
             @Step {
                 Open your `ContentView.swift` file 
                 
-                @Code(name: "ContentView.swift", file: "quiz-ch1-button-s2-0-ContentView.swift") {
-                    @Image(source: "quiz-ch2-button-s1-0-Preview.png", alt: "")
+                @Code(name: "ContentView.swift", file: "quiz-ch2-button-s2-0-ContentView.swift") {
+                    @Image(source: "quiz-ch2-button-s2-0-Preview.png", alt: "")
                 }
             }
             
@@ -73,16 +73,16 @@
                 
                 `Image(systemName:)` works like any normal `Image`.
                 
-                @Code(name: "ContentView.swift", file: "quiz-ch1-button-s2-1-ContentView.swift") {
-                    @Image(source: "quiz-ch2-button-s1-1-Preview.png", alt: "")
+                @Code(name: "ContentView.swift", file: "quiz-ch2-button-s2-1-ContentView.swift") {
+                    @Image(source: "quiz-ch2-button-s2-1-Preview.png", alt: "")
                 }
             }
             
             @Step {
                 Apply the change to all the options.
                 
-                @Code(name: "ContentView.swift", file: "quiz-ch1-button-s2-2-ContentView.swift") {
-                    @Image(source: "quiz-ch2-button-s1-2-Preview.png", alt: "")
+                @Code(name: "ContentView.swift", file: "quiz-ch2-button-s2-2-ContentView.swift") {
+                    @Image(source: "quiz-ch2-button-s2-2-Preview.png", alt: "")
                 }
             }
         }
