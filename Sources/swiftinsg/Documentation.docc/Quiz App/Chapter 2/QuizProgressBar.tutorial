@@ -1,13 +1,13 @@
 @Tutorial(time: 15, projectFiles: "Quiz - Progress Bar.zip") {
     @Intro(title: "Creating a Progress Bar") {
-        Use a `ProgressView` to 
+        Create a Progress Bar to tell the user how far along the quiz they are.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
     @Section(title: "Create Progress Bar") {
         @ContentAndMedia(layout: horizontal) {
-            Create a Progress Bar to tell the user how far along the quiz they are. The progress bar should update automatically as the user does the quiz
+            The `ProgressView` should update automatically as the user does the quiz. 
             
             The `ProgressView` has 2 inputs, the `value` and the `total` 
             - the `value` should be the number of completed questions 
