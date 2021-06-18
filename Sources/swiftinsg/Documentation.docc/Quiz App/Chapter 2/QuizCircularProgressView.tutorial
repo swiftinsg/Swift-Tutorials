@@ -2,12 +2,12 @@
     @Intro(title: "Creating a Custom Circular Progress View") {
         Create a custom circular progress bar using `Circle()` and a whole bunch of modifiers.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "quiz-ch2-circular-hero.png", alt: "")
     }
     
     @Section(title: "Creating a new View") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Create a new SwiftUI View file. 
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
@@ -142,6 +142,32 @@
                 
                 @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s3-6-CircularProgressView.swift") {
                     @Image(source: "quiz-ch2-circular-s3-6-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Implementing Circular Progress View") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to integrate the `CircularProgressView` into the rest of the app.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This section uses the `ScoreView.swift` file.
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch2-circular-s4-0-ScoreView.swift") {
+                    @Image(source: "quiz-ch2-circular-s4-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add the progress ring and set the width and height to 150. Setting the width and height helps to make it look good.
+                
+                @Code(name: "ScoreView.swift", file: "quiz-ch2-circular-s4-1-ScoreView.swift") {
+                    @Image(source: "quiz-ch2-circular-s4-1-Preview.png", alt: "")
                 }
             }
         }

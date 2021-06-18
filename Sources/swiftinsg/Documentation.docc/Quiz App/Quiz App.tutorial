@@ -6,7 +6,7 @@
     @Chapter(name: "Basic Quiz App") {
         Manipulate `HStack`s and `VStack`s to create a grid of options for a simple multiple choice quiz app. Use `@State` variables, modals and alerts to show results and tell users how they've done.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "quiz-ch1-hero.png", alt: "")
         
         @TutorialReference(tutorial: "doc:QuizLayout")
         @TutorialReference(tutorial: "doc:QuizStruct")
@@ -17,7 +17,7 @@
     @Chapter(name: "Better Quiz App") {
         Build on top of the first chapter with variable answers, custom-styled buttons with SF Symbols, progress bars and building with custom circular progress views.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "quiz-ch2-hero.png", alt: "")
         
         @TutorialReference(tutorial: "doc:QuizVariableAnswers")
         @TutorialReference(tutorial: "doc:QuizCustomButtons")

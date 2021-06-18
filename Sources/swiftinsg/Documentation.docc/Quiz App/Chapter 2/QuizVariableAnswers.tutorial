@@ -2,7 +2,7 @@
     @Intro(title: "Variable Answers") {
         Keep track of the correct answer using a variable instead of just using 2.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "quiz-ch2-variable-hero.png", alt: "")
     }
     
     @Section(title: "Updating the Struct") {

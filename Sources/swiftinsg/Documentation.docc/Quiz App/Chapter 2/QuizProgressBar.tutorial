@@ -2,7 +2,7 @@
     @Intro(title: "Creating a Progress Bar") {
         Create a Progress Bar to tell the user how far along the quiz they are.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "quiz-ch2-progressbar-hero.png", alt: "")
     }
     
     @Section(title: "Create Progress Bar") {

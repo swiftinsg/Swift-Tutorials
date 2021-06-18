@@ -1,8 +1,8 @@
 @Tutorial(time: 15, projectFiles: "Quiz - Custom Buttons.zip") {
     @Intro(title: "Customising Buttons") {
-        Create custom buttons with SF Symbols.
+        Customise buttons with SF Symbols – Apple's icon set. SF Symbols provide a consistent icon theme that fits well with the operating system icons.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "quiz-ch2-button-hero.png", alt: "")
     }
     
     @Section(title: "SF Symbols") {
