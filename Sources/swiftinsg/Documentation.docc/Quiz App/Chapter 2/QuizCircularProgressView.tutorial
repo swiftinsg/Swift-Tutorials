@@ -1,11 +1,11 @@
 @Tutorial(time: 25, projectFiles: "Quiz - Circular Progress View.zip") {
     @Intro(title: "Creating a Custom Circular Progress View") {
-        <#text#>
+        Create a custom circular progress bar using `Circle()` and a whole bunch of modifiers.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Creating a new View") {
         @ContentAndMedia(layout: horizontal) {
             <#text#>
             
@@ -14,13 +14,135 @@
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Create a new **SwiftUI View** file. In the menubar, go to **File → New → File**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file. 
+                
+                @Image(source: "quiz-ch2-circular-s1-new file.png", alt: "") 
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Select **SwiftUI View**.
+                
+                @Image(source: "shared-new swiftui view.png", alt: "")
+            }
+            
+            @Step {
+                Name the new View `"CircularProgressView"`. 
+                > This `View` will be used for us to build the circular progress view
+                
+                @Image(source: "quiz-ch2-circular-s1-saving file.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Laying Out Background") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to layout the background circle in the progress ring.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open your `CircularProgressView.swift` file.
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s2-0-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Circle()` within a `ZStack`.
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s2-1-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s2-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Make it a ring by setting its `.stroke` 
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s2-2-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s2-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Color the ring
+                
+                It has an `.opacity` of `.3` to have contrast between the background ring and the foreground ring later on.
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s2-3-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s2-3-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Laying Out Foreground") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to build the foreground ring. This ring will be cropped based on the progress.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This section uses the `CircularProgressView.swift` file.
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s3-0-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a variable, `progress`, to keep track of the current progress. This is a `CGFloat` because that’s the type of parameter needed to control the progress ring. 
+                
+                Remember to update the `PreviewProvider` with the `progress`!
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s3-1-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Circle()` for the foreground.
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s3-2-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                `.trim` the circle to a crop out a certain part of it.
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s3-3-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s3-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `.stroke`, this is similar to the previous section except that it now has `lineCap` to create a circular style.
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s3-4-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s3-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Set the `.foregroundColor` to `.red`
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s3-5-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s3-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Rotate the foreground ring 270° to start the progress ring from the top. 
+                
+                @Code(name: "CircularProgressView.swift", file: "quiz-ch2-circular-s3-6-CircularProgressView.swift") {
+                    @Image(source: "quiz-ch2-circular-s3-6-Preview.png", alt: "")
+                }
             }
         }
     }
