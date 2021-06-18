@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 25, projectFiles: "Quiz - Circular Progress View.zip") {
     @Intro(title: "Creating a Custom Circular Progress View") {
         <#text#>
         

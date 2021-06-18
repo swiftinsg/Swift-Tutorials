@@ -1,6 +1,6 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 15, projectFiles: "Quiz - Progress Bar.zip") {
     @Intro(title: "Creating a Progress Bar") {
-        <#text#>
+        Create a Progress Bar 
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
