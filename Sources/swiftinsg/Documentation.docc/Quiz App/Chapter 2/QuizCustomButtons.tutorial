@@ -1,4 +1,4 @@
-@Tutorial(time: 20) {
+@Tutorial(time: 15) {
     @Intro(title: "Customising Buttons") {
         Create custom buttons with SF Symbols.
         
@@ -39,6 +39,51 @@
                 When using it within Xcode, you will need to copy the symbol name instead. In order to do so, you can use ⌘⇧C (Command-Shift-C) or control-click and press **Copy Name**. 
                 
                 @Image(source: "quiz-ch2-button-s1-name.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Adding Symbols to Project") {
+        @ContentAndMedia(layout: horizontal) {
+            This section goes through how to integrate symbols into your project.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Select Symbols
+                
+                When selecting symbols for your app, consistency is important. For instance, if all your symbols have `.fill` on them, ensure that your new symbols are also filled. It is also important to consider what the symbol is meant to convey within the context of your app. Using random symbols is not helpful to your user. 
+                > In the example, the symbols chosen are all filled and were chosen because of their resemblence to Kahoot because that is objectively funny.
+                
+                @Image(source: "quiz-ch2-button-s2-kahoot.png", alt: "")
+            }
+            
+            @Step {
+                Open your `ContentView.swift` file 
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-button-s2-0-ContentView.swift") {
+                    @Image(source: "quiz-ch2-button-s1-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add an SF Symbol to the `Button`. 
+                
+                `Image(systemName:)` works like any normal `Image`.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-button-s2-1-ContentView.swift") {
+                    @Image(source: "quiz-ch2-button-s1-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Apply the change to all the options.
+                
+                @Code(name: "ContentView.swift", file: "quiz-ch1-button-s2-2-ContentView.swift") {
+                    @Image(source: "quiz-ch2-button-s1-2-Preview.png", alt: "")
+                }
             }
         }
     }
