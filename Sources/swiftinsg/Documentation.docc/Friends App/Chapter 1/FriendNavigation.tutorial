@@ -1,26 +1,162 @@
 @Tutorial(time: <#number#>) {
     @Intro(title: "Navigating with NavigationView") {
-        <#text#>
+        Learn how to use `NavigationView`s to segue between `View`s. `NavigationView`s allow you to create Navigation Bars which are frequently used system-wide from apps like Settings to Photos and even 3rd-party apps like WhatsApp. 
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Embedding in NavigationView") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Embed the `List` in a `NavigationView` to add a fancy title.   
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Video(source: "friends-ch1-navigation-s1-hero.mp4", poster: "")
         }
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Open your `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "friends-ch1-navigation-s1-0-ContentView.swift") {
+                    @Image(source: "friends-ch1-navigation-s1-0-Preview.png", alt: "")
+                }
+            }   
+            
+            @Step {
+                Hold down ⌘ (command key) and click on `List`. This should bring up a menu with a list of actions, within the menu, press **Embed…**.
+                @Image(source: "friends-ch1-navigation-s1-1-ContentView.png", alt: "Embedding")
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                You should see this in your `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "friends-ch1-navigation-s1-2-ContentView.swift") {
+                    @Image(source: "friends-ch1-navigation-s1-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Change the `Container` placeholder to `NavigationView`. 
+                
+                You should see a huge space at the top. We'll fill that in the next section.
+                @Code(name: "ContentView.swift", file: "friends-ch1-navigation-s1-3-ContentView.swift") {
+                    @Image(source: "friends-ch1-navigation-s1-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Adding a Title") {
+        @ContentAndMedia(layout: horizontal) {
+            Add a fancy title to your NavigationView. It fills the huge empty space at the top.
+            
+            @Image(source: "friends-ch1-navigation-s2-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open your `ContentView.swift` file.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch1-navigation-s2-0-ContentView.swift") {
+                    @Image(source: "friends-ch1-navigation-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Set the `navigationTitle` to **"Friends"** by adding the modifier to the `List`.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch1-navigation-s2-1-ContentView.swift") {
+                    @Image(source: "friends-ch1-navigation-s2-1-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Creating a Detail View") {
+        @ContentAndMedia(layout: horizontal) {
+            Create a detail view where more information about the `Friend` can be shown.
+            
+            @Image(source: "", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Create a new **SwiftUI View** file. In the menubar, go to **File → New → File**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file. 
+                
+                @Image(source: "friends-ch1-navigation-s3-New File.png", alt: "") 
+            }
+            
+            @Step {
+                Select **SwiftUI View**.
+                
+                @Image(source: "shared-new swiftui view.png", alt: "")
+            }
+            
+            @Step {
+                Name the new View `"FriendDetailView"`. 
+                > This `View` will be presented using our NavigationView
+                
+                @Image(source: "friends-ch1-navigation-s3-saving file.png", alt: "")
+            }
+            
+            @Step {
+                This is what your `FriendDetailView.swift` should look like.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-navigation-s3-0-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-navigation-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add the `friend` property to allow for a `friend` to be passed in from `ContentView.swift`. Remember to update your `PreviewProvider`.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-navigation-s3-1-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-navigation-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Display the `friend`'s `school` on the `Text`. 
+                
+                Your preview should update with information from your PreviewProvider
+                > This serves as a placeholder for now. The next tutorial covers how to customise the detail view.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-navigation-s3-2-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-navigation-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Set the title text to the `friend`'s `name`. 
+                
+                This creates one of those large titles like in the `ContentView`
+                > You will **not** see any changes on the preview as it is not connected yet.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-navigation-s3-3-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-navigation-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Open your `ContentView.swift` file
+                
+                @Code(name: "ContentView.swift", file: "friends-ch1-navigation-s3-4-ContentView.swift") {
+                    @Image(source: "friends-ch1-navigation-s3-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the contents of the `List` row in a `NavigationLink`, set the `destination` to `FriendDetailView` and pass in the `friend` 
+                
+                You should see a small chevron icon (`>`) show up next to the cell. This indicates that it is linked to `FriendDetailView`.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch1-navigation-s3-5-ContentView.swift") {
+                    @Image(source: "friends-ch1-navigation-s3-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code and you should be able to scroll through the `List` of `friend`s and tapping on a `friend` opens the `FriendDetailView` with a large title.
+                
+                @Video(source: "friends-ch1-navigation-s3-6-Demo.mp4", poster: "")
             }
         }
     }

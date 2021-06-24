@@ -1,7 +1,7 @@
 # swiftinsg
 This is a collection of DocC tutorials as part of the Swift Accelerator Programme 2021.
 
-## Projects
+## Tutorials
 
 ### Flag Raising
 
@@ -15,7 +15,7 @@ In this tutorial, you will learn how to bind `Friend`s to pass them around and m
 
 [Open Tutorial](../../tutorials/friends)
 
-- Warning: This project is incomplete and currently being worked on.
+- Warning: This tutorial is incomplete and currently being worked on.
 
 ### Quiz App
 Learn how to use various stack views and modifiers to achieve custom layouts and `View`s.
@@ -24,6 +24,8 @@ Learn how to use various stack views and modifiers to achieve custom layouts and
 
 ## More
 These tutorials are built using [Apple's DocC tutorials](https://developer.apple.com/documentation/docc/tutorial-syntax).
+
+The project is open soured on [GitHub](https://github.com/tinkercademy/Swift-Tutorials)
 
 - Note: These tutorials are part of the [Swift Accelerator Programme 2021](https://swiftinsg.org).
 - Copyright: © 2021 [Tinkertanker Pte Ltd](https://tinkertanker.com).
