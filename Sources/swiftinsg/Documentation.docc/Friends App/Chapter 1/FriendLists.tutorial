@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 20, projectFiles: "Friends - Lists.zip") {
     @Intro(title: "Listing Friends") {
         Create `Friend`s and list them out.
         

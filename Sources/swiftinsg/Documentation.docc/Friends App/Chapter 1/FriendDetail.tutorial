@@ -1,6 +1,6 @@
-@Tutorial(time: <#number#>) {
-    @Intro(title: "Customising the Destination") {
-        <#text#>
+@Tutorial(time: 20) {
+    @Intro(title: "Customising Detail View") {
+        Customise the `FriendDetailView` using a bunch of modifiers and masks. Masks are important. 
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }

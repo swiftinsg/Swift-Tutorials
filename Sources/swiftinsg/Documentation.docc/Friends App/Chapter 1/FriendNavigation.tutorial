@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 40, projectFiles: "Friends - Navigation.zip") {
     @Intro(title: "Navigating with NavigationView") {
         Learn how to use `NavigationView`s to segue between `View`s. `NavigationView`s allow you to create Navigation Bars which are frequently used system-wide from apps like Settings to Photos and even 3rd-party apps like WhatsApp. 
         
