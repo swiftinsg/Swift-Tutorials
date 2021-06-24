@@ -7,11 +7,17 @@
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Chapter(name: "<#text#>") {
-        <#text#>
+    @Chapter(name: "Listing & Navigating Friends") {
+        Learn how to use `List`s to display an array of `Friend`s and use `NavigationView` and `NavigationLink`s to move between `View`s. 
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
         
-        @TutorialReference(tutorial: "doc:<#tutorial name#>")
+        @TutorialReference(tutorial: "doc:FriendLists")
+        @TutorialReference(tutorial: "doc:FriendNavigation")
+        @TutorialReference(tutorial: "doc:FriendDetail")
+    }
+    
+    @Resources {
+        This project is part of the [Swift Accelerator Programme](https://swiftinsg.org/) 2021. 
     }
 }
