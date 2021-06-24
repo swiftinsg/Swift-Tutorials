@@ -1,13 +1,13 @@
 @Tutorial(time: <#number#>) {
     @Intro(title: "Listing Friends") {
-        Present `Friend`s with `List`s, `NavigationView`s and Friends
+        Create `Friend`s and list them out.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
     @Section(title: "Creating a Project") {
         @ContentAndMedia(layout: horizontal) {
-            This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../Flag-Raising) and [Quiz App](../Quiz-App) and , 
+            This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../Flag-Raising) and [Quiz App](../Quiz-App) tutorials.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
@@ -34,6 +34,130 @@
             @Step {
                 You're all set!
                 @Image(source: "friends-ch1-lists-s1-create project.png", alt: "Project Created")
+            }
+        }
+    }
+    
+    @Section(title: "Creating a Friend") {
+        @ContentAndMedia(layout: horizontal) {
+            This section covers how to create a `Friend` struct. Not a real one, I'm still trying to figure that one out.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Create a new `Swift` file. In the menubar, go to **File → New → File**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                @Image(source: "friends-ch1-lists-s2-new file.png", alt: "Creating new file")
+            }
+            
+            @Step {
+                Select New **Swift** file.
+                @Image(source: "shared-new swift file.png", alt: "New Swift file")
+            }
+            
+            @Step {
+                Name it `Friend.swift`
+                @Image(source: "friends-ch1-lists-s2-name file.png", alt: "Naming Swift file")
+            }
+            
+            @Step {
+                This is what you should see after you created your new file.
+                @Code(name: "Friend.swift", file: "friends-ch1-lists-s2-0-Friend.swift")
+            }
+            
+            @Step {
+                Create a struct named `Friend`.
+                @Code(name: "Friend.swift", file: "friends-ch1-lists-s2-1-Friend.swift")
+            }
+            
+            @Step {
+                Each `Friend`, should have a `name`, `icon`, `school`, and of course, a `slothImage`. All of them should be `String`s. 
+                > The `icon` is just an SF Symbol name. The `slothImage` is an image of a sloth… because every friend needs a sloth.  
+                
+                @Code(name: "Friend.swift", file: "friends-ch1-lists-s2-2-Friend.swift")
+            }
+            
+            @Step {
+                Make `Friend` conform to the `Identifiable` protocol. You will realise, the code does not compile at this stage.
+                
+                You can see it as, to be my Friend, I will need it to follow a set of rules. Those rules are the protocol. 
+                > Conforming to the `Identifiable` protocol means that `Friend` will now follow the rules and become `Identifiable`. This is important later on when we add `Friend`s to a `List`.
+                
+                @Code(name: "Friend.swift", file: "friends-ch1-lists-s2-3-Friend.swift")
+            }
+            
+            @Step {
+                Create a property named `id` and set its value to `UUID()`. Setting the value to `UUID()` sets a default value for the property this means we do not need to type in a `(id: ...)` every time a `Friend` is created.
+                
+                This is needed to conform to `Identifiable`. Without this, the code will not compile.
+                
+                > UUID stands for Universally Unique Identifier. In Swift, `UUID()` creates a UUID, this is important as the identifier needs to be unique. While the probability that a UUID will be duplicated is not zero, it is close enough to zero to be negligible. Learn more about UUIDs [here on Wikipedia](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+                
+                @Code(name: "Friend.swift", file: "friends-ch1-lists-s2-4-Friend.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Listing Friends") {
+        @ContentAndMedia(layout: horizontal) {
+            Use `List`s to display `Friend`s in a scrollable list. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open your `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "shared-ContentView.swift") {
+                    @Image(source: "friends-ch1-lists-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an array of `Friend`s.
+                @Code(name: "ContentView.swift", file: "friends-ch1-lists-s3-1-ContentView.swift") {
+                    @Image(source: "friends-ch1-lists-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `List` and display the `Friend` name within it.
+                
+                The `List` creaates a scrollable list of items from the `friends` array. 
+                
+                @Code(name: "ContentView.swift", file: "friends-ch1-lists-s3-2-ContentView.swift") {
+                    @Image(source: "friends-ch1-lists-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add the icon in an `Image` in the `List`
+                
+                Swapping the positions of the `Text` and the `Image` will cause them to exchange positions.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch1-lists-s3-3-ContentView.swift") {
+                    @Image(source: "friends-ch1-lists-s3-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `name` in a VStack with a new `Text` for the `school`.
+                
+                In this case, a `VStack` with an alignment to the `.leading` edge is used to ensure the 2 `Text`s are aligned to the left.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch1-lists-s3-4-ContentView.swift") {
+                    @Image(source: "friends-ch1-lists-s3-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Bold the `name` to distinguish it from the school.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch1-lists-s3-5-ContentView.swift") {
+                    @Image(source: "friends-ch1-lists-s3-5-Preview.png", alt: "")
+                }
             }
         }
     }

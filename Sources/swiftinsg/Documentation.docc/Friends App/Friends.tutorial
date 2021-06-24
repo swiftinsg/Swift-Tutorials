@@ -2,8 +2,6 @@
     @Intro(title: "Building a Friends List App") {
         In this tutorial, you will learn how to bind `Friend`s to pass them around and mutate them. You will also learn about adding and deleting `Friend`s and most importantly, ensuring that your `Friend`s are persistent and will not reset between app sessions.   
         
-        *we might need to rephrase this.*
-        
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
