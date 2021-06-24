@@ -1,5 +1,7 @@
 @Tutorials(name: "Quiz App") {
     @Intro(title: "Building a Quiz App") {
+        Learn how to use various stack views and modifiers to achieve custom layouts and `View`s.
+        
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
