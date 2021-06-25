@@ -11,6 +11,7 @@ struct FriendDetailView: View {
                 .scaledToFill()
                 .frame(height: 300)
         }
+        .navigationTitle(friend.name)
     }
 }
 

@@ -1,4 +1,4 @@
-@Tutorial(time: 20) {
+@Tutorial(time: 20, projectFiles: "Friends - Detail.zip") {
     @Intro(title: "Customising Detail View") {
         Customise the `FriendDetailView` using a bunch of modifiers and masks. Masks are important. 
         
@@ -9,7 +9,7 @@
         @ContentAndMedia(layout: horizontal) {
             Before actually building the layout, it is important to understand how to build it and how to manipulate your `View`s.
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Video(source: "friends-ch1-detail-s1-hero.mp4", poster: "")
         }
         
         @Steps {
@@ -221,6 +221,75 @@
                 @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-8-FriendDetailView.swift") {
                     @Image(source: "friends-ch1-detail-s3-8-Preview.png", alt: "")
                 }
+            }
+        }
+    }
+    
+    @Section(title: "String/Image Interpolation") {
+        @ContentAndMedia(layout: horizontal) {
+            You can't tell a `Text` what it can and cannot be. If it wants an `Image`, it gets an `Image`. 
+            
+            @Video(source: "friends-ch1-detail-s4-hero.mp4", poster: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `FriendDetailView.swift` file.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s4-0-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s4-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Text` with the `friend`'s `school`
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s4-1-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s4-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Use String interpolation to add `friend.school` into a string literal. 
+                
+                To put it simply, add the `friend.school` into the "".
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s4-2-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s4-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                🤯 Add an `Image` into the `Text` using String interpolation.  
+                > This should not work, but it does, because SwiftUI. This was a feature released at WWDC20 along with SwiftUI 2. This only works with SF Symbols.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s4-3-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s4-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Make the `Text` (and the icon) larger by increasing the font size.
+                
+                > SF Symbols can scale based on the font size and weight (e.g. **bold**, *italics*).
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s4-4-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s4-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add some `.padding()` to space it out from the profile `Image`.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s4-5-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s4-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code! 😴 Time to sleep 💤
+                
+                @Video(source: "friends-ch1-detail-s4-6.mp4", poster: "")
             }
         }
     }

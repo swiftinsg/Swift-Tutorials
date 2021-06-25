@@ -10,6 +10,7 @@ struct FriendDetailView: View {
                 .resizable()
                 .scaledToFill()
         }
+        .navigationTitle(friend.name)
     }
 }
 

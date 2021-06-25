@@ -25,6 +25,7 @@ struct FriendDetailView: View {
             
             Spacer()
         }
+        .navigationTitle(friend.name)
     }
 }
 

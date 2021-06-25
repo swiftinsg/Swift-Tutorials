@@ -8,6 +8,7 @@ struct FriendDetailView: View {
         VStack(spacing: 0) {
             Image(friend.slothImage)
         }
+        .navigationTitle(friend.name)
     }
 }
 
