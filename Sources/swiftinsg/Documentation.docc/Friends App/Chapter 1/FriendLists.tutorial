@@ -7,7 +7,7 @@
     
     @Section(title: "Creating a Project") {
         @ContentAndMedia(layout: horizontal) {
-            This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../Flag-Raising) and [Quiz App](../Quiz-App) tutorials.
+            This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../flag-raising) and [Quiz App](../quiz-app) tutorials.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }

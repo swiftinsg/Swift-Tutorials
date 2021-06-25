@@ -5,22 +5,222 @@
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Understanding the Layout") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Before actually building the layout, it is important to understand how to build it and how to manipulate your `View`s.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                This is the final interface.
+                @Image(source: "friends-ch1-detail-s1-0.png", alt: "")
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Everything here is nested in a `VStack`. 
+                
+                This allows the interface to be easily laid out vertically. 
+                
+                @Image(source: "friends-ch1-detail-s1-1.png", alt: "")
+            }
+            
+            @Step {
+                The banner is an `Image`, scaled to fill with a fixed height of `300`. 
+                @Image(source: "friends-ch1-detail-s1-2.png", alt: "")
+            }
+            
+            @Step {
+                The profile picture is an `Image`, masked into a `Circle()` with a fixed width and height of 250. It is then offset in the Y-axis by `-250/2` and has a bottom padding of `-250/2`. 
+                
+                This allows for a nice floating circular profile picture.
+                
+                @Image(source: "friends-ch1-detail-s1-3.png", alt: "")
+            }
+            
+            @Step {
+                A `HStack` with an `Image` for the `friend`'s `icon` and a `Text` for the `friend`'s `school`.
+                
+                @Image(source: "friends-ch1-detail-s1-4.png", alt: "")
+            }
+            
+            @Step {
+                Finally, a `Spacer()` at the bottom to align the entire `VStack` to the top.
+                
+                @Image(source: "friends-ch1-detail-s1-5.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Creating a Banner") {
+        @ContentAndMedia(layout: horizontal) {
+            This is when the `slothImage` becomes useful. The `slothImage` is used for the banners because everyone needs a sloth.
+            
+            @Video(source: "friends-ch1-detail-s2-hero.mp4", poster: "")
+        }
+        
+        @Steps {
+            @Step {
+                Download the folder of sloth images [here](https://cld.tk.sg/X6uAE4Ej).
+                
+                @Image(source: "friends-ch1-detail-s2-sloth folder.png", alt: "")
+            }
+            
+            @Step {
+                Import the images into Xcode.
+                
+                Open your **Assets.xcassets** folder. From the folder of sloth images, select all items using ⌘A (Command-A) and drag the files into Xcode.
+                
+                @Video(source: "friends-ch1-detail-s2-import assets.mp4", poster: "")
+            }
+            
+            @Step {
+                Open the `FriendDetailView.swift` file.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s2-0-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add an `Image` with the `slothImage` nested in a `VStack` with 0 spacing.
+                
+                The `spacing` value is set to 0 to allow for the other items like the profile picture to be aligned later.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s2-1-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s2-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Make the banner `Image` `resizable()` and make the image `scaledToFill()`. This is to allow the banner `Image` to scale images properly.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s2-2-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s2-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Set the banner height to `300` so the banner does not take up the full screen.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s2-3-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s2-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `Spacer()` to the bottom of the `VStack` to align the content to the top.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s2-4-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s2-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Creating a Profile Picture") {
+        @ContentAndMedia(layout: horizontal) {
+            Create a fancy circular profile picture bubble that floats on top of the actual banner `Image` with shadows!. 
+            
+            @Video(source: "friends-ch1-detail-s3-hero.mp4", poster: "")
+        }
+        
+        @Steps {
+            @Step {
+                Download (from [here](https://cld.tk.sg/d5uA9P0p)) or create a folder of friends images.
+                
+                Rename them based on their names in the `friends` array. 
+                
+                @Image(source: "friends-ch1-detail-s3-rename images.png", alt: "")
+            }
+            
+            @Step {
+                Select all the images in the folder, or using ⌘A (Command-A), and drag them into the **Assets.xcassets** file.
+                
+                @Video(source: "friends-ch1-detail-s3-importing images.mp4", poster: "")
+            }
+            
+            @Step {
+                Open the `FriendDetailView.swift` file.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-0-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an `Image` with the `friend`'s `name` between the banner `Image` and the `Spacer()`.
+                
+                This creates a profile `Image` that references the images that were just imported.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-1-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Make the `Image` `resizable()` to allow the image to be `scaledToFill()`. This ensures that the profile picture looks good. 
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-2-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Set the `width` and `height` of the `Image` to `250`.
+                
+                This is important for the next couple of steps to create a floating profile image. 
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-3-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                `.mask` the `Image` with a `Circle()` to create a fancy profile picture.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-4-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Use an `.overlay` to add a `white` border to the profile `Image`.
+                
+                In order to create this, make an `.overlay` with a `Circle()` with a `stroke` `lineWidth` of `8` and a `foregroundColor` of `.white`.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-5-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Move the profile `Image` upwards using an `offset` of `-250/2` in the Y-axis. 
+                
+                This will create the floating effect.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-6-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-6-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a subtle `.shadow` to create a better floating effect. 
+                
+                This helps to create a sense of dimention to an otherwise flat UI.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-7-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-7-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a padding of `-250/2` to ensure the next element will have a proper spacing in the `VStack`.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch1-detail-s3-8-FriendDetailView.swift") {
+                    @Image(source: "friends-ch1-detail-s3-8-Preview.png", alt: "")
+                }
             }
         }
     }
