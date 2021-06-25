@@ -1,8 +1,8 @@
-@Tutorial(time: 20, projectFiles: "Friends - Lists.zip") {
+@Tutorial(time: 30, projectFiles: "Friends - Lists.zip") {
     @Intro(title: "Listing Friends") {
         Create `Friend`s and list them out.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "friends-ch1-lists-hero.png", alt: "")
     }
     
     @Section(title: "Creating a Project") {

@@ -1,8 +1,8 @@
-@Tutorial(time: 20, projectFiles: "Friends - Detail.zip") {
+@Tutorial(time: 30, projectFiles: "Friends - Detail.zip") {
     @Intro(title: "Customising Detail View") {
         Customise the `FriendDetailView` using a bunch of modifiers and masks. Masks are important. 
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "friends-ch1-detail-hero.png", alt: "")
     }
     
     @Section(title: "Understanding the Layout") {

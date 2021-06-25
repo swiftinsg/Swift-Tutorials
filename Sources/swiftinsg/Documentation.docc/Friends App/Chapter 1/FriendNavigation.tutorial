@@ -2,7 +2,7 @@
     @Intro(title: "Navigating with NavigationView") {
         Learn how to use `NavigationView`s to segue between `View`s. `NavigationView`s allow you to create Navigation Bars which are frequently used system-wide from apps like Settings to Photos and even 3rd-party apps like WhatsApp. 
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "friends-ch1-navigation-hero.png", alt: "")
     }
     
     @Section(title: "Embedding in NavigationView") {
@@ -73,7 +73,7 @@
         @ContentAndMedia(layout: horizontal) {
             Create a detail view where more information about the `Friend` can be shown.
             
-            @Image(source: "", alt: "")
+            @Image(source: "friends-ch1-navigation-s3-hero.png", alt: "")
         }
         
         @Steps {
