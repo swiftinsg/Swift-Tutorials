@@ -1,4 +1,4 @@
-@Tutorial(time: 30, projectFiles: "Friends - Detail.zip") {
+@Tutorial(time: 45, projectFiles: "Friends - Detail.zip") {
     @Intro(title: "Customising Detail View") {
         Customise the `FriendDetailView` using a bunch of modifiers and masks. Masks are important. 
         

@@ -8,7 +8,7 @@
     @Chapter(name: "Listing & Navigating Friends") {
         Learn how to use `List`s to display an array of `Friend`s and use `NavigationView` and `NavigationLink`s to move between `View`s. 
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "friends-ch1-hero.png", alt: "")
         
         @TutorialReference(tutorial: "doc:FriendLists")
         @TutorialReference(tutorial: "doc:FriendNavigation")

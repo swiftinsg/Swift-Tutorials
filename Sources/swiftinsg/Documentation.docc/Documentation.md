@@ -15,8 +15,6 @@ In this tutorial, you will learn how to bind `Friend`s to pass them around and m
 
 [Open Tutorial](../../tutorials/friends)
 
-- Warning: This tutorial is incomplete and currently being worked on.
-
 ### Quiz App
 Learn how to use various stack views and modifiers to achieve custom layouts and `View`s.
 
