@@ -23,7 +23,7 @@ Learn how to use various stack views and modifiers to achieve custom layouts and
 ## More
 These tutorials are built using [Apple's DocC tutorials](https://developer.apple.com/documentation/docc/tutorial-syntax).
 
-The project is open soured on [GitHub](https://github.com/tinkercademy/Swift-Tutorials)
+The project is open sourced on [GitHub](https://github.com/tinkercademy/Swift-Tutorials)
 
 - Note: These tutorials are part of the [Swift Accelerator Programme 2021](https://swiftinsg.org).
 - Copyright: © 2021 [Tinkertanker Pte Ltd](https://tinkertanker.com).
