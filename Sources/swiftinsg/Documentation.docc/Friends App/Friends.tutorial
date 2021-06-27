@@ -15,6 +15,16 @@
         @TutorialReference(tutorial: "doc:FriendDetail")
     }
     
+    @Chapter(name: "Binding & Mutating Friends") {
+        Learn how to mutate friends using `Slider`s and use `@Binding` to pass them around. 
+        
+        @Image(source: "friends-ch1-hero.png", alt: "")
+        
+        @TutorialReference(tutorial: "doc:FriendLists")
+        @TutorialReference(tutorial: "doc:FriendNavigation")
+        @TutorialReference(tutorial: "doc:FriendDetail")
+    }
+    
     @Resources {
         This project is part of the [Swift Accelerator Programme](https://swiftinsg.org/) 2021.
     }
