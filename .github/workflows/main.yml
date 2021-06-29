@@ -1,6 +1,14 @@
 name: deploy website
 on: [pull_request, push]
 jobs:
+  build:
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jiachenyee/docc-action@master
+        with:
+          scheme-name: swiftinsg
+          web-public: Web/public
   deploy:
     runs-on: ubuntu-latest
     steps:
