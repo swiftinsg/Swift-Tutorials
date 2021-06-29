@@ -1,0 +1,11 @@
+name: build site
+on: [pull_request, push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jiachenyee/docc-action@master
+        with:
+          scheme-name: swiftinsg
+          web-public: Web/public
