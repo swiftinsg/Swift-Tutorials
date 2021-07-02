@@ -1,10 +1,10 @@
-@Tutorial(time: 60) {
+@Tutorial(time: 60, projectFiles: "Friends - Binding.zip") {
     @Intro(title: "Binding, Mutating & Sliding Friends") {
         This tutorial covers how to use `@Binding` variables to allow for two-way connection between the `ContentView` and `FriendsDetailView`. 
         
         This will allow the `friends` in the `ContentView` to be updated by mutating the `friends` in the `FriendsDetailView`. 
         
-        This tutorial also covers how you can create a `Slider()` in SwiftUI with `@Binding` variables. 
+        This tutorial also covers how you can create a `Slider()` in SwiftUI with `@Binding` variables and how everything can be embedded in a `ScrollView`. 
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
@@ -163,7 +163,7 @@
                 }
             }
             
-            ### Setting up a `.defence` Slider
+            ### Setting up a .defence Slider
             @Step {
                 This is pretty much the same as an `.attack` slider.
                 
