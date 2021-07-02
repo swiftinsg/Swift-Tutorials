@@ -1,11 +1,118 @@
 @Tutorial(time: <#number#>) {
     @Intro(title: "Categorising & Enumerating Friends") {
-        <#text#>
+        Use enums in Swift to create custom options and use `ForEach` to iterate through an array.  
+        
+        `Friend`s are similar to Pokémon in many ways, they are indexed and id-ed, they’re mutated, and they’re fictional. Another key similarity is that friends have types. Some may be `.water` type, others may be `.fire` type.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Creating an Enum") {
+        @ContentAndMedia(layout: horizontal) {
+            Create an enum for the `FriendType`. Think of an enum like a multiple choice field, the user is limited to certain predefined options (or `case`s). 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Create a new file. In the menubar, go to **File** → **New** → **File…** or **⌘N** (Command-N).
+                
+                This file will be used to create the `FriendType` enum.
+                
+                @Image(source: "friends-ch2-enum-s1-new file menubar.png", alt: "")
+            }
+            
+            @Step {
+                Select a **Swift file** and press **Next**.
+                @Image(source: "friends-ch2-enum-s1-new file.png", alt: "")
+            }
+            
+            @Step {
+                Name the file **"FriendType"**
+                @Image(source: "friends-ch2-enum-s1-save.png", alt: "")
+            }
+            
+            @Step {
+                This should be what your file looks like.
+                @Code(name: "FriendType.swift", file: "friends-ch2-enum-s1-0-FriendType.swift")
+            }
+            
+            @Step {
+                Create an enum called `FriendType`.
+                @Code(name: "FriendType.swift", file: "friends-ch2-enum-s1-1-FriendType.swift")
+            }
+            
+            @Step {
+                There are several types of friends, `.normal`, `.fire`, `.water`, `.grass`, `.electric` & `.ice`. We can add those as cases in the enum.
+                
+                @Code(name: "FriendType.swift", file: "friends-ch2-enum-s1-2-FriendType.swift")
+            }
+            
+            @Step {
+                Add raw values to the Friend. The `rawValue` is a `String` that will be the title of the case.  
+                @Code(name: "FriendType.swift", file: "friends-ch2-enum-s1-3-FriendType.swift")
+            }
+            
+            @Step {
+                Create a function called `getSymbolName()` that returns a `String`.
+                
+                This function will be used to get the SF Symbol name for each `FriendType`.
+                
+                @Code(name: "FriendType.swift", file: "friends-ch2-enum-s1-4-FriendType.swift")
+            }
+            
+            @Step {
+                Within the function, create a `switch` statement to return the SF Symbol icon name. 
+                
+                Think of a switch statement like an if-else statement but simpler. 
+                
+                @Code(name: "FriendType.swift", file: "friends-ch2-enum-s1-5-FriendType.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Implementing the Enum") {
+        @ContentAndMedia(layout: horizontal) {
+            Implement the `FriendType` enum by adding it to the `Friend` struct and updating every instance of the `Friend` struct.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `Friend.swift` file
+                @Code(name: "Friend.swift", file: "friends-ch2-enum-s2-0-Friend.swift")
+            }
+            
+            @Step {
+                Create a new property, `types` and set its type as an array of `FriendType` or `[FriendType]`.
+                @Code(name: "Friend.swift", file: "friends-ch2-enum-s2-1-Friend.swift")
+            }
+            
+            @Step {
+                Open the `ContentView.swift` file
+                @Code(name: "ContentView.swift", file: "friends-ch2-enum-s2-2-ContentView.swift")
+            }
+            
+            @Step {
+                Add `FriendType`s to every `Friend`.
+                @Code(name: "ContentView.swift", file: "friends-ch2-enum-s2-3-ContentView.swift")
+            }
+            
+            @Step {
+                Open the `FriendDetailView.swift` file
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-enum-s2-4-FriendDetailView.swift")
+            }
+            
+            @Step {
+                Update the `Friend` in the preview with the `FriendType`. 
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-enum-s2-5-FriendDetailView.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Adding Friend's Type to FriendDetailView") {
         @ContentAndMedia(layout: horizontal) {
             <#text#>
             
@@ -14,13 +121,37 @@
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Open the `FriendDetailView.swift` file
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-enum-s3-0-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-enum-s3-0-Preview.png", alt: "")
+                }
             }
             
             @Step {
                 <#text#>
                 @Code(name: "<#display name#>", file: <#filename.swift#>)
+            }
+        }
+    }
+    
+    @Section(title: "Adding Friend's Type to ContentView") {
+        @ContentAndMedia(layout: horizontal) {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `Friend.swift` file
+                @Code(name: "", file: <#filename.swift#>) {
+                    @Image(source: <#file#>, alt: "<#accessible description#>")
+                }
+            }
+            
+            @Step {
+                <#text#>
+                @Code(name: "", file: <#filename.swift#>)
             }
         }
     }
