@@ -18,11 +18,9 @@
     }
     
     @Chapter(name: "Binding, Mutating, Enumerating and Sliding Friends") {
-        Learn how to mutate friends using `Slider`s and use `@Binding` to pass them around. 
+        `@Binding` friends to mutate them with `Slider`s. We also inject our `friends` to allow them to have `.attack` and `.defence` . Finally, we scrutinise our friends attributes and enumerate them. 
         
-        > Warning: Incomplete chapter
-        
-        @Image(source: "friends-ch1-hero.png", alt: "")
+        @Image(source: "friends-ch2-hero.png", alt: "")
         
         @TutorialReference(tutorial: "doc:FriendBinding")
         @TutorialReference(tutorial: "doc:FriendEnums")

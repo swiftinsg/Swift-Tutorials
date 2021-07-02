@@ -6,7 +6,7 @@
         
         This tutorial also covers how you can create a `Slider()` in SwiftUI with `@Binding` variables and how everything can be embedded in a `ScrollView`. 
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "friends-ch2-binding-hero.png", alt: "")
     }
     
     @Section(title: "@Binding Friends") {
@@ -79,7 +79,7 @@
             
             The most important thing in friendship is a `friend`'s `attack` & `defence`. This will allow us to make more realistic `friends` in our app.
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Image(source: "friends-ch2-binding-s2-Hero.png", alt: "<#accessible description#>")
         }
         
         @Steps {
@@ -188,7 +188,7 @@
             
             As our `FriendDetailView` is getting crowded, it can be especially hard for those with smaller screens (e.g. iPhone SE, 8 etc.) to use. Therefore, we can use a `ScrollView` to allow our elements in the `VStack` to scroll up and down allowing users to slide the sliders no matter the size of their device.
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Image(source: "", alt: "")
         }
             
         @Steps {

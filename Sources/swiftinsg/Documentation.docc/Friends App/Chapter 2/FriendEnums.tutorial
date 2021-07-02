@@ -4,7 +4,7 @@
         
         `Friend`s are similar to Pokémon in many ways, they are indexed and id-ed, they’re mutated, and they’re fictional. Another key similarity is that friends have types. Some may be `.water` type, others may be `.fire` type.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "friends-ch2-enum-hero.png", alt: "")
     }
     
     @Section(title: "Creating an Enum") {
