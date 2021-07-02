@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 60) {
     @Intro(title: "Binding, Mutating & Sliding Friends") {
         This tutorial covers how to use `@Binding` variables to allow for two-way connection between the `ContentView` and `FriendsDetailView`. 
         
@@ -137,11 +137,7 @@
                 
                 A `VStack` with the elements aligned to the left, or `.leading` edge. Within the `VStack` there are 2 `Text`s and 2 `Slider`s.
                 
-                @Comment {
-                    TODO: Add image
-                }
-                
-                @Image(source: "friends-ch2-binding-s2-0-Preview.png", alt: "")
+                @Image(source: "friends-ch2-binding-s2-Sliders.png", alt: "")
             }
                
                
@@ -197,11 +193,53 @@
             
         @Steps {
             @Step {
-                Open the
+                Open the `FriendDetailView.swift` file.
                 
-                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s2-5-FriendDetailView.swift") {
-                    @Image(source: "friends-ch2-binding-s2-5-Preview.png", alt: "")
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s3-0-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s3-0-Preview.png", alt: "")
                 }
+            }
+            
+            @Step {
+                Embed the `VStack` in a `ScrollView`
+                
+                The location of the **Embed** button may differ based on the version of Xcode you are running. If you do not see the **Embed** button, you can manually embed the VStack in a ScrollView (refer to the next step for the final code from this step).
+                
+                @Video(source: "friends-ch2-binding-s3-1-Embed.mp4", poster: "")
+            }
+            
+            @Step {
+                This is how your code should look like after embedding.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s3-2-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Oh no the slider is messed up.
+                
+                @Image(source: "friends-ch2-binding-s3-3-SliderIssues.png", alt: "")
+            }
+            
+            @Step {
+                Fix this issue by swapping the `.frame` where we set the height of the banner `Image` and the `scaledToFill`. 
+                
+                By adding the frame before scaling it to fill, the `Image` is now resized based on the new `frame`. This was an oversight in the previous version.
+                > Experiment: Click on the banner `Image` and see the outline of its bounds. Then swap the 2 lines to see the change.   
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s3-4-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s3-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code!!
+                
+                The FriendDetailView should be scrollable. Also, the sliders "remember" the previous settings. If you switch between `friends` and slide the `Slider`, it will ensure that when you revisit the view with the same `friend`, the `Slider` is at the same position.
+                > To scroll on simulator, drag up and down within the simulator. 
+                
+                @Video(source: "friends-ch2-binding-s3-5-Final.mp4", poster: "")
             }
         }
     }
