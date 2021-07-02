@@ -1,26 +1,207 @@
 @Tutorial(time: <#number#>) {
-    @Intro(title: "<#text#>") {
-        <#text#>
+    @Intro(title: "Binding, Mutating & Sliding Friends") {
+        This tutorial covers how to use `@Binding` variables to allow for two-way connection between the `ContentView` and `FriendsDetailView`. 
+        
+        This will allow the `friends` in the `ContentView` to be updated by mutating the `friends` in the `FriendsDetailView`. 
+        
+        This tutorial also covers how you can create a `Slider()` in SwiftUI with `@Binding` variables. 
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "@Binding Friends") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            In order to mutate or modify our `friends` when they are passed to another `View`. We will first need to bind them. 
+            
+            There will not be any visible changes in the preview after this section.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Open the `FriendDetailView.swift` file.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s1-0-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s1-0-Preview.png", alt: "")
+                }
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                `@Binding` your `friend`.
+                
+                You will also need to update your `PreviewProvider` by using `.constant` to create a `Binding` value that is a constant.
+                > Important: There is no preview at this point as your build will not succeed. You will need to ensure that your `friend` is also `@Binding` in the `ContentView.swift` file.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s1-1-FriendDetailView.swift")
+            }
+            
+            @Step {
+                Open the `ContentView.swift` file. 
+                
+                @Code(name: "ContentView.swift", file: "friends-ch2-binding-s1-2-ContentView.swift") {
+                    @Image(source: "friends-ch2-binding-s1-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Make your `friends` a `@State` variable to mutate them.
+                
+                This is required as passing a `friend` through a `@Binding` variable requires it to be a `@State` variable as the `friend` will be mutated.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch2-binding-s1-3-ContentView.swift") {
+                    @Image(source: "friends-ch2-binding-s1-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Bind your `friends` in the list. The `$friends` is the `Binding` version of `friends`. This means that you can now edit the value of each `friend` from within the `List`. The `friend` is passed into the `FriendDetailView`.
+                > The values of `friend` within the `Image` and `Text` will need to use `.wrappedValue` in order to get the value of `friend` from the `@Binding` variable.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch2-binding-s1-4-ContentView.swift") {
+                    @Image(source: "friends-ch2-binding-s1-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                You can now go back to the `FriendDetailView.swift` file, the preview should work and the build will succeed. 
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s1-5-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s1-5-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Creating Sliders") {
+        @ContentAndMedia(layout: horizontal) {
+            The purpose of `@Binding` the `friends` earlier was to add `Slider()`s to the `friends`.
+            
+            The most important thing in friendship is a `friend`'s `attack` & `defence`. This will allow us to make more realistic `friends` in our app.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            
+            ## Injecting .attack and .defence into Friend
+            
+            @Step {
+                Open the `Friend.swift` file.
+                
+                @Code(name: "Friend.swift", file: "friends-ch2-binding-s2-0-Friend.swift")
+            }
+            @Step {
+                Add the `attack` and `defence` properties as `Double`s.
+                
+                This will be used to customise the attack and defence of the `Friend`. They will need to be of type `Double` for our `Slider()` later on.
+                
+                @Code(name: "Friend.swift", file: "friends-ch2-binding-s2-1-Friend.swift")
+            }
+            
+            @Step {
+                Open the `ContentView.swift` file.
+                > Important: There is no preview available as the build will not succeed.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch2-binding-s2-2-ContentView.swift")
+            }
+            
+            @Step {
+                Add the `attack` and `defence` properties into each `Friend`. 
+                
+                Set the `attack` and `defence` to a number within 0 to 15, inclusive.
+                > Important: There is no preview available as the build will not succeed.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch2-binding-s2-3-ContentView.swift")
+            }
+            
+            @Step {
+                Open the `FriendDetailView.swift` file.
+                > Important: There is no preview available as the build will not succeed.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s2-4-FriendDetailView.swift")
+            }
+            
+            @Step {
+                Update the Preview `Friend` with an `attack` and `defence`.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s2-5-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s2-5-Preview.png", alt: "")
+                }
+            }
+            
+            ## Creating a Slider
+            
+            @Step {
+                Layout of Sliders
+                
+                A `VStack` with the elements aligned to the left, or `.leading` edge. Within the `VStack` there are 2 `Text`s and 2 `Slider`s.
+                
+                @Comment {
+                    TODO: Add image
+                }
+                
+                @Image(source: "friends-ch2-binding-s2-0-Preview.png", alt: "")
+            }
+               
+               
+            ### Setting up .attack Slider
+            @Step {
+                Create a `VStack` with a `.leading` alignment and `Text` within it.
+                
+                The `Text` will still be in the centre of the screen until a `Slider` is added.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s2-6-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s2-6-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Slider`. 
+                
+                The slider will increase in `step`s of 10 and be restricted to values within 0 to 15 (inclusive of both 0 and 15). 
+                > The slider will modify the `friend.attack` value as the user slides the slider as it is a `Binding` variable (you can see based on the `$` in front of the `friend`).  
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s2-7-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s2-7-Preview.png", alt: "")
+                }
+            }
+            
+            ### Setting up a `.defence` Slider
+            @Step {
+                This is pretty much the same as an `.attack` slider.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s2-8-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s2-8-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add some `.padding()` to the `VStack` to ensure the `Slider()`s are not touching the edges.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s2-9-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s2-9-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+        
+    @Section(title: "Embedding in ScrollView") {
+        @ContentAndMedia(layout: horizontal) {
+            A ScrollView is, as the [documentation](https://developer.apple.com/documentation/swiftui/scrollview/) puts it, "A scrollable view".
+            
+            As our `FriendDetailView` is getting crowded, it can be especially hard for those with smaller screens (e.g. iPhone SE, 8 etc.) to use. Therefore, we can use a `ScrollView` to allow our elements in the `VStack` to scroll up and down allowing users to slide the sliders no matter the size of their device.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+            
+        @Steps {
+            @Step {
+                Open the
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-binding-s2-5-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-binding-s2-5-Preview.png", alt: "")
+                }
             }
         }
     }
