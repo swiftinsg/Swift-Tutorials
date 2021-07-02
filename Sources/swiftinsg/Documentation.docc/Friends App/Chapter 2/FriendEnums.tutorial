@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 60, projectFiles: "Friends - Enum.zip") {
     @Intro(title: "Categorising & Enumerating Friends") {
         Use enums in Swift to create custom options and use `ForEach` to iterate through an array.  
         
@@ -114,9 +114,9 @@
     
     @Section(title: "Adding Friend's Type to FriendDetailView") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Use `HStack`, `ForEach` and `Label`s to create a View to display each `friend`'s `types`   
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Image(source: "friends-ch2-enum-s3-Hero.png", alt: "<#accessible description#>")
         }
         
         @Steps {
@@ -128,30 +128,90 @@
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Create a `HStack` with some `.padding()`. This will be used to show the different friend types.
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-enum-s3-1-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-enum-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Within the `HStack`, add a `ForEach`. 
+                
+                `ForEach` functions like a for-loop but for SwiftUI elements. It allows you to iterate through an array of elements, in this case, `FriendType`s.
+                > As `FriendType` does not conform to `Identifiable`, we will need to manually set the `id` using a key path. In this case, the `rawValue` is set as the `id`.
+                
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-enum-s3-2-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-enum-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Label` with the text as the `rawValue`. The `rawValue` is a `String` that was set earlier in the enum. See [Creating an Enum](#Creating-an-Enum).
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-enum-s3-3-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-enum-s3-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Customise the `Label`s with a little `.padding`, a `.background`, `.foregroundColor` and `.cornerRadius`.
+                @Code(name: "FriendDetailView.swift", file: "friends-ch2-enum-s3-4-FriendDetailView.swift") {
+                    @Image(source: "friends-ch2-enum-s3-4-Preview.png", alt: "")
+                }
             }
         }
     }
     
     @Section(title: "Adding Friend's Type to ContentView") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Display the `Friend`'s `types` icons in the `List` with a `Spacer`, `HStack` and `Image`.
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Image(source: "friends-ch2-enum-s4-Hero", alt: "")
         }
         
         @Steps {
             @Step {
-                Open the `Friend.swift` file
-                @Code(name: "", file: <#filename.swift#>) {
-                    @Image(source: <#file#>, alt: "<#accessible description#>")
+                Open the `ContentView.swift` file
+                @Code(name: "ContentView.swift", file: "friends-ch2-enum-s4-0-ContentView.swift") {
+                    @Image(source: "friends-ch2-enum-s4-0-Preview.png", alt: "")
                 }
             }
             
             @Step {
-                <#text#>
-                @Code(name: "", file: <#filename.swift#>)
+                In the `List`, embed the `friend`'s `.school` `Text` in a `HStack`. 
+                
+                The location of the **Embed in HStack** button may differ based on the version of Xcode you are running. If you do not see the **Embed in HStack** button, you can manually embed the `Text` in a `HStack` (refer to the next step for the final code from this step).
+                
+                @Video(source: "friends-ch2-enum-s4-1-Embed.mp4", posterFrame: "")
+            }
+            
+            @Step {
+                After embedding in HStack, this is what your code should look like.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch2-enum-s4-2-ContentView.swift") {
+                    @Image(source: "friends-ch2-enum-s4-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Within the `HStack`, add a `ForEach` with the `friend`'s `types`. From there, create `Image`s with the SF Symbol.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch2-enum-s4-3-ContentView.swift") {
+                    @Image(source: "friends-ch2-enum-s4-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Align the icons to the right of the `HStack` using a `Spacer()`.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch2-enum-s4-4-ContentView.swift") {
+                    @Image(source: "friends-ch2-enum-s4-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                and… that's it!
+                
+                @Video(source: "friends-ch2-enum-s4-5-Finally time to sleep.mp4", posterFrame: "")
             }
         }
     }
