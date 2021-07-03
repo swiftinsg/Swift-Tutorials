@@ -26,18 +26,20 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List($friends) { friend in
-                NavigationLink(destination: FriendDetailView(friend: friend)) { 
-                    Image(systemName: friend.wrappedValue.icon)
-                    
-                    VStack(alignment: .leading) {
-                        Text(friend.wrappedValue.name)
-                            .bold()
-                        HStack {
-                            Text(friend.wrappedValue.school)
-                            
-                            ForEach(friend.wrappedValue.types, id: \.rawValue) { type in
-                                Image(systemName: type.getSymbolName())
+            List {
+                ForEach($friends) { friend in
+                    NavigationLink(destination: FriendDetailView(friend: friend)) { 
+                        Image(systemName: friend.wrappedValue.icon)
+                        
+                        VStack(alignment: .leading) {
+                            Text(friend.wrappedValue.name)
+                                .bold()
+                            HStack {
+                                Text(friend.wrappedValue.school)
+                                
+                                ForEach(friend.wrappedValue.types, id: \.rawValue) { type in
+                                    Image(systemName: type.getSymbolName())
+                                }
                             }
                         }
                     }
