@@ -36,7 +36,7 @@ struct ContentView: View {
                         HStack {
                             Text(friends[index].school)
                             
-                            ForEach(friend.wrappedValue.types, id: \.rawValue) { type in
+                            ForEach(friend[index].types, id: \.rawValue) { type in
                                 Image(systemName: type.getSymbolName())
                             }
                         }
