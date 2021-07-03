@@ -17,15 +17,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach($friends) { friend in
-                    NavigationLink(destination: FriendDetailView(friend: friend)) {
-                        Image(systemName: friend.wrappedValue.icon)
-                        
-                        VStack(alignment: .leading) {
-                            Text(friend.wrappedValue.name)
-                                .bold()
-                            Text(friend.wrappedValue.school)
+            List (0..<friends.count) { index in
+                NavigationLink(destination: FriendDetailView(friend: $friends[index])) {
+                    Image(systemName: friends[index].icon)
+                    
+                    VStack(alignment: .leading) {
+                        Text(friends[index].name)
+                            .bold()
+                        HStack {
+                            Text(friend[index].school)
                         }
                     }
                 }
