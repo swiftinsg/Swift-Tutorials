@@ -26,6 +26,15 @@
         @TutorialReference(tutorial: "doc:FriendEnums")
     }
     
+    @Chapter(name: "Manipulating and Storing Friends") {
+        `@Binding` friends to mutate them with `Slider`s. We also inject our `friends` to allow them to have `.attack` and `.defence` . Finally, we scrutinise our friends attributes and enumerate them. 
+        
+        @Image(source: "friends-ch2-hero.png", alt: "")
+        
+        @TutorialReference(tutorial: "doc:FriendManipulation")
+        @TutorialReference(tutorial: "doc:FriendPersistence")
+    }
+    
     @Resources {
         This project is part of the [Swift Accelerator Programme](https://swiftinsg.org/) 2021.
     }

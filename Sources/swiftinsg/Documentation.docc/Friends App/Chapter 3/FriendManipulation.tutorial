@@ -1,0 +1,30 @@
+@Tutorial(time: <#number#>) {
+    @Intro(title: "No longer one man on an island") {
+        This tutorial covers how to delete & move `friends` using a `List` and `ForEach`. 
+        
+        The tutorial also covers how to make `Friend`s. However, the tutorial will only cover the easy way of making friends where you sit in front of a computer for a couple of hours and use `Form`s, instead of that strange method of going out and try to talk to people.
+        > Experiment: Try the harder way of making `Friend`s, maybe at some point, maybe never.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "<#text#>") {
+        @ContentAndMedia(layout: horizontal) {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                <#text#>
+                @Image(source: <#file#>, alt: "<#accessible description#>")
+            }
+            
+            @Step {
+                <#text#>
+                @Code(name: "<#display name#>", file: <#filename.swift#>)
+            }
+        }
+    }
+}
