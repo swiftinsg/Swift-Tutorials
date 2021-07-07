@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 60) {
     @Intro(title: "No longer one man on an island") {
         This tutorial covers how to delete & move `friends` using a `List` and `ForEach`. 
         
@@ -8,7 +8,150 @@
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Preparing Friends") {
+        @ContentAndMedia(layout: horizontal) {
+            Before we start manipulating `Friend`s, they need to be prepared by conforming to `Equatable`. We'll also need to update the `List` to allow for `Friend`s to be manipulated.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the **Friend.swift** file.
+                @Code(name: "Friend.swift", file: "friends-ch3-manipulation-s1-0-Friend.swift")
+            }
+            
+            [`Equatable`](https://developer.apple.com/documentation/swift/equatable/), like `Identifiable` is a protocol. It allows the `Friend` to be compared with one another.  
+            
+            `Equatable` allows the use of `==` to compare `Friend`s. It's also frequently used to check if an array contains an element and in this case, finding the first index of a `Friend` in the `friends` array.
+            
+            @Step {
+                Conforming `Friend` to `Equatable`
+                
+                @Code(name: "Friend.swift", file: "friends-ch3-manipulation-s1-1-Friend.swift")
+            }
+            
+            @Step {
+                Open the **ContentView.swift** file.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s1-2-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s1-2-Preview.png", alt: "")
+                }
+            }
+            
+            The range was a workaround from last lesson, however, it only supports constant data. `friends` will be dynamically updated as the user deletes and adds `Friend`s. 
+            
+            In essence, we're reverting back to what it was with a few extra steps for the `Binding` `Friend`, *sorry*. 
+            
+            @Step {
+                Change the `List` to use `friends` instead of a range, then get the index of the current `Friend` from `friends` using `.firstIndex(of:)`.
+                
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s1-3-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s1-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Use a `ForEach` to iterate through the elements in the `List` instead of the `List` itself.
+                
+                This is useful later when we need to delete and move `Friend`s.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s1-4-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s1-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Deleting Friends") {
+        @ContentAndMedia(layout: horizontal) {
+            Deleting Friends is surprisingly easy. Another way to phrase this is **"Removing Friends from Memory"** but I felt that we had sufficient ridiculous names within this chapter.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the **ContentView.swift** file.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s2-0-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            ```swift
+            .onDelete { offsets in
+                friends.remove(atOffsets: offsets)
+            }
+            ```
+            The `offsets` above refer to the elements to delete within the array. Thus, `friends.remove(atOffsets:)` is used to remove `friends` at that particular offset.
+            
+            @Step {
+                Add an `.onDelete` attached to the `ForEach`
+                
+                Start the **Live Preview** and you should be able to swipe to delete a `Friend`. You can also run it on your Simulator to test this out if you lack sufficient system resources.
+                > As your trackpad simulates a touch on the Simulator or Live Preview, you will have to hold down as you drag the item away.  
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s2-1-ContentView.swift") {
+                    @Video(source: "friends-ch3-manipulation-s2-1-Preview.mp4", posterFrame: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Moving Friends") {
+        @ContentAndMedia(layout: horizontal) {
+            Moving `Friend`s is similar to deleting `Friend`s from the `friends` array. Like deleting `Friend`s, we will also rely on `offsets`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the **ContentView.swift** file
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s3-0-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            ```swift
+            .onMove { source, destination in
+                friends.move(fromOffsets: source, toOffset: destination)
+            }
+            ```
+            This is similar to deleting but now with 2 offsets. The first is the original position of the item and the second is the new position. What this does is it moves the item from the original position in the `friends` array to the new position in the `friends` array thereby reordering `Friend`s.
+            
+            @Step {
+                Add an `.onMove` attached to the `.onDelete` earlier that was attached to the `ForEach`.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s3-1-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            In order to move the items, there needs to be an **Edit** button.
+            
+            @Step {
+                Add an **Edit** button can be added as a `NavigationItem` on the `.leading` edge (left side). 
+                > Important: The `.trailing` edge will be used for the button to add a new `Friend`. 
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s3-2-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code!
+                
+                You should be able to drag and move your `Friend`s around and delete them with the **Edit** button. 
+                
+                @Video(source: "friends-ch3-manipulation-s3-Video", posterFrame: "")
+            }
+        }
+    }
+    
+    @Section(title: "Creating Friends") {
         @ContentAndMedia(layout: horizontal) {
             <#text#>
             
