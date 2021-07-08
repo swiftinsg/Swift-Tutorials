@@ -1,26 +1,359 @@
 @Tutorial(time: <#number#>) {
     @Intro(title: "Look around us always and remember") {
-        This tutorial covers how to use `@ObservableObject`s, `@ObservedObject`, `@Published` variables and how to store and retrieve data using a Property Lists. 
+        This tutorial covers how to use `@ObservableObject`s, `@ObservedObject`, `@Published` variables and how to store and retrieve data using a Property Lists.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Conforming to Codable") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            The `Codable` protocol combines 2 other protocols—`Encodable` and `Decodable`. 
+            - `Encodable` allows data to be encoded, or converted to a form suitable for storage such as a JSON or a Property List.
+            - `Decodable` allows data to be decoded from said JSON or Property List into the object itself
+            
+            This makes `Codable` ideal for storing data such as the array of `Friend`s. [Learn more about Codable](https://developer.apple.com/documentation/swift/codable).  
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Open the **Friend.swift** file.
+                @Code(name: "Friend.swift", file: "friends-ch3-persistence-s1-0-Friend.swift")
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Make `Friend` conform to `Codable`.
+                > You will get an error saying Type `'Friend' does not conform to protocol 'Encodable'` and `Type 'Friend' does not conform to protocol 'Decodable'`. It will be fixed in the next step.
+                
+                @Code(name: "Friend.swift", file: "friends-ch3-persistence-s1-1-Friend.swift")
+            }
+            
+            The error is basically saying "In order to conform to `Codable`, `Friend` needs to follow the 'rules' of `Codable` and has to be `Decodable` and `Encodable`"
+            
+            In order to conform to `Codable`, all other objects within it has to also conform to Codable. In the case of the `Friend`, everything conforms to `Codable` except for the `types` property. To fix this, the  `FriendType` will also need to conform to `Codable`.
+            
+            @Step {
+                Open the **FriendType.swift** file.
+                @Code(name: "FriendType.swift", file: "friends-ch3-persistence-s1-2-FriendType.swift")
+            }
+            
+            @Step {
+                Make `FriendType` conform to `Codable`.
+                @Code(name: "FriendType.swift", file: "friends-ch3-persistence-s1-3-FriendType.swift")
+            }
+            
+            After `FriendType` conforms to `Codable`, it should stop throwing errors and the build should succeed.
+        }
+    }
+    
+    @Section(title: "Creating a Data Model") {
+        @ContentAndMedia(layout: horizontal) {
+            Create a class to serve as a data model.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            
+            ## Create a new Swift file
+            
+            @Step {
+                Create a new `Swift` file. In the menubar, go to **File → New → File**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                
+                @Image(source: "friends-ch3-persistence-s2-0-New File.png", alt: "")
+            }
+            
+            @Step {
+                Select **Swift File**.
+                
+                @Image(source: "friends-ch3-persistence-s2-1-Swift File.png", alt: "")
+            }
+            
+            @Step {
+                Name it **"FriendsData"** and save it.
+                
+                @Image(source: "friends-ch3-persistence-s2-2-Save.png", alt: "")
+            }
+            
+            @Step {
+                This is what you should see in the `FriendsData.swift` file.
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s2-3-FriendsData.swift")
+            }
+            
+            ## Setting up ObservableObject
+            
+            @Step {
+                Import SwiftUI. 
+                
+                As ObservableObject is part of SwiftUI, you will need to `import SwiftUI`.
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s2-4-FriendsData.swift")
+            }
+            
+            @Step {
+                Create a `class` named `FriendsData`.
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s2-5-FriendsData.swift")
+            }
+            
+            @Step {
+                `FriendsData` will need to conform to the `ObservableObject` protocol
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s2-6-FriendsData.swift")
+            }
+            
+            A `@Published` variable allows us to create `ObservableObject`s that automatically announce when changes occur. SwiftUI will automatically monitor for such changes, and reload any views that rely on the data. 
+            
+            Think of it as a small animal, if you manipulate it, it will scream loudly and make a lot of noise so everyone around will know what happened. That's how `@Published` variables work, if you manipulate them, they will announce its changes and reload any `View` that uses it.  
+            
+            @Step {
+                Within `FriendsData`, declare an empty array of `Friend`s. This should be a `@Published`
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s2-7-FriendsData.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Getting Archive URL") {
+        @ContentAndMedia(layout: horizontal) {
+            Before we store our data, we need to figure out where to store the data. This is where the archive URL comes in. In iOS, all apps have a "sandbox" where documents and data can be stored and which is inaccessible by other apps. The archive URL is a URL within the app's sandbox that can be used to read and write data securely. With that said, this data storage method should not be used to store any sensitive information, like passwords, as it is unencrypted. If you're interested in securely storing sensitive information, see [here](https://developer.apple.com/documentation/security/certificate_key_and_trust_services/keys/storing_keys_in_the_keychain). 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `FriendsData.swift` file.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s3-0-FriendsData.swift")
+            }
+            
+            @Step {
+                Declare a function to `getArchiveURL()`. This function should return a `URL` type.
+                > There will be an error as the function has not returned a `URL` yet
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s3-1-FriendsData.swift")
+            }
+            
+            @Step {
+                Within the function, create a constant with the property list name called `plistName`. This is the file name for the Property List itself and should end with the `.plist` extension.
+                > There will be an error as the function has not returned a `URL` yet
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s3-2-FriendsData.swift")
+            }
+            
+            @Step {
+                Get the `.documentDirectory` for the app. The `.documentDirectory` is specific to each app and is within the app's sandbox. This ensures that no other app can access the information stored within this directory.
+                > There will be an error as the function has not returned a `URL` yet
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s3-3-FriendsData.swift")
+            }
+            
+            @Step {
+                Finally, return the `documentDirectory` URL appending the `plistName`. This will create a final URL that looks like `file://…/Documents/friends.plist`.
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s3-4-FriendsData.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Adding a Method to Save Data") {
+        @ContentAndMedia(layout: horizontal) {
+            Create a function to write data to a local file.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `FriendsData.swift` file.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s4-0-FriendsData.swift")
+            }
+            
+            @Step {
+                Create a function to `save()` friends.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s4-1-FriendsData.swift")
+            }
+            
+            @Step {
+                Get the `archiveURL` from the `getArchiveURL()` function
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s4-2-FriendsData.swift")
+            }
+            
+            @Step {
+                Create a `propertyListEncoder`. This will be used to encode the data. 
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s4-3-FriendsData.swift")
+            }
+            
+            @Step {
+                Encode `friends` using the `propertyListEncoder`. 
+                
+                The `try?` means if something goes wrong, just return a nil value.
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s4-4-FriendsData.swift")
+            }
+            
+            @Step {
+                Finally, write `friends` to the `archiveURL`
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s4-5-FriendsData.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Adding a Method to Load Data") {
+        @ContentAndMedia(layout: horizontal) {
+            Create a function to read data from a local file.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the **FriendsData.swift** file.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-0-FriendsData.swift")
+            }
+            
+            @Step {
+                Create a function called `load()` this will be called when we need to load data.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-1-FriendsData.swift")
+            }
+            
+            @Step {
+                Get the `archiveURL` from `getArchiveURL()`.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-2-FriendsData.swift")
+            }
+            
+            @Step {
+                Create a `PropertyListDecoder()` in order to decode the property list.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-3-FriendsData.swift")
+            }
+            
+            @Step {
+                Create a variable called `finalFriends` with a value of `nil`
+                
+                This is an **implicitly unwrapped optional**. This means we do not need to unwrap the value and it is assumed as a non-optional. Essentially, we are saying that "when you call `finalFriends`, it will never be `nil`". [Learn more](https://www.hackingwithswift.com/example-code/language/what-are-implicitly-unwrapped-optionals).
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-4-FriendsData.swift")
+            }
+            
+            @Step {
+                Retrive and decode `Friend`s. 
+                
+                As this uses `try?`, when there is an error, it will return an nil, making this an optional. Thus, `if`-`let` is used to unwrap the value, however, if there is an issue, it will not crash and skip that part. 
+                
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-5-FriendsData.swift")
+            }
+            
+            @Step {
+                Create `sampleFriends`. These `Friend`s will be used as placeholders if there are no actual `Friend`s. 
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-6-FriendsData.swift")
+            }
+            
+            @Step {
+                Back at the `if`-`let`, add an `else` block so that, if there are any errors, it uses the `sampleFriends` as the friends.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-7-FriendsData.swift")
+            }
+            
+            @Step {
+                Update the `friends` `@Published` variable with the `finalFriends`.
+                @Code(name: "FriendsData.swift", file: "friends-ch3-persistence-s5-8-FriendsData.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Load and Save Data") {
+        @ContentAndMedia(layout: horizontal) {
+            Put everything to gather and connect `FriendsData` to the `ContentView`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "friends-ch3-persistence-s6-0-ContentView.swift") {
+                    @Image(source: "friends-ch3-persistence-s6-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Make `friends` `@Binding`
+                > `friends` will be `@Binding` as it will be passed in from the `App` file instead. 
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-persistence-s6-1-ContentView.swift") {
+                    @Image(source: "friends-ch3-persistence-s6-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Update the `PreviewProvider` with the new `@Binding` `friends`.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-persistence-s6-2-ContentView.swift") {
+                    @Image(source: "friends-ch3-persistence-s6-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Open the `FriendsApp.swift` file.
+                
+                This file is named based on your project's name. If you made the wise decision to name your project "Potato", the file would be `PotatoApp.swift`.
+                > It is *usually* the top-most file in the project navigator
+                
+                @Image(source: "friends-ch3-persistence-s6-3-Where App.png", alt: "")
+            }
+            
+            @Step {
+                The file should look something like this.
+                
+                @Code(name: "FriendsApp.swift", file: "friends-ch3-persistence-s6-4-FriendsApp.swift")
+            }
+            
+            @Step {
+                Create an `@ObservedObject` called `friendsData`. This will be an instance of `FriendsData()` and will be used to keep track of the `friends`.
+                @Code(name: "FriendsApp.swift", file: "friends-ch3-persistence-s6-5-FriendsApp.swift")
+            }
+            
+            @Step {
+                Bind the `ContentView`'s `friends` to the `@Published` `friends` from the `friendsData`. 
+                @Code(name: "FriendsApp.swift", file: "friends-ch3-persistence-s6-6-FriendsApp.swift")
+            }
+            
+            @Step {
+                When the `View` appears, `load()` the `friendsData`. The `load()` function reads from the property list and updates the value of `friends`.
+                @Code(name: "FriendsApp.swift", file: "friends-ch3-persistence-s6-7-FriendsApp.swift")
+            }
+            
+            The `scenePhase` indicates the current state of the app, whether it is `.active`, `.inactive` or running in the `.background`. This app will use the `scenePhase` to automatically save `friends` data when the app is closed. [Learn more](https://developer.apple.com/documentation/swiftui/scenephase).
+            
+            @Step {
+                Create an `@Environment` variable to get the `scenePhase`.
+                
+                @Code(name: "FriendsApp.swift", file: "friends-ch3-persistence-s6-8-FriendsApp.swift")
+            }
+            
+            @Step {
+                Use the `.onChange` modifier to listen for when the `scenePhase` changes.
+                @Code(name: "FriendsApp.swift", file: "friends-ch3-persistence-s6-9-FriendsApp.swift")
+            }
+            
+            @Step {
+                When the app becomes `.inactive`, `save()` `friendsData`.
+                
+                This will update the property list with the changes made to the `friends` while the user was using the app.
+                
+                @Code(name: "FriendsApp.swift", file: "friends-ch3-persistence-s6-10-FriendsApp.swift")
+            }
+            
+            @Step {
+                Finally, run your app!! 🎉
+                
+                Double-tap ⌘⇧H (Command-Shift-H) and use the app switcher to restart the app to test if the `friends` persist. 
+                
+                @Video(source: "friends-ch3-persistence-s6-11-I CAN GO HOME.mp4", posterFrame: "")
             }
         }
     }
