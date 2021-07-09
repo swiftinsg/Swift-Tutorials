@@ -121,7 +121,7 @@
         @ContentAndMedia(layout: horizontal) {
             Before we store our data, we need to figure out where to store the data. This is where the archive URL comes in. In iOS, all apps have a "sandbox" where documents and data can be stored and which is inaccessible by other apps. The archive URL is a URL within the app's sandbox that can be used to read and write data securely. With that said, this data storage method should not be used to store any sensitive information, like passwords, as it is unencrypted. If you're interested in securely storing sensitive information, see [here](https://developer.apple.com/documentation/security/certificate_key_and_trust_services/keys/storing_keys_in_the_keychain). 
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Image(source: "friends-ch3-persistence-s3-hero.png", alt: "")
         }
         
         @Steps {
@@ -163,7 +163,7 @@
         @ContentAndMedia(layout: horizontal) {
             Create a function to write data to a local file.
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Image(source: "friends-ch3-persistence-s4-hero.png", alt: "")
         }
         
         @Steps {
@@ -207,7 +207,7 @@
         @ContentAndMedia(layout: horizontal) {
             Create a function to read data from a local file.
             
-            @Image(source: <#file#>, alt: "<#accessible description#>")
+            @Image(source: "friends-ch3-persistence-s5-hero.png", alt: "")
         }
         
         @Steps {
