@@ -15,7 +15,7 @@
         @TutorialReference(tutorial: "doc:FriendDetail")
     }
     
-    @Chapter(name: "Binding, Mutating, Enumerating and Sliding Friends") {
+    @Chapter(name: "Binding, Mutating, Enumerating & Sliding Friends") {
         `@Binding` friends to mutate them with `Slider`s. We also inject our `friends` to allow them to have `.attack` and `.defence` . Finally, we scrutinise our friends attributes and enumerate them. 
         
         @Image(source: "friends-ch2-hero.png", alt: "")
@@ -24,9 +24,8 @@
         @TutorialReference(tutorial: "doc:FriendEnums")
     }
     
-    @Chapter(name: "Manipulating and Storing Friends") {
+    @Chapter(name: "Manipulating & Storing Friends") {
         Learn to move, relocate and add `Friend`s. Persist `friends` in a Property Lists to save data between sessions.
-        > Important: This is an incomplete tutorial
         
         @Image(source: "friends-ch3-hero.png", alt: "")
         

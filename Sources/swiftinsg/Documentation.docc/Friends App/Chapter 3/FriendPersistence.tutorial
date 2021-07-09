@@ -1,8 +1,8 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 60) {
     @Intro(title: "Look around us always and remember") {
         This tutorial covers how to use `@ObservableObject`s, `@ObservedObject`, `@Published` variables and how to store and retrieve data using a Property Lists.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "friends-ch3-persistence-hero.png", alt: "")
     }
     
     @Section(title: "Conforming to Codable") {
