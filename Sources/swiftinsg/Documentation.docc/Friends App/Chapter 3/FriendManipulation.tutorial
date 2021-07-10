@@ -1,0 +1,410 @@
+@Tutorial(time: 60) {
+    @Intro(title: "No longer one man on an island") {
+        This tutorial covers how to delete & move `friends` using a `List` and `ForEach`. 
+        
+        The tutorial also covers how to make `Friend`s. However, the tutorial will only cover the easy way of making friends where you sit in front of a computer for a couple of hours and use `Form`s, instead of that strange method of going out and try to talk to people.
+        > Experiment: Try the harder way of making `Friend`s, maybe at some point, maybe never.
+        
+        @Image(source: "friends-ch3-manipulation-hero.png", alt: "")
+    }
+    
+    @Section(title: "Preparing Friends") {
+        @ContentAndMedia(layout: horizontal) {
+            Before we start manipulating `Friend`s, they need to be prepared by conforming to `Equatable`. We'll also need to update the `List` to allow for `Friend`s to be manipulated.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the **Friend.swift** file.
+                @Code(name: "Friend.swift", file: "friends-ch3-manipulation-s1-0-Friend.swift")
+            }
+            
+            [`Equatable`](https://developer.apple.com/documentation/swift/equatable/), like `Identifiable` is a protocol. It allows the `Friend` to be compared with one another.  
+            
+            `Equatable` allows the use of `==` to compare `Friend`s. It's also frequently used to check if an array contains an element and in this case, finding the first index of a `Friend` in the `friends` array.
+            
+            @Step {
+                Conforming `Friend` to `Equatable`
+                
+                @Code(name: "Friend.swift", file: "friends-ch3-manipulation-s1-1-Friend.swift")
+            }
+            
+            @Step {
+                Open the **ContentView.swift** file.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s1-2-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s1-2-Preview.png", alt: "")
+                }
+            }
+            
+            The range was a workaround from last lesson, however, it only supports constant data. `friends` will be dynamically updated as the user deletes and adds `Friend`s. 
+            
+            In essence, we're reverting back to what it was with a few extra steps for the `Binding` `Friend`, *sorry*. 
+            
+            @Step {
+                Change the `List` to use `friends` instead of a range, then get the index of the current `Friend` from `friends` using `.firstIndex(of:)`.
+                
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s1-3-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s1-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Use a `ForEach` to iterate through the elements in the `List` instead of the `List` itself.
+                
+                This is useful later when we need to delete and move `Friend`s.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s1-4-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s1-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Deleting Friends") {
+        @ContentAndMedia(layout: horizontal) {
+            Deleting Friends is surprisingly easy. Another way to phrase this is **"Removing Friends from Memory"** but I felt that we had sufficient ridiculous names within this chapter.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the **ContentView.swift** file.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s2-0-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            ```swift
+            .onDelete { offsets in
+                friends.remove(atOffsets: offsets)
+            }
+            ```
+            The `offsets` above refer to the elements to delete within the array. Thus, `friends.remove(atOffsets:)` is used to remove `friends` at that particular offset.
+            
+            @Step {
+                Add an `.onDelete` attached to the `ForEach`
+                
+                Start the **Live Preview** and you should be able to swipe to delete a `Friend`. You can also run it on your Simulator to test this out if you lack sufficient system resources.
+                > As your trackpad simulates a touch on the Simulator or Live Preview, you will have to hold down as you drag the item away.  
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s2-1-ContentView.swift") {
+                    @Video(source: "friends-ch3-manipulation-s2-1-Preview.mp4", posterFrame: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Moving Friends") {
+        @ContentAndMedia(layout: horizontal) {
+            Moving `Friend`s is similar to deleting `Friend`s from the `friends` array. Like deleting `Friend`s, we will also rely on `offsets`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the **ContentView.swift** file
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s3-0-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            ```swift
+            .onMove { source, destination in
+                friends.move(fromOffsets: source, toOffset: destination)
+            }
+            ```
+            This is similar to deleting but now with 2 offsets. The first is the original position of the item and the second is the new position. What this does is it moves the item from the original position in the `friends` array to the new position in the `friends` array thereby reordering `Friend`s.
+            
+            @Step {
+                Add an `.onMove` attached to the `.onDelete` earlier that was attached to the `ForEach`.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s3-1-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            In order to move the items, there needs to be an **Edit** button.
+            
+            @Step {
+                Add an `EditButton()` can be added as a `NavigationItem` on the `.leading` edge (left side). 
+                > Important: The `.trailing` edge will be used for the button to add a new `Friend`. 
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s3-2-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code!
+                
+                You should be able to drag and move your `Friend`s around and delete them with the **Edit** button. 
+                
+                @Video(source: "friends-ch3-manipulation-s3-Video.mp4", posterFrame: "")
+            }
+        }
+    }
+    
+    @Section(title: "Creating Friends") {
+        @ContentAndMedia(layout: horizontal) {
+            Learn to use `Form`, `Section`s to create a simple screen for data entry with a whole bunch of controls like `Slider`s, `Picker`s, and `TextField`s. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            
+            Create a new SwiftUI view for users to create a `Friend`. This will be presented as a `.sheet`.
+            
+            @Step {
+                Create a new file by going to **File → New → File…**
+                
+                Alternatively, you can use **⌘N (Command-N)**
+                
+                @Image(source: "friends-ch3-manipulation-s4-0-New File.png", alt: "")
+            }
+            
+            @Step {
+                Select **SwiftUI View**.
+                
+                @Image(source: "friends-ch3-manipulation-s4-1-SwiftUI View.png", alt: "")
+            }
+            
+            @Step {
+                Name the file `NewFriendView` and save it.
+                
+                @Image(source: "friends-ch3-manipulation-s4-2-Save.png", alt: "")
+            }
+            
+            @Step {
+                This is what you should see in the `NewFriendView.swift` file.
+                > You do not need to type any of this out, it should be auto-generated.
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-3-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an empty `Friend` and make it a `@State` variable.
+                
+                This `Friend` will be mutated as the user edits using `TextField`s, `Slider`s and `Picker`s. 
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-4-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `Text` in a `NavigationView`
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-5-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `.navigationTitle` with the title **"New Friend"**.
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-6-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-6-Preview.png", alt: "")
+                }
+            }
+            
+            A `Form` is a container for grouping controls (like `TextField`s, `Toggle`s, `Slider`s & `Picker`s) used for data entry. A notable example of a `Form` is the Settings app where `Form`s are used for data entry. [Learn more](https://swiftontap.com/form).
+            
+            @Step {
+                Remove the `Text` and create a `Form`.
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-7-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-7-Preview.png", alt: "")
+                }
+            }
+            
+            ## Layout Form
+            - **`Form` content**
+                - Section 1: **Information**
+                    - `TextField` • Name
+                    - `TextField` • School
+                    - `TextField` • Icon
+                    - `TextField` • Sloth Image
+                - Section 2: **Attributes**
+                    - `Picker` • Friend Type
+                    - `Slider` • Attack
+                    - `Slider` • Defence
+                - Section 3
+                    - `Button` • Save
+                    - `Button` • Discard Friend
+            
+            ### Section 1
+            
+            @Step {
+                Create a `Section` in the `Form` with the header **"Information"**
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-8-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-8-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create 2 `TextField`s for the `friend`'s `.name` and `.school` respectively.
+                
+                A `TextField` has 2 parameters, a placeholder and the `text` itself. The `text` is a `Binding` variable (as denoted by the `$`) which means as the user edits the `TextField`, the `Binding` variable will be updated.
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-9-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-9-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an `Image` and a `Text` in a `HStack`. This will provide the user with a live preview as they type an icon name.
+                
+                As the `friend.icon` is `Binded` to the text of the `TextField`, it will refresh the `Image` every time the `TextField`'s text changes.
+                > Autocapitalization is turned off because icon names are all lowercased and autocapitalization can be a bit annoying to users.
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-10-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-10-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `TextField` for a sloth image. `autocapitalization` is set to `.none` as users will not need to use capital letters in the input
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-11-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-11-Preview.png", alt: "")
+                }
+            }
+            
+            ### Section 2
+            
+            @Step {
+                Create a new `Section` to edit attributes of your `Friend`. This section will have the header **"Attributes"**.
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-12-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-12-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Picker` to allow users to select the `Friend` type. 
+                
+                The picker's options will be the different `FriendType`s. As there is a Binding variable, it can be used to update the new `Friend` with the `Picker` selection. 
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-13-NewFriendView.swift") {
+                    @Video(source: "friends-ch3-manipulation-s4-13-Preview.mp4", posterFrame: "")
+                }
+            }
+            
+            @Step {
+                Create 2 `Slider`s for the user's attack and defence. This is similar to the `Slider`s in the `FriendDetailView.swift` file. 
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-14-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-14-Preview.png", alt: "")
+                }
+            }
+            
+            
+            ### Section 3
+            
+            @Step {
+                Create a new `Section`, this time, there is no need for a `header`. 
+                
+                This `Section` will host 2 `Button`s. One to save and another to discard the `Friend`.
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-15-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-15-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create 2 `Button`s. The first with the title "Save", the second with the title "Discard Friend" and a `.foregroundColor` of `.red`. These `Button`s will have empty actions for now. 
+                
+                The `.red` `.foregroundColor` indicates that the action is destructive. This warns the user that the action is "dangerous" as they may lose a friend. *Think of that friend, you may hurt its fragile feelings.*
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-16-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-16-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Declare an `@Environment` variable for `\.presentationMode` called `presentationMode`. 
+                
+                This will allow us to dismiss the modal when the user presses **"Save"** or **"Discard Friend"**. 
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-17-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-17-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@Binding` variable called `friends` for an array of `Friend`s. This will be used to pass `friends` from the `ContentView` over in order to `.append` the newly created `Friend`.
+                
+                > Important: Remember to update the `PreviewProvider` at the bottom of the file. In this case, it can just be a constant empty array.
+                
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-18-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-18-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                If the user presses **Save**, append the newly created `Friend` to the `friends` array, then dismiss. If the user presses **Discard Friend**, just dismiss *and give the user a sense of guilt*.
+                @Code(name: "NewFriendView.swift", file: "friends-ch3-manipulation-s4-19-NewFriendView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-19-Preview.png", alt: "")
+                }
+            }
+            
+            ## Connecting to ContentView
+            Connect `NewFriendView` to `ContentView` with a modal when the user presses a plus button in the navigation bar.
+            
+            @Step {
+                Open the **ContentView.swift** file.
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s4-20-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-20-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create another `NavigationBarItem` on the `trailing` edge (right). This will be a `Button` with the `"plus"` SF Symbol. 
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s4-21-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-21-Preview.png", alt: "")
+                }
+            }
+            
+            ### Presenting the Modal
+            
+            @Step {
+                Create a `@State` variable named `isSheetPresented`. This will be used to present the `NewFriendView` as a `.sheet` so it should begin with a default value of `false`.
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s4-22-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-22-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Connect a `.sheet` to the bottom of the `NavigationView`. 
+                
+                The `isPresented` parameter is binded to the `isSheetPresented` variable and the content is the `NewFriendView`. 
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s4-23-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-23-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Finally, set `isSheetPresented` to `true` when the user taps the plus `Button` in order to present the `NewFriendView`. 
+                
+                @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s4-24-ContentView.swift") {
+                    @Image(source: "friends-ch3-manipulation-s4-24-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code! 
+                
+                @Video(source: "friends-ch3-manipulation-s4-25-omg we are done.mp4", posterFrame: "")
+            }
+        }
+    }
+}

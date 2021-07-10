@@ -13,8 +13,6 @@ Create a flag raising app in SwiftUI. It was a joke, then it became a recurring 
 
 In this tutorial, you will learn how to bind `Friend`s to pass them around and mutate them. You will also learn about adding and deleting `Friend`s and most importantly, ensuring that your `Friend`s are persistent and will not reset between app sessions.
 
-- Warning: This tutorial is incomplete
-
 [Open Tutorial](../../tutorials/friends)
 
 ### Quiz App

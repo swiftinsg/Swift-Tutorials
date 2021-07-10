@@ -3,8 +3,6 @@
         In this tutorial, you will learn how to bind `Friend`s to pass them around and mutate them. You will also learn about adding and deleting `Friend`s and most importantly, ensuring that your `Friend`s are persistent and will not reset between app sessions.   
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
-        
-        > Important: This is an incomplete tutorial
     }
     
     @Chapter(name: "Listing & Navigating Friends") {
@@ -17,13 +15,22 @@
         @TutorialReference(tutorial: "doc:FriendDetail")
     }
     
-    @Chapter(name: "Binding, Mutating, Enumerating and Sliding Friends") {
+    @Chapter(name: "Binding, Mutating, Enumerating & Sliding Friends") {
         `@Binding` friends to mutate them with `Slider`s. We also inject our `friends` to allow them to have `.attack` and `.defence` . Finally, we scrutinise our friends attributes and enumerate them. 
         
         @Image(source: "friends-ch2-hero.png", alt: "")
         
         @TutorialReference(tutorial: "doc:FriendBinding")
         @TutorialReference(tutorial: "doc:FriendEnums")
+    }
+    
+    @Chapter(name: "Manipulating & Storing Friends") {
+        Learn to move, relocate and add `Friend`s. Persist `friends` in a Property Lists to save data between sessions.
+        
+        @Image(source: "friends-ch3-hero.png", alt: "")
+        
+        @TutorialReference(tutorial: "doc:FriendManipulation")
+        @TutorialReference(tutorial: "doc:FriendPersistence")
     }
     
     @Resources {
