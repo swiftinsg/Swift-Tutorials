@@ -34,7 +34,7 @@ struct ContentView: View {
                         Text(friends[index].name)
                             .bold()
                         HStack {
-                            Text(friend[index].school)
+                            Text(friends[index].school)
                         }
                     }
                 }

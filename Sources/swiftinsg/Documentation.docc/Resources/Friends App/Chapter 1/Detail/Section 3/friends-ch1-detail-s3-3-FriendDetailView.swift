@@ -2,6 +2,8 @@ import SwiftUI
 
 struct FriendDetailView: View {
     
+    let profilePicSize: CGFloat = 250
+    
     var friend: Friend
     
     var body: some View {
@@ -14,7 +16,7 @@ struct FriendDetailView: View {
             Image(friend.name)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 250, height: 250)
+                .frame(width: profilePicSize, height: profilePicSize)
                 
             Spacer()
         }
