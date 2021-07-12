@@ -2,6 +2,8 @@ import SwiftUI
 
 struct FriendDetailView: View {
     
+    let profilePicSize: CGFloat = 250
+    
     var friend: Friend
     
     var body: some View {
@@ -14,16 +16,16 @@ struct FriendDetailView: View {
             Image(friend.name)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 250, height: 250)
+                .frame(width: profilePicSize, height: profilePicSize)
                 .mask(Circle())
                 .overlay(
                     Circle()
                         .stroke(lineWidth: 8)
                         .foregroundColor(.white)
                 )
-                .offset(x: 0, y: -250 / 2)
+                .offset(x: 0, y: -profilePicSize / 2)
                 .shadow(radius: 6)
-                .padding(.bottom, -250 / 2)
+                .padding(.bottom, -profilePicSize / 2)
             
             Text("\(Image(systemName: friend.icon)) \(friend.school)")
                 .font(.system(size: 24))
