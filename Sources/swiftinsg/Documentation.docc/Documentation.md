@@ -9,16 +9,21 @@ Create a flag raising app in SwiftUI. It was a joke, then it became a recurring 
 
 [Open Tutorial](../../tutorials/flag-raising)
 
-### Friends App
-
-In this tutorial, you will learn how to bind `Friend`s to pass them around and mutate them. You will also learn about adding and deleting `Friend`s and most importantly, ensuring that your `Friend`s are persistent and will not reset between app sessions.
-
-[Open Tutorial](../../tutorials/friends)
-
 ### Quiz App
 Learn how to use various stack views and modifiers to achieve custom layouts and `View`s.
 
 [Open Tutorial](../../tutorials/quiz-app)
+
+
+### Friends App
+In this tutorial, you will learn how to bind `Friend`s to pass them around and mutate them. You will also learn about adding and deleting `Friend`s and most importantly, ensuring that your `Friend`s are persistent and will not reset between app sessions.
+
+[Open Tutorial](../../tutorials/friends)
+
+### Todo App (Working)
+> Warning: This is an incomplete tutorial
+
+[Open Tutorial](../../tutorials/todo)
 
 ## Issues
 Spot an issue in the tutorial? Submit an issue on GitHub [here](https://github.com/tinkercademy/Swift-Tutorials/issues/).

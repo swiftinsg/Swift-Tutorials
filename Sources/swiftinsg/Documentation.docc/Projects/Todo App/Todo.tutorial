@@ -1,0 +1,15 @@
+@Tutorials(name: "Todo App") {
+    @Intro(title: "Building a Todo List App") {
+        This tutorial recaps on the concepts taught in the [Friends tutorial](../tutorials/friends) such as `@Binding` variables, `List`s, `Form`s, and persistence. 
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Chapter(name: "<#text#>") {
+        <#text#>
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:<#tutorial name#>")
+    }
+}
