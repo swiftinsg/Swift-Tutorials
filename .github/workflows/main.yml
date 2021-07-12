@@ -1,5 +1,5 @@
 name: deploy website
-on: [pull_request, push]
+on: [pull_request]
 jobs:
 #   build:
 #     runs-on: macos-11
