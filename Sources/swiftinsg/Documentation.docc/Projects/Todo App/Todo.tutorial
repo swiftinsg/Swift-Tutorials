@@ -5,11 +5,15 @@
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Chapter(name: "<#text#>") {
+    @Chapter(name: "Creating a Todo List app") {
         <#text#>
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
         
-        @TutorialReference(tutorial: "doc:<#tutorial name#>")
+        @TutorialReference(tutorial: "doc:0-TodoLists")
+        @TutorialReference(tutorial: "doc:1-TodoStrikethrough")
+        @TutorialReference(tutorial: "doc:2-TodoManipulation")
+        @TutorialReference(tutorial: "doc:3-TodoNew")
+        @TutorialReference(tutorial: "doc:4-TodoPersistence")
     }
 }
