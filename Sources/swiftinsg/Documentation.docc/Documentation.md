@@ -20,6 +20,9 @@ Learn how to use various stack views and modifiers to achieve custom layouts and
 
 [Open Tutorial](../../tutorials/quiz-app)
 
+## Issues
+Spot an issue in the tutorial? Submit an issue on GitHub [here](https://github.com/tinkercademy/Swift-Tutorials/issues/).
+
 ## More
 - These tutorials are built using [Apple's DocC tutorials](https://developer.apple.com/documentation/docc/tutorial-syntax).
 - This project is open sourced on [GitHub](https://github.com/tinkercademy/Swift-Tutorials).

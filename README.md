@@ -36,3 +36,6 @@ $ sh build.sh
 - `xcodebuild: error: Unknown build action 'docbuild'.`
     - Run `xcode-select --switch /Path/To/Xcode.app`. 
     - Ensure the path leads to Xcode 13.
+
+## Issues
+Spot an issue in the tutorial? Use the [issues template](https://github.com/tinkercademy/Swift-Tutorials/issues/new/choose) to submit an issue
