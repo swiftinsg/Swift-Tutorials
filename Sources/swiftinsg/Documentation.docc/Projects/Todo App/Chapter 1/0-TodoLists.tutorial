@@ -1,6 +1,6 @@
 @Tutorial(time: 20) {
     @Intro(title: "Listing Todos") {
-        <#text#>
+        This tutorial covers how to use create a `Todo` struct, using `List`s to iterate over an array of `todos` and embedding it in a `NavigationView` with a `.navigationTitle`. 
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
