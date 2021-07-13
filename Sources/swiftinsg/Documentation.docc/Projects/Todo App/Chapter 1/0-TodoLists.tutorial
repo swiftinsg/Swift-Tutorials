@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 20) {
     @Intro(title: "Listing Todos") {
         <#text#>
         
