@@ -5,17 +5,26 @@
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Adding a Checkmark") {
         @ContentAndMedia(layout: horizontal) {
-            <#text#>
+            Use SF Symbols to display a checkmark if the todo is completed and a ring if the todo is incomplete.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s1-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s1-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Make one of the sample `Todo` completed by adding the `isCompleted` parameter and setting it to `true`
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s1-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s1-1-Preview.png", alt: "")
+                }
             }
             
             @Step {
