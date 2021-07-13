@@ -139,4 +139,35 @@
             }
         }
     }
+    
+    @Section(title: "Embedding in a NavigationView") {
+        @ContentAndMedia(layout: horizontal) {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s4-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s4-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `List` in a `NavigationView`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s4-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s4-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `.navigationTitle` called **"Todos"**.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s4-2-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s4-2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
 }
