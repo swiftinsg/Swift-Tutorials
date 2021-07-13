@@ -94,10 +94,29 @@
                 
                 @Code(name: "Todo.swift", file: "todo-ch1-lists-s2-6-Todo.swift")
             }
+            
+            ## Creating an array of Todos
+            Create an array of sample Todos.
+            
+            @Step {
+                Open the `ContentView.swift` file.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s2-7-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s2-7-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@State` variable with an array of sample `Todo`s 
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s2-8-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s2-8-Preview.png", alt: "")
+                }
+            }
         }
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Creating a List") {
         @ContentAndMedia(layout: horizontal) {
             <#text#>
             
@@ -106,13 +125,17 @@
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s3-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s3-0-Preview.png", alt: "")
+                }
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Create a `List` iterating through the `todos` array and displaying each `Todo`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s3-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s3-1-Preview.png", alt: "")
+                }
             }
         }
     }
