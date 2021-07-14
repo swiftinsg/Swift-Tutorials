@@ -10,16 +10,18 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(todos) { todo in
-                Button {
-                    let todoIndex = todos.firstIndex(of: todo)!
-                    todos[todoIndex].isCompleted.toggle()
-                } label: {
-                    HStack {
-                        Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
-                        Text(todo.title)
-                            .strikethrough(todo.isCompleted)
-                            .foregroundColor(.black)
+            List {
+                ForEach(todos) { todo in
+                    Button {
+                        let todoIndex = todos.firstIndex(of: todo)!
+                        todos[todoIndex].isCompleted.toggle()
+                    } label: {
+                        HStack {
+                            Image(systemName: todo.isCompleted ? "checkmark.circle.fill" : "circle")
+                            Text(todo.title)
+                                .strikethrough(todo.isCompleted)
+                                .foregroundColor(.black)
+                        }
                     }
                 }
             }
