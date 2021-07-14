@@ -49,7 +49,7 @@
         @Steps {
             ## Create a new Swift file
             @Step {
-                Create a new Swift file. In the menubar, go to **File → New → File**.
+                Create a new Swift file. In the menubar, go to **File → New → File…**.
                 > Alternatively, you may use ⌘N (Command-N) to create a new file.
                 
                 @Image(source: "todo-ch1-lists-s2-0-new file.png", alt: "")

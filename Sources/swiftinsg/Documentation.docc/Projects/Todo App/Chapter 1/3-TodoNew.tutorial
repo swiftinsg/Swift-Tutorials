@@ -5,7 +5,7 @@
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Creating a new SwiftUI View") {
         @ContentAndMedia(layout: horizontal) {
             <#text#>
             
@@ -14,13 +14,29 @@
         
         @Steps {
             @Step {
-                <#text#>
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Create a new **SwiftUI View** file. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                
+                @Image(source: "todo-ch1-new-s1-0-New File.png", alt: "")
             }
             
             @Step {
-                <#text#>
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Select New **SwiftUI View**.
+                
+                @Image(source: "shared-new swiftui view.png", alt: "")
+            }
+            
+            @Step {
+                Name the file `NewTodoView` and create it.
+                
+                @Image(source: "todo-ch1-new-s1-2-Save.png", alt: "")
+            }
+            
+            @Step {
+                This is what you should see after you created your new file.
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s1-3-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s1-3-Preview.png", alt: "")
+                }
             }
         }
     }
