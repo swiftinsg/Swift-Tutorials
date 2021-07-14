@@ -1,6 +1,6 @@
 @Tutorial(time: 25) {
     @Intro(title: "Creating New Todos") {
-        <#text#>
+        This tutorial covers how to use `Form`s, modals and `@Binding` variables to create a new `Todo`.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
@@ -194,6 +194,44 @@
                 
                 @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s5-2-NewTodoView.swift") {
                     @Image(source: "todo-ch1-new-s5-2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Presenting the Modal") {
+        @ContentAndMedia(layout: horizontal) {
+            <#text#>
+            
+            @Image(source: "todo-ch1-new-s6-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-new-s6-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-new-s6-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@State` variable, `isSheetPresented` to present the modal.
+                @Code(name: "ContentView.swift", file: "todo-ch1-new-s6-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-new-s6-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Connect a `.sheet` with the `NewTodoView`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-new-s6-2-ContentView.swift") {
+                    @Image(source: "todo-ch1-new-s6-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Button` as the trailing `navigationBarItems` (right side). When the `Button` is tapped, it should present the modal. 
+                @Code(name: "ContentView.swift", file: "todo-ch1-new-s6-3-ContentView.swift") {
+                    @Video(source: "todo-ch1-new-s6-3-Preview.mp4", posterFrame: "")
                 }
             }
         }
