@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 25) {
     @Intro(title: "Creating New Todos") {
         <#text#>
         
@@ -36,6 +36,164 @@
                 This is what you should see after you created your new file.
                 @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s1-3-NewTodoView.swift") {
                     @Image(source: "todo-ch1-new-s1-3-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Building a Form") {
+        @ContentAndMedia(layout: horizontal) {
+            <#text#>
+            
+            @Image(source: "todo-ch1-new-s2-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `NewTodoView.swift` file.
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-0-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an empty `Form`.
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-1-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-1-Preview.png", alt: "")
+                }
+            }
+            
+            ## Creating a TextField to set the Todo title
+            @Step {
+                Declare a `@State` variable called `todo` which is an empty `String`.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-2-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `TextField` within the `Form`.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-3-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-3-Preview.png", alt: "")
+                }
+            }
+            
+            ## Creating a Button
+            @Step {
+                Create a `Button` with an empty action, for now.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-4-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Saving a Todo") {
+        @ContentAndMedia(layout: horizontal) {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `NewTodoView.swift` file.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s3-0-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@Binding` variable to pass in the array of `todos`. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s3-1-NewTodoView.swift")
+            }
+            
+            @Step {
+                Update the `PreviewProvider` with a *"fake @Binding"* which is just an empty array. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s3-2-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                `.append` the new `Todo` to the array of `todos` within the `Button`'s action. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s3-3-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s3-3-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Dismissing the Modal") {
+        @ContentAndMedia(layout: horizontal) {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `NewTodoView.swift` file. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s4-0-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s4-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an `@Environment` variable for the `presentationMode`.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s4-1-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s4-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                After appending `Todo` to the `todos` array, dismiss the modal.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s4-2-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s4-2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Embedding in NavigationView") {
+        @ContentAndMedia(layout: horizontal) {
+            <#text#>
+            
+            @Image(source: "todo-ch1-new-s5-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `NewTodoView.swift` file.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s5-0-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s5-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `Form` in a `NavigationView`. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s5-1-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s5-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `.navigationTitle` named **"New Todo"**. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s5-2-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s5-2-Preview.png", alt: "")
                 }
             }
         }
