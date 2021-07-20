@@ -1,7 +1,7 @@
 # Swift Tutorials
 ## This is not a package, it's just a bunch of tutorials
 
-[![deploy website](https://github.com/tinkercademy/Swift-Tutorials/actions/workflows/main.yml/badge.svg)](https://github.com/tinkercademy/Swift-Tutorials/actions/workflows/main.yml)
+[![deploy website](https://github.com/swiftinsg/Swift-Tutorials/actions/workflows/main.yml/badge.svg)](https://github.com/swiftinsg/Swift-Tutorials/actions/workflows/main.yml)
 
 This project uses [Apple's DocC (Documentation Compiler)](http://developer.apple.com/documentation/docc/) to create a set of SwiftUI tutorials for students.
 
