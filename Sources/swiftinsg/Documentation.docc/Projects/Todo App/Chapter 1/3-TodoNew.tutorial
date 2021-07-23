@@ -1,0 +1,239 @@
+@Tutorial(time: 25) {
+    @Intro(title: "Creating New Todos") {
+        This tutorial covers how to use `Form`s, modals and `@Binding` variables to create a new `Todo`.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Creating a new SwiftUI View") {
+        @ContentAndMedia(layout: horizontal) {
+            Create the `NewTodoView`. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Create a new **SwiftUI View** file. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                
+                @Image(source: "todo-ch1-new-s1-0-New File.png", alt: "")
+            }
+            
+            @Step {
+                Select New **SwiftUI View**.
+                
+                @Image(source: "shared-new swiftui view.png", alt: "")
+            }
+            
+            @Step {
+                Name the file `NewTodoView` and create it.
+                
+                @Image(source: "todo-ch1-new-s1-2-Save.png", alt: "")
+            }
+            
+            @Step {
+                This is what you should see after you created your new file.
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s1-3-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s1-3-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Building a Form") {
+        @ContentAndMedia(layout: horizontal) {
+            Replace the placeholder `Text` with a `Form`.
+            
+            @Image(source: "todo-ch1-new-s2-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `NewTodoView.swift` file.
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-0-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an empty `Form`.
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-1-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-1-Preview.png", alt: "")
+                }
+            }
+            
+            ## Creating a TextField to set the Todo title
+            @Step {
+                Declare a `@State` variable called `todo` which is an empty `String`.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-2-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `TextField` within the `Form`.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-3-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-3-Preview.png", alt: "")
+                }
+            }
+            
+            ## Creating a Button
+            @Step {
+                Create a `Button` with an empty action, for now.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s2-4-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s2-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Saving a Todo") {
+        @ContentAndMedia(layout: horizontal) {
+            Use a `@Binding` variable to save the new `Todo` by appending it to the `todos` array.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `NewTodoView.swift` file.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s3-0-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@Binding` variable to pass in the array of `todos`. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s3-1-NewTodoView.swift")
+            }
+            
+            @Step {
+                Update the `PreviewProvider` with a *"fake @Binding"* which is just an empty array. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s3-2-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                `.append` the new `Todo` to the array of `todos` within the `Button`'s action. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s3-3-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s3-3-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Dismissing the Modal") {
+        @ContentAndMedia(layout: horizontal) {
+            Use the `presentationMode` `@Environment` variable to dismiss the modal when the user saves the new todo.
+            
+            @Image(source: "todo-ch1-new-s4-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `NewTodoView.swift` file. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s4-0-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s4-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an `@Environment` variable for the `presentationMode`.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s4-1-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s4-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                After appending `Todo` to the `todos` array, dismiss the modal.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s4-2-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s4-2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Embedding in NavigationView") {
+        @ContentAndMedia(layout: horizontal) {
+            Embed the `Form` in a `NavigationView` to show a fancy large title.
+            
+            @Image(source: "todo-ch1-new-s5-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `NewTodoView.swift` file.
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s5-0-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s5-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `Form` in a `NavigationView`. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s5-1-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s5-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `.navigationTitle` named **"New Todo"**. 
+                
+                @Code(name: "NewTodoView.swift", file: "todo-ch1-new-s5-2-NewTodoView.swift") {
+                    @Image(source: "todo-ch1-new-s5-2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Presenting the Modal") {
+        @ContentAndMedia(layout: horizontal) {
+            Use a `.sheet` and present the `NewTodoView` modal.
+            
+            @Image(source: "todo-ch1-new-s6-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-new-s6-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-new-s6-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@State` variable, `isSheetPresented` to present the modal.
+                @Code(name: "ContentView.swift", file: "todo-ch1-new-s6-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-new-s6-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Connect a `.sheet` with the `NewTodoView`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-new-s6-2-ContentView.swift") {
+                    @Image(source: "todo-ch1-new-s6-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Button` as the trailing `navigationBarItems` (right side). When the `Button` is tapped, it should present the modal. 
+                @Code(name: "ContentView.swift", file: "todo-ch1-new-s6-3-ContentView.swift") {
+                    @Video(source: "todo-ch1-new-s6-3-Preview.mp4", posterFrame: "")
+                }
+            }
+        }
+    }
+}

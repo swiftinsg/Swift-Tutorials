@@ -1,0 +1,173 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Listing Todos") {
+        This tutorial covers how to use create a `Todo` struct, using `List`s to iterate over an array of `todos` and embedding it in a `NavigationView` with a `.navigationTitle`. 
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Creating a Project") {
+        @ContentAndMedia(layout: horizontal) {
+            This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../flag-raising), [Quiz App](../quiz-app) & [Friends App](../friends) tutorials.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                In Xcode, **Create a new Xcode project**. 
+                
+                > Alternatively, you can go to **File → New → Project…** or **⌘⇧N** (Command-Shift-N)
+                
+                @Image(source: "shared-new project.png", alt: "Create new project")
+            }
+            
+            @Step {
+                Set the platform as **iOS** and select **App**.
+                @Image(source: "shared-select app.png", alt: "Select App")
+            }
+            
+            @Step {
+                Set the Product Name as **"Todos"** and ensure that your interface is **SwiftUI** and your life cycle is **SwiftUI App**.
+                @Image(source: "todo-ch1-lists-s1-2-configuring project.png", alt: "Configure App")
+            }
+            
+            @Step {
+                You're all set!
+                @Image(source: "todo-ch1-lists-s1-3-create project.png", alt: "Project Created")
+            }
+        }
+    }
+    
+
+    @Section(title: "Create a Todo") {
+        @ContentAndMedia(layout: horizontal) {
+            Create a `Todo` struct to store each todo item and conform it to `Identifiable` as it will be iterated through in a `List`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            ## Create a new Swift file
+            @Step {
+                Create a new Swift file. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                
+                @Image(source: "todo-ch1-lists-s2-0-new file.png", alt: "")
+            }
+            
+            @Step {
+                Select New **Swift** file.
+                
+                @Image(source: "shared-new swift file.png", alt: "")
+            }
+            
+            @Step {
+                Name the file `Todo.swift` and create it.
+                
+                @Image(source: "todo-ch1-lists-s2-2-save.png", alt: "")
+            }
+            
+            @Step {
+                This is what you should see after you created your new file. 
+                
+                @Code(name: "Todo.swift", file: "todo-ch1-lists-s2-3-Todo.swift")
+            }
+            
+            ## Setting up Todo struct
+            @Step {
+                Create a `Todo` struct. This struct will be used to store each individual todo. 
+                
+                @Code(name: "Todo.swift", file: "todo-ch1-lists-s2-4-Todo.swift")
+            }
+            
+            @Step {
+                Within each `Todo`, there are 2 properties. The `title` and whether or not the todo `isCompleted`. 
+                
+                @Code(name: "Todo.swift", file: "todo-ch1-lists-s2-5-Todo.swift")
+            }
+            
+            ## Conforming to Identifiable
+            As `Todo` will be used within a `List`, it will need to conform to the [`Identifiable`](https://developer.apple.com/documentation/swift/identifiable/) protocol.
+            
+            @Step {
+                Add `: Identifiable` to allow the `Todo` struct to conform to the Identifable procol.
+                
+                @Code(name: "Todo.swift", file: "todo-ch1-lists-s2-6-Todo.swift")
+            }
+            
+            ## Creating an array of Todos
+            Create an array of sample Todos.
+            
+            @Step {
+                Open the `ContentView.swift` file.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s2-7-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s2-7-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@State` variable with an array of sample `Todo`s 
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s2-8-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s2-8-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Creating a List") {
+        @ContentAndMedia(layout: horizontal) {
+            Create a `List` to display the contents of the `todos` array.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s3-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `List` iterating through the `todos` array and displaying each `Todo`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s3-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s3-1-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Embedding in a NavigationView") {
+        @ContentAndMedia(layout: horizontal) {
+            Embed the `List` in a `NavigationView` to provide it with a nice `.navigationTitle`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s4-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s4-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `List` in a `NavigationView`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s4-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s4-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `.navigationTitle` called **"Todos"**.
+                @Code(name: "ContentView.swift", file: "todo-ch1-lists-s4-2-ContentView.swift") {
+                    @Image(source: "todo-ch1-lists-s4-2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+}

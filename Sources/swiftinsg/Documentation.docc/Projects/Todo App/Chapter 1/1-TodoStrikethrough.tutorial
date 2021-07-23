@@ -1,0 +1,160 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Striking Off Todos") {
+        Add a checkmark using SF Symbols and use the `.strikethrough` modifier to add a strikethrough when the todo `isCompleted`. 
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Adding a Checkmark") {
+        @ContentAndMedia(layout: horizontal) {
+            Use SF Symbols to display a checkmark if the todo is completed and a ring if the todo is incomplete.
+            
+            @Image(source: "todo-ch1-strikethrough-s1-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s1-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s1-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Make one of the sample `Todo` completed by adding the `isCompleted` parameter and setting it to `true`
+                
+                This will be used to test out what a completed todo will look like.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s1-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s1-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed the `Text` in a `HStack`. 
+                
+                This will allow us to add an `Image` with an icon next to the `Text` later.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s1-2-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s1-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add an `Image` with a `"circle"` icon. 
+                
+                The `circle` SF Symbol icon creates a ring.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s1-3-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s1-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                The `Image` should change based on whether the `Todo`'s `isCompleted` is `true` or `false`.
+                
+                If the `todo` `isCompleted`, it should use a `checkmark.circle.fill`, otherwise, it should be a `circle`. This can be achieved using a ternary operator.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s1-4-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s1-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Adding a Strikethrough") {
+        @ContentAndMedia(layout: horizontal) {
+            Add a `.strikethrough` to completed `Todo`s.
+            
+            @Image(source: "todo-ch1-strikethrough-s2-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s2-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `.strikethrough()` to the `Text`.
+                
+                The `.strikethough()` should appear based on whether the `todo` `isCompleted` or not.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s2-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s2-1-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Toggling a Todo") {
+        @ContentAndMedia(layout: horizontal) {
+            Change a `todo` from completed to incomplete and vice-versa when it is tapped.
+            
+            @Image(source: "todo-ch1-strikethrough-s3-hero.mp4", alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s3-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Button` and embed the `HStack` as the `label`.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s3-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Give the `Text` a `.foregroundColor` of `.black`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s3-2-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            ## Conforming to Equatable
+            
+            @Step {
+                Open the `Todo.swift` file.
+                @Code(name: "Todo.swift", file: "todo-ch1-strikethrough-s3-3-Todo.swift")
+            }
+            
+            @Step {
+                Make the `Todo` conform to `Equatable`. 
+                @Code(name: "Todo.swift", file: "todo-ch1-strikethrough-s3-4-Todo.swift")
+            }
+            
+            ## Toggle isCompleted
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s3-5-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s3-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a variable to get the current `todoIndex` within the `Button`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s3-6-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s3-6-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Get the current `Todo` from the `todos` array and toggle the `isCompleted` variable.
+                
+                This will change the `isCompleted` from `false` to `true` and vice-versa. As `todos` is a `@State` variable, changing it will reload the entire view.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-strikethrough-s3-7-ContentView.swift") {
+                    @Image(source: "todo-ch1-strikethrough-s3-7-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+@Tutorial(time: 15) {
+    @Intro(title: "Persisting Todos") {
+        Persistence is not that hard, all you need is some… persistence. HAHHAHAHHAHHHAHAHAH. Persistence refers to the concept of storing data in a way that they will remain there even if you close the app. Currently, when you close the app, any data is thrown away. If you create a new todo, it gets thrown away when you close the app. We want data to persist when the app is closed otherwise the todo list app will be as forgetful as you.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Conforming to Codable") {
+        @ContentAndMedia {
+            In order to encode and decode the `Todo`s, the `Todo` struct needs to conform to `Codable`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `Todo.swift` file.
+                @Code(name: "Todo.swift", file: "todo-ch1-persistence-s1-0-Todo.swift")
+            }
+            
+            @Step {
+                Add `Codable` after `Todo: ` to conform to the Codable protocol. 
+                @Code(name: "Todo.swift", file: "todo-ch1-persistence-s1-1-Todo.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Creating a Task Model") {
+        @ContentAndMedia(layout: horizontal) {
+            In a new Swift file, create a task model that will perform the persistence tasks.  
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            ## Create a new Swift file
+            
+            @Step {
+                Create a new `Swift` file. In the menubar, go to **File → New → File**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                
+                @Image(source: "todo-ch1-persistence-s2-0-New File.png", alt: "")
+            }
+            
+            @Step {
+                Select **Swift File**.
+                
+                @Image(source: "shared-new swift file.png", alt: "")
+            }
+            
+            @Step {
+                Name it **"TodoData"** and save it.
+                
+                @Image(source: "todo-ch1-persistence-s2-2-Save.png", alt: "")
+            }
+            
+            @Step {
+                This is what you should see in the `TodoData.swift` file.
+                
+                @Code(name: "TodoData.swift", file: "todo-ch1-persistence-s2-3-TodoData.swift")
+            }
+            
+            ## Creating Persistence Model
+            @Step {
+                Copy the code from [here](https://gist.github.com/jiachenyee/f0a32b36cc171bd942be4acc0c344dcc) and paste it in `TodoData.swift`. This file provides the boilerplate code required to make an array of structs persistent.
+                
+                Ignore the errors for now, we'll get to them later.
+                
+                > This GitHub Gist can be reused for any project that requires saving an array of structs. 
+                
+                @Code(name: "TodoData.swift", file: "todo-ch1-persistence-s2-4-TodoData.swift")
+            }
+            
+            @Step {
+                Replace all the placeholders. "Model" → "Todo", "model" → "todo".
+                @Code(name: "TodoData.swift", file: "todo-ch1-persistence-s2-5-TodoData.swift")
+            }
+            
+            @Step {
+                Add in sample `Todo`s. These will be used if there are no other `Todo`s.
+                @Code(name: "TodoData.swift", file: "todo-ch1-persistence-s2-6-TodoData.swift")
+            }
+            
+            @Step {
+                <#text#>
+                @Code(name: "TodoData.swift", file: "todo-ch1-persistence-s2-7-TodoData.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Save and Load Data") {
+        @ContentAndMedia(layout: horizontal) {
+            Finally, save and load data from the saved file.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            
+            ## Updating ContentView
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-persistence-s3-0-ContentView.swift")
+            }
+            
+            @Step {
+                Make `todos` a `@Binding` variable.
+                
+                This will be important when `todos` is passed from the App's Swift file later on.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-persistence-s3-1-ContentView.swift")
+            }
+            
+            @Step {
+                Update the `PreviewProvider` with the `@Binding` todos by providing it with a constant `[]`.
+                @Code(name: "ContentView.swift", file: "todo-ch1-persistence-s3-2-ContentView.swift")
+            }
+            
+            @Step {
+                Open the `TodosApp.swift` file.
+                @Code(name: "TodosApp.swift", file: "todo-ch1-persistence-s3-3-TodosApp.swift")
+            }
+            
+            @Step {
+                Create a `todoData` `@ObservedObject` and pass the `.todos` to the `ContentView`.
+                @Code(name: "TodosApp.swift", file: "todo-ch1-persistence-s3-4-TodosApp.swift")
+            }
+            
+            @Step {
+                When the app appears, load the data from `todoData`.
+                @Code(name: "TodosApp.swift", file: "todo-ch1-persistence-s3-5-TodosApp.swift")
+            }
+            
+            @Step {
+                Create an `@Environment` variable to allow for data to be saved when the app is closed.
+                @Code(name: "TodosApp.swift", file: "todo-ch1-persistence-s3-6-TodosApp.swift")
+            }
+        }
+    }
+}

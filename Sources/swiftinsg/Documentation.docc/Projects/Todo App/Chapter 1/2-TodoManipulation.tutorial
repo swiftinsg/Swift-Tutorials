@@ -1,0 +1,79 @@
+@Tutorial(time: 25) {
+    @Intro(title: "Moving & Deleting Todos") {
+        Use an `ForEach` and `EditButton()` to allow users to move and delete todos.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Deleting a Todo") {
+        @ContentAndMedia(layout: horizontal) {
+            Use `.onDelete` with `ForEach` to allow for swipe to delete.
+            
+            @Image(source: "todo-ch1-manipulation-s1-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-manipulation-s1-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-manipulation-s1-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Update the `List` to use `ForEach` to iterate through the elements. 
+                
+                This is important in order to implement `.onDelete` and `.onMove`.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-manipulation-s1-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-manipulation-s1-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add the `.onDelete` to the `ForEach`. `.onDelete`, the item should be removed from the `todos` array.
+                
+                > Experiment: Test this out using the live preview or Simulator.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-manipulation-s1-2-ContentView.swift") {
+                    @Video(source: "todo-ch1-manipulation-s1-2-Preview.mp4", posterFrame: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Moving Todos") {
+        @ContentAndMedia(layout: horizontal) {
+            Add an `EditButton()` with `.onMove` to allow users to move todos to rearrange them.
+            
+            @Image(source: "todo-ch1-manipulation-s2-hero.png", alt: "")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "todo-ch1-manipulation-s2-0-ContentView.swift") {
+                    @Image(source: "todo-ch1-manipulation-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add an `EditButton()` as a `.navigationBarItems` on the `leading` edge (left side).
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-manipulation-s2-1-ContentView.swift") {
+                    @Image(source: "todo-ch1-manipulation-s2-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add the `.onMove` to the `ForEach`. `.onMove`, the item should be moved from the original location to the new location.
+                
+                > Experiment: Test this out using the live preview or Simulator.
+                
+                @Code(name: "ContentView.swift", file: "todo-ch1-manipulation-s2-2-ContentView.swift") {
+                    @Video(source: "todo-ch1-manipulation-s2-2-Preview.mp4", posterFrame: "")
+                }
+            }
+        }
+    }
+}
