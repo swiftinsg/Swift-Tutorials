@@ -6,7 +6,7 @@
 This project uses [Apple's DocC (Documentation Compiler)](http://developer.apple.com/documentation/docc/) to create a set of SwiftUI tutorials for students.
 
 ## Requirements
-- Xcode 13.0 (Beta 2)
+- Xcode 13.0 (Beta 4)
 
 ## Creating DocC
 1. Open the `Package.swift` file

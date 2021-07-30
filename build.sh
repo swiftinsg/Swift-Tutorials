@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build DocC and dump it in a temporary build directory
-xcodebuild docbuild -scheme swiftinsg -derivedDataPath tmp/
+xcodebuild docbuild -scheme swiftinsg -derivedDataPath tmp/ -destination 'platform=iOS Simulator,name=iPhone 12'
 
 # Building complete
 echo "🛠 build completed"
@@ -10,7 +10,7 @@ echo "🛠 build completed"
 rm -rf Web/public/
 
 # Move the doccarchive to the Web folder, rename it to public
-mv tmp/Build/Products/Debug/swiftinsg.doccarchive/ Web/public/
+mv tmp/Build/Products/Debug-iphonesimulator/swiftinsg.doccarchive Web/public/
 
 # Building complete
 echo "🕸 updated Web"
