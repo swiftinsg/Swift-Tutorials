@@ -21,5 +21,8 @@ echo "🧼 cleaning up"
 # Delete temporary build directory
 rm -rf tmp
 
+echo "Remove Nav Bar"
+python3 scripts/remove_nav.py
+
 # We're done!
 echo "😴 we're done! time go back to sleep"
