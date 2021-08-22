@@ -27,7 +27,7 @@ start_location = data.find(start_marker)
 end_location = data.find(end_marker)
 
 top = data[:start_location]
-middle = "\n{}\n{}\n".format(start_marker, table)
+middle = "{}\n{}\n".format(start_marker, table)
 bottom = data[end_location:]
 
 rebuilt_file = top + middle + bottom

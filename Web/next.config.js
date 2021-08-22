@@ -18,7 +18,14 @@ module.exports = {
         source: '/',
         destination: '/documentation/swiftinsg/documentation',
         permanent: true,
-        },
-                ]
+        },{
+        source: '/contributing',
+        destination: '/documentation/swiftinsg/contributing',
+        permanent: true,
+        },{
+        source: '/more',
+        destination: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        permanent: true,
+        },]
     },
 };
