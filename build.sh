@@ -28,6 +28,8 @@ rm -rf tmp
 echo "Remove Nav Bar"
 python3 scripts/remove_nav.py
 
+python3 scripts/welcome_header.py
+
 # Update favicon
 cp assets/favicon.ico Web/public/
 rm Web/public/favicon.svg

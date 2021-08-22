@@ -1,5 +1,5 @@
 # swiftinsg
-This is a collection of DocC tutorials as part of the [Swift Accelerator Programme 2021](https://swiftinsg.org/).
+This is a collection of DocC tutorials as part of the Swift Accelerator Programme 2021.
 
 ## Tutorials
 ### Flag Raising
@@ -26,20 +26,19 @@ In this tutorial, you will learn how to bind `Friend`s to pass them around and m
 Spot an issue in the tutorial? Submit an issue on GitHub [here](https://github.com/swiftinsg/Swift-Tutorials/issues/).
 
 ## Contributors
+Want to contribute? See [Contributing](contributing).
+
 @Comment { 
     Do not edit this section.
     This section is automatically generated using GitHub's API when you run `build.sh`. 
     This section gets automatically populated with contributors. Not potatoes. It's just that potato is a nice word. 
 }
-
-
-
 @Comment {
     potato
 }
 Author | Commits
 --- | ---
-**[jiachenyee](https://github.com/jiachenyee)** | 101
+**[jiachenyee](https://github.com/jiachenyee)** | 103
 **[yjsoon](https://github.com/yjsoon)** | 1
 @Comment {
     end-potato
