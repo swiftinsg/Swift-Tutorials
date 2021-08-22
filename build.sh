@@ -24,5 +24,10 @@ rm -rf tmp
 echo "Remove Nav Bar"
 python3 scripts/remove_nav.py
 
+# Update favicon
+cp assets/favicon.ico Web/public/
+rm Web/public/favicon.svg
+
 # We're done!
 echo "😴 we're done! time go back to sleep"
+

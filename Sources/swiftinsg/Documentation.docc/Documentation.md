@@ -1,8 +1,7 @@
 # swiftinsg
-This is a collection of DocC tutorials as part of the Swift Accelerator Programme 2021.
+This is a collection of DocC tutorials as part of the [Swift Accelerator Programme 2021](https://swiftinsg.org/).
 
 ## Tutorials
-
 ### Flag Raising
 
 Create a flag raising app in SwiftUI. It was a joke, then it became a recurring joke, then it became curriculum.
@@ -20,13 +19,11 @@ In this tutorial, you will learn how to bind `Friend`s to pass them around and m
 
 [Open Tutorial](../../tutorials/friends)
 
-### Todo App (Working)
-> Warning: This is an incomplete tutorial
-
+### Todo App
 [Open Tutorial](../../tutorials/todo)
 
 ## Issues
-Spot an issue in the tutorial? Submit an issue on GitHub [here](https://github.com/tinkercademy/Swift-Tutorials/issues/).
+Spot an issue in the tutorial? Submit an issue on GitHub [here](https://github.com/swiftinsg/Swift-Tutorials/issues/).
 
 ## More
 - These tutorials are built using [Apple's DocC tutorials](https://developer.apple.com/documentation/docc/tutorial-syntax).
