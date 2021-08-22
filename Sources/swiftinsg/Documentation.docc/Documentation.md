@@ -25,10 +25,29 @@ In this tutorial, you will learn how to bind `Friend`s to pass them around and m
 ## Issues
 Spot an issue in the tutorial? Submit an issue on GitHub [here](https://github.com/swiftinsg/Swift-Tutorials/issues/).
 
+## Contributors
+@Comment { 
+    Do not edit this section.
+    This section is automatically generated using GitHub's API when you run `build.sh`. 
+    This section gets automatically populated with contributors. Not potatoes. It's just that potato is a nice word. 
+}
+
+
+
+@Comment {
+    potato
+}
+Author | Commits
+--- | ---
+**[jiachenyee](https://github.com/jiachenyee)** | 101
+**[yjsoon](https://github.com/yjsoon)** | 1
+@Comment {
+    end-potato
+}
+
 ## More
 - These tutorials are built using [Apple's DocC tutorials](https://developer.apple.com/documentation/docc/tutorial-syntax).
 - This project is open sourced on [GitHub](https://github.com/tinkercademy/Swift-Tutorials).
 
 - Note: These tutorials are part of the [Swift Accelerator Programme 2021](https://swiftinsg.org).
-- Authors: [Jia Chen](https://github.com/jiachenyee), [YJ Soon](https://github.com/yjsoon)
 - Copyright: © 2021 [Tinkertanker Pte Ltd](https://tinkertanker.com).
