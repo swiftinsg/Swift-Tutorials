@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Update authors
+echo "🖊 updating authors"
+python3 scripts/update_authors.py
+
 # Build DocC and dump it in a temporary build directory
 xcodebuild docbuild -scheme swiftinsg -derivedDataPath tmp/ -destination 'platform=iOS Simulator,name=iPhone 12'
 
