@@ -55,7 +55,7 @@
             @Step {
                 Use a `ForEach` to iterate through the elements in the `List` instead of the `List` itself.
                 
-                This is useful later when we need to delete and move `Friend`s.
+                This is useful later when we need to delete and move `Friend`s, as you can only move and delete things inside a `ForEach`, not a `List`. (A `List` can contain static data, whereas a `ForEach` is based on an array of things, which can be manipulated.)
                 
                 @Code(name: "ContentView.swift", file: "friends-ch3-manipulation-s1-4-ContentView.swift") {
                     @Image(source: "friends-ch3-manipulation-s1-4-Preview.png", alt: "")
