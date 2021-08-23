@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Creating a Project") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../flag-raising), [Quiz App](../quiz-app) & [Friends App](../friends) tutorials.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -40,7 +40,7 @@
     
 
     @Section(title: "Create a Todo") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create a `Todo` struct to store each todo item and conform it to `Identifiable` as it will be iterated through in a `List`.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -117,7 +117,7 @@
     }
     
     @Section(title: "Creating a List") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create a `List` to display the contents of the `todos` array.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -141,7 +141,7 @@
     }
     
     @Section(title: "Embedding in a NavigationView") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Embed the `List` in a `NavigationView` to provide it with a nice `.navigationTitle`.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

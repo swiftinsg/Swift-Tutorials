@@ -26,7 +26,7 @@
     }
     
     @Section(title: "Creating a Task Model") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             In a new Swift file, create a task model that will perform the persistence tasks.  
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -89,7 +89,7 @@
     }
     
     @Section(title: "Save and Load Data") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Finally, save and load data from the saved file.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

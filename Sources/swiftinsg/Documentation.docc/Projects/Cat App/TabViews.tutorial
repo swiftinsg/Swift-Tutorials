@@ -1,0 +1,62 @@
+@Tutorial(time: <#number#>) {
+    @Intro(title: "TabViews") {
+        <#text#>
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Creating a Project") {
+        @ContentAndMedia {
+            This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../flag-raising) and [Quiz App](../quiz-app) tutorials.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                In Xcode, **Create a new Xcode project**. 
+                
+                > Alternatively, you can go to **File → New → Project…** or **⌘⇧N** (Command-Shift-N)
+                
+                @Image(source: "shared-new project.png", alt: "Create new project")
+            }
+            
+            @Step {
+                Set the platform as **iOS** and select **App**.
+                @Image(source: "shared-select app.png", alt: "Select App")
+            }
+            
+            @Step {
+                Set the Product Name as **"Friends"** and ensure that your interface is **SwiftUI** and your life cycle is **SwiftUI App**.
+                @Image(source: "friends-ch1-lists-s1-configuring project.png", alt: "Configure App")
+            }
+            
+            @Step {
+                You're all set!
+                @Image(source: "friends-ch1-lists-s1-create project.png", alt: "Project Created")
+            }
+        }
+    }
+    
+    @Section(title: "<#text#>") {
+        @ContentAndMedia {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                <#text#>
+                
+                @Image(source: <#file#>, alt: "<#accessible description#>")
+            }
+            
+            @Step {
+                <#text#>
+                
+                @Code(name: "<#display name#>", file: <#filename.swift#>)
+            }
+        }
+    }
+}

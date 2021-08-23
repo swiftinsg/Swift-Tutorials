@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Adding a Checkmark") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Use SF Symbols to display a checkmark if the todo is completed and a ring if the todo is incomplete.
             
             @Image(source: "todo-ch1-strikethrough-s1-hero.png", alt: "")
@@ -63,7 +63,7 @@
     }
     
     @Section(title: "Adding a Strikethrough") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Add a `.strikethrough` to completed `Todo`s.
             
             @Image(source: "todo-ch1-strikethrough-s2-hero.png", alt: "")
@@ -90,7 +90,7 @@
     }
     
     @Section(title: "Toggling a Todo") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Change a `todo` from completed to incomplete and vice-versa when it is tapped.
             
             @Image(source: "todo-ch1-strikethrough-s3-hero.mp4", alt: "<#accessible description#>")

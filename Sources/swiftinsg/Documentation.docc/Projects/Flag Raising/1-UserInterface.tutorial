@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Create a new project") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             In this section, you'll learn how to create a new project. We've done it a bunch of times, it's pretty much the same. 
         }
         
@@ -38,7 +38,7 @@
     }
     
     @Section(title: "Layout Interface") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             In this section, you will learn how to layout the app's interface. 
             
             @Image(source: "flag-ch1-layout-s2-hero.png", alt: "Interface overview")

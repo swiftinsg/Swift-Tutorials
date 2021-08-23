@@ -6,7 +6,7 @@
     }
     
     @Section(title: "SF Symbols") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             *“SF Symbols is a **library of iconography designed to integrate seamlessly with** San Francisco, **the system font for Apple platforms**. Symbols come in nine weights and three scales, and automatically align with text labels. They can be exported and edited in vector graphics editing tools to create custom symbols with shared design characteristics and accessibility features."*
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -44,7 +44,7 @@
     }
     
     @Section(title: "Adding Symbols to Project") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section goes through how to integrate symbols into your project.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

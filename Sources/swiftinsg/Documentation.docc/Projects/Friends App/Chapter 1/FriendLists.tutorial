@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Creating a Project") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../flag-raising) and [Quiz App](../quiz-app) tutorials.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -39,7 +39,7 @@
     }
     
     @Section(title: "Creating a Friend") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section covers how to create a `Friend` struct. Not a real one, I'm still trying to figure that one out.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -101,7 +101,7 @@
     }
     
     @Section(title: "Listing Friends") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Use `List`s to display `Friend`s in a scrollable list. 
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

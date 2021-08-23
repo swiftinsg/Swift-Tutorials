@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Questions Struct") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             In this section, you will learn how to use a struct to keep track of multiple variables.
             
             When creating a struct, we must understand what each question needs. In this case, each question requires the following:
@@ -50,7 +50,7 @@
     }
     
     @Section(title: "Adding Questions") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             In this section, you'll learn how to use an array of `Question`s to keep track of questions.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -74,7 +74,7 @@
     }
     
     @Section(title: "Displaying Questions") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             In this section, you'll learn how to display the contents of the `questions` array to the user using `@State` variables. 
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

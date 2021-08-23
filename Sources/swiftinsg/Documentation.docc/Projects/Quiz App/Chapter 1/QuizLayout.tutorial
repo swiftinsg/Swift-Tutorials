@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Creating a Project") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Setting up and creating the Xcode project.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -39,7 +39,7 @@
     }
     
     @Section(title: "Understanding the Layout") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section aims to breakdown the layout of the quiz app to better understand how we can implement this within SwiftUI.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -73,7 +73,7 @@
     }
     
     @Section(title: "Implementing Layout") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section covers how to build the user interface based on the diagrams above.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

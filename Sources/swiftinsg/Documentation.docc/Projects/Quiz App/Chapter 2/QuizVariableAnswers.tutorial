@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Updating the Struct") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section covers the modifications that need to be made to the `Question` struct to create variable answers. 
             
             In order to create a variable answer, there needs to be a variable within the Question struct to keep track of the correct answer. This variable can the be used, check if the user is correct every time they select an option.
@@ -38,7 +38,7 @@
     }
     
     @Section(title: "Updating the View") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section covers how to update the user interface to be based on the `correctOption` variable instead of just `2`.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

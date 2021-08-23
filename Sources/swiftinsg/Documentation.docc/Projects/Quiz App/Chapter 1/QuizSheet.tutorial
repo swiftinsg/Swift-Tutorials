@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Understanding the Layout") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section explains how the interface is built by providing a step-by-step breakdown.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -42,7 +42,7 @@
     }
     
     @Section(title: "Creating a new View") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section covers how to create a new **SwiftUI View** file.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -72,7 +72,7 @@
     }
     
     @Section(title: "Laying out ScoreView") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section covers how to layout the `ScoreView` based on the wireframe in Section 1. 
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -116,7 +116,7 @@
     }
     
     @Section(title: "Injecting Dependencies") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section covers how to add inputs to `ScoreView` to ensure its contents are accurate. 
             
             `ScoreView` requires 2 inputs to function:
@@ -158,7 +158,7 @@
     }
     
     @Section(title: "Presenting ScoreView") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This section covers how to present the ScoreView modal as a `sheet`. 
             
             In order to do so, there are a few things need to be done:

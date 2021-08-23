@@ -9,7 +9,7 @@
     }
     
     @Section(title: "Preparing Friends") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Before we start manipulating `Friend`s, they need to be prepared by conforming to `Equatable`. We'll also need to update the `List` to allow for `Friend`s to be manipulated.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -65,7 +65,7 @@
     }
     
     @Section(title: "Deleting Friends") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Deleting Friends is surprisingly easy. Another way to phrase this is **"Removing Friends from Memory"** but I felt that we had sufficient ridiculous names within this chapter.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -101,7 +101,7 @@
     }
     
     @Section(title: "Moving Friends") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Moving `Friend`s is similar to deleting `Friend`s from the `friends` array. Like deleting `Friend`s, we will also rely on `offsets`.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -152,7 +152,7 @@
     }
     
     @Section(title: "Creating Friends") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Learn to use `Form`, `Section`s to create a simple screen for data entry with a whole bunch of controls like `Slider`s, `Picker`s, and `TextField`s. 
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

@@ -1,0 +1,23 @@
+@Tutorials(name: "Cat App") {
+    @Intro(title: "Building a Cat App") {
+        Build an app that uses APIs to load data from images and JSON.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Chapter(name: "Basic Cat App") {
+        Create a minimum viable product (MVP) for a cat app. It covers tab bars, .    
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:TabViews")
+    }
+    
+    @Chapter(name: "Extensions") {
+        <#text#>
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:<#tutorial name#>")
+    }
+}

@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Embedding in NavigationView") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Embed the `List` in a `NavigationView` to add a fancy title.   
             
             @Video(source: "friends-ch1-navigation-s1-hero.mp4", poster: "")
@@ -44,7 +44,7 @@
     }
     
     @Section(title: "Adding a Title") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Add a fancy title to your NavigationView. It fills the huge empty space at the top.
             
             @Image(source: "friends-ch1-navigation-s2-hero.png", alt: "")
@@ -70,7 +70,7 @@
     }
     
     @Section(title: "Creating a Detail View") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create a detail view where more information about the `Friend` can be shown.
             
             @Image(source: "friends-ch1-navigation-s3-hero.png", alt: "")
