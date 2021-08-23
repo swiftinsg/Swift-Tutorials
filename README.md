@@ -11,7 +11,7 @@ This project uses [Apple's DocC (Documentation Compiler)](http://developer.apple
 ## Creating DocC
 1. Open the `Package.swift` file
 2. In the menu bar, Product → Build Documentation
-    - Alternatively, if you have the dexterity for it, use ⌘⌃⇧D (Command-Control-Shift-D)
+    - Alternatively, if you have the dexterity for it, use <kbd>⌘</kbd>+<kbd>⌃</kbd>+<kbd>⇧</kbd>+<kbd>D</kbd> (Command+Control+Shift+D)
 3. The tutorials should open up in the Documentation viewer
 
 ## DocC on Web
@@ -36,6 +36,9 @@ $ sh build.sh
 - `xcodebuild: error: Unknown build action 'docbuild'.`
     - Run `xcode-select --switch /Path/To/Xcode.app`. 
     - Ensure the path leads to Xcode 13.
+
+## Contributing
+For more information on contributing to these tutorials, visit [learn.swiftinsg.org/contributing](https://learn.swiftinsg.org/contributing).
 
 ## Issues
 Spot an issue in the tutorial? Use the [issues template](https://github.com/tinkercademy/Swift-Tutorials/issues/new/choose) to submit an issue
