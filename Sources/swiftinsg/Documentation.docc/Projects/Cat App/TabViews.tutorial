@@ -27,7 +27,7 @@
             }
             
             @Step {
-                Set the Product Name as **"Friends"** and ensure that your interface is **SwiftUI** and your life cycle is **SwiftUI App**.
+                Set the Product Name as **"Cats"**, and ensure that your interface is **SwiftUI** and your life cycle is **SwiftUI App**.
                 @Image(source: "friends-ch1-lists-s1-configuring project.png", alt: "Configure App")
             }
             
