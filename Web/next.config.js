@@ -26,6 +26,18 @@ module.exports = {
         source: '/more',
         destination: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         permanent: true,
+        },{
+        source: '/documentation',
+        destination: '/documentation/swiftinsg/documentation',
+        permanent: true,
+        },{
+        source: '/tutorials',
+        destination: '/documentation/swiftinsg/documentation',
+        permanent: true,
+        },{
+        source: '/:path',
+        destination: '/tutorials/:path',
+        permanent: true,
         },]
     },
 };
