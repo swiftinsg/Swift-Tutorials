@@ -1,6 +1,6 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 15, projectFiles: "1 - Cats - Tabs.zip") {
     @Intro(title: "TabViews") {
-        <#text#>
+        Set up a new project with tab views and use `Label`s together with SF Symbols to create tab bar items.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
