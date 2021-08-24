@@ -7,7 +7,7 @@
     
     @Section(title: "Creating a Project") {
         @ContentAndMedia {
-            This section just covers how to set up and create a project. This is similar to what we have done in the [Flag Raising](../flag-raising) and [Quiz App](../quiz-app) tutorials.
+            This section just covers how to set up and create a project. This is similar to what we have done in the other tutorials.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
@@ -28,34 +28,96 @@
             
             @Step {
                 Set the Product Name as **"Cats"**, and ensure that your interface is **SwiftUI** and your life cycle is **SwiftUI App**.
-                @Image(source: "friends-ch1-lists-s1-configuring project.png", alt: "Configure App")
+                @Image(source: "cats-ch1-tabbar-s1-configuring project.png", alt: "Configure App")
             }
             
             @Step {
                 You're all set!
-                @Image(source: "friends-ch1-lists-s1-create project.png", alt: "Project Created")
+                @Image(source: "cats-ch1-tabbar-s1-create project.png", alt: "Project Created")
             }
         }
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Creating up Views") {
         @ContentAndMedia {
-            <#text#>
+            Create 2 new SwiftUI Views to host the `CatFactView` and the `CatImageView`.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
+                Create a new `SwiftUI View`. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
                 
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                @Image(source: "cats-ch1-tabbar-s2-0-new-file.png", alt: "")
             }
             
             @Step {
-                <#text#>
+                Select **SwiftUI View**.
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                @Image(source: "shared-new swiftui view.png", alt: "")
+            }
+            
+            @Step {
+                Name the view `CatFactView`.
+                
+                @Image(source: "cats-ch1-tabbar-s2-2-Save.png", alt: "")
+            }
+            
+            @Step {
+                Repeat steps 1 to 3 to create `CatImageView`.
+            }
+            
+            @Step {
+                This should be what your navigator looks like, with the 2 new files, `CatFactView.swift` and `CatImageView.swift`
+                
+                @Image(source: "cats-ch1-tabbar-s2-4.png", alt: "")
+            }
+        }
+    }
+        
+    @Section(title: "Embedding in Tab View") {
+        @ContentAndMedia {
+            Embed the `CatFactView` & `CatImageView` within a `TabView`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open the `ContentView.swift` file.
+                @Code(name: "ContentView.swift", file: "cats-ch1-tabbar-s3-0-ContentView.swift") {
+                    @Image(source: "cats-ch1-tabbar-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Replace the `Text` with a `TabView`.
+                @Code(name: "ContentView.swift", file: "cats-ch1-tabbar-s3-1-ContentView.swift") {
+                    @Image(source: "cats-ch1-tabbar-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `CatFactView()` in the `TabView`.
+                @Code(name: "ContentView.swift", file: "cats-ch1-tabbar-s3-2-ContentView.swift") {
+                    @Image(source: "cats-ch1-tabbar-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add the `.tabItem` modifier providing a `Label` with a title and `systemImage`.  
+                @Code(name: "ContentView.swift", file: "cats-ch1-tabbar-s3-3-ContentView.swift") {
+                    @Image(source: "cats-ch1-tabbar-s3-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Repeat steps 1 to 4 for the `CatImageView()`.  
+                @Code(name: "ContentView.swift", file: "cats-ch1-tabbar-s3-4-ContentView.swift") {
+                    @Image(source: "cats-ch1-tabbar-s3-4-Preview.png", alt: "")
+                }
             }
         }
     }
