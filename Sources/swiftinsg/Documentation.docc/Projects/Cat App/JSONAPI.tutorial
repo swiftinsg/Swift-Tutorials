@@ -1,0 +1,238 @@
+@Tutorial(time: 30, projectFiles: "2 - Cats - JSON.zip") {
+    @Intro(title: "GETting Cat Facts") {
+        Get JSON returned from an external API and display the data within your app.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Creating a Swift File") {
+        @ContentAndMedia {
+            Create a new Swift file for the `CatFactManager`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Create a new `Swift` file. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                @Image(source: "cats-ch1-json-s1-new file.png", alt: "Creating new file")
+            }
+            
+            @Step {
+                Select new **Swift file**.
+                @Image(source: "shared-new swift file.png", alt: "New Swift file")
+            }
+            
+            @Step {
+                Name it `CatFactManager.swift` and save it.
+                @Image(source: "cats-ch1-json-s1-save.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Calling the API") {
+        @ContentAndMedia {
+            Call a cat fact API, [catfact.ninja](https://catfact.ninja/), which returns a JSON with a cat fact.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatFactManager.swift`.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s2-0-CatFactManager.swift")
+            }
+            
+            @Step {
+                Import SwiftUI and create an `ObservableObject` named `CatFactManager`.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s2-1-CatFactManager.swift")
+            }
+            
+            @Step {
+                Create a function to `getCatFact()`.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s2-2-CatFactManager.swift")
+            }
+            
+            @Step {
+                Add the cat facts `apiURL`, [https://catfact.ninja/fact](https://catfact.ninja/fact).
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s2-3-CatFactManager.swift")
+            }
+            
+            @Step {
+                Create a `URLRequest` with the `apiURL`.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s2-4-CatFactManager.swift")
+            }
+            
+            @Step {
+                Create a `URLSession` to perform the `request`. 
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s2-5-CatFactManager.swift")
+            }
+            
+            @Step {
+                Within the completion handler, output the data it receives, convert it to a `String` (with utf8 encoding) and print it out.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s2-6-CatFactManager.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Testing the API") {
+        @ContentAndMedia {
+            Before we go ahead, it is important to ensure the `CatFactManager` is working as intended.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatFactView.swift`.
+                @Code(name: "CatFactView.swift", file: "cats-ch1-json-s3-0-CatFactView.swift") {
+                    @Image(source: "cats-ch1-json-s3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an instance of `CatFactManager` with the `@ObservedObject` property wrapper.
+                @Code(name: "CatFactView.swift", file: "cats-ch1-json-s3-1-CatFactView.swift") {
+                    @Image(source: "cats-ch1-json-s3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                In order to test if the request works, onAppear, the cat fact manager should load a cat fact.
+                @Code(name: "CatFactView.swift", file: "cats-ch1-json-s3-2-CatFactView.swift") {
+                    @Image(source: "cats-ch1-json-s3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code and you will see a JSON gets printed out in your console.
+                @Code(name: "Output.json", file: "cats-ch1-json-s3-Output.json")
+            }
+        }
+    }
+    
+    @Section(title: "Creating CatFact Model") {
+        @ContentAndMedia {
+            Create a `CatFact` model to store and decode cat facts received from the API.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Create another `Swift` file, this will be for the `CatFact` model. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                @Image(source: "cats-ch1-json-s4-new file.png", alt: "Creating new file")
+            }
+            
+            @Step {
+                Select new **Swift file**.
+                @Image(source: "shared-new swift file.png", alt: "New Swift file")
+            }
+            
+            @Step {
+                Name it `CatFact.swift` and save it.
+                @Image(source: "cats-ch1-json-s4-save.png", alt: "")
+            }
+            
+            @Step {
+                Open `CatFact.swift`.
+                @Code(name: "CatFact.swift", file: "cats-ch1-json-s4-4-CatFact.swift")
+            }
+            
+            @Step {
+                Create a struct named `CatFact`.
+                @Code(name: "CatFact.swift", file: "cats-ch1-json-s4-5-CatFact.swift")
+            }
+            
+            @Step {
+                Within the struct, add 2 variables called `fact` (a `String`) and `length` (an `Int`).
+                > This name is based on the JSON output from the API. It will not work if you rename the variables. If you are using other APIs, you will need to change the variable names to match that API.
+                
+                @Code(name: "CatFact.swift", file: "cats-ch1-json-s4-6-CatFact.swift")
+            }
+            
+            @Step {
+                Make the struct conform to `Decodable`. In this case, we are not trying to encode data, therefore, we do not need `Encodable` and can simply implement `Decodable`.                
+                @Code(name: "CatFact.swift", file: "cats-ch1-json-s4-7-CatFact.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Decoding Cat Facts") {
+        @ContentAndMedia {
+            Remember `Codable`? We did it before, and we'll do it again.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatFactManager.swift`.
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s5-0-CatFactManager.swift")
+            }
+            
+            @Step {
+                Create a `@Published` variable to store retrieved cat facts called `fact`.
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s5-1-CatFactManager.swift")
+            }
+            
+            @Step {
+                Decode the data retrieved from the API and set the value of `fact` as it.
+                > As the URL request is running on a background thread, you will need to escape back onto the main thread to update the `Text`.
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s5-2-CatFactManager.swift")
+            }
+            
+            @Step {
+                Set `fact` to `nil` before sending the URL request out. This is useful for later when presenting the loading indicator.
+                @Code(name: "CatFactManager.swift", file: "cats-ch1-json-s5-3-CatFactManager.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Displaying Cat Facts") {
+        @ContentAndMedia {
+            Update `CatFactView` with the received `CatFact`s from the API.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatFactView.swift`.
+                @Code(name: "CatFactView.swift", file: "cats-ch1-json-s6-0-CatFactView.swift") {
+                    @Image(source: "cats-ch1-json-s6-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Use `if-let` to unwrap the fact within the `CatFactManager` and display it in a `Text`.
+                @Code(name: "CatFactView.swift", file: "cats-ch1-json-s6-1-CatFactView.swift") {
+                    @Image(source: "cats-ch1-json-s6-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Within the `else`, add a `ProgressView` with a circular style.
+                > This progress view style should only be used if you are unsure how long a task might take. If you know how long a task would take, a progress bar would be more appropriate.
+                @Code(name: "CatFactView.swift", file: "cats-ch1-json-s6-2-CatFactView.swift") {
+                    @Image(source: "cats-ch1-json-s6-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run it and test it!
+                > When you first launch it, you will see a spinning progress indicator.
+                @Video(source: "cats-ch1-json-s6-3.mp4", posterFrame: "")
+            }
+        }
+    }
+}

@@ -1,0 +1,183 @@
+@Tutorial(time: 30, projectFiles: "3 - Cats - Image.zip") {
+    @Intro(title: "GETting Images") {
+        Download images from an external API and display them within your app.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Creating a Swift File") {
+        @ContentAndMedia {
+            Create a new Swift file for the CatImageManager.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Create a new `Swift` file. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                @Image(source: "cats-ch1-images-s1-new file.png", alt: "Creating new file")
+            }
+            
+            @Step {
+                Select new **Swift file**.
+                @Image(source: "shared-new swift file.png", alt: "New Swift file")
+            }
+            
+            @Step {
+                Name it `CatImageManager.swift` and save it.
+                @Image(source: "cats-ch1-images-s1-save.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Calling the API") {
+        @ContentAndMedia {
+            Call a cat images API, [Cat as a Service](https://cataas.com/), which returns an image of a cat.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatImageManager.swift`.
+                
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s2-0-CatImageManager.swift")
+            }
+            
+            @Step {
+                Import `SwiftUI` and create an `ObservableObject` named `CatImageManager`.
+                
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s2-1-CatImageManager.swift")
+            }
+            
+            @Step {
+                Create a function to `getCatImage`. This function will be used to make the URL request. 
+                
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s2-2-CatImageManager.swift")
+            }
+            
+            @Step {
+                Add the `apiURL` and create a `URLRequest` with the `apiURL`.
+                
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s2-3-CatImageManager.swift")
+            }
+            
+            @Step {
+                Call the api.
+                
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s2-4-CatImageManager.swift")
+            }
+            
+            @Step {
+                Print out the `Data` that gets returned.
+                
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s2-5-CatImageManager.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Testing the API") {
+        @ContentAndMedia {
+            Before moving ahead trying to decode it, it is important to ensure the `CatImageManager` works as intended. To do that, when the `CatImageView` appears, we should load the image.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatImageView.swift`.
+                @Code(name: "CatImageView.swift", file: "cats-ch1-images-s3-0-CatImageView.swift") {
+                    @Image(source: "cats-ch1-images-s3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an `@ObservedObject` with the `CatImageManager`.
+                @Code(name: "CatImageView.swift", file: "cats-ch1-images-s3-1-CatImageView.swift") {
+                    @Image(source: "cats-ch1-images-s3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Load an image when the `View` appears.
+                @Code(name: "CatImageView.swift", file: "cats-ch1-images-s3-2-CatImageView.swift") {
+                    @Image(source: "cats-ch1-images-s3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code!
+                > Give it several seconds to make the API call, after that, you will get the number of bytes in the image printed out.
+                @Code(name: "Output.txt", file: "cats-ch1-images-s3-3-Output.txt")
+            }
+        }
+    }
+    
+    @Section(title: "Decoding Cat Images") {
+        @ContentAndMedia {
+            We don't need to do those fancy `Codable` nonsense. The `Data` we get back from the API is the image itself.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatImageManager.swift`.
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s4-0-CatImageManager.swift")
+            }
+            
+            @Step {
+                Create a `@Published` variable to store retrieved image.
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s4-1-CatImageManager.swift")
+            }
+            
+            @Step {
+                Get the image from the raw data.
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s4-2-CatImageManager.swift")
+            }
+            
+            @Step {
+                Set `image` to `nil` before sending the URL request out. This is useful for later when presenting the loading indicator.
+                @Code(name: "CatImageManager.swift", file: "cats-ch1-images-s4-3-CatImageManager.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Displaying Cat Images") {
+        @ContentAndMedia {
+            Update `CatImageView` with the received images from the API.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatImageView.swift`.
+                @Code(name: "CatImageView.swift", file: "cats-ch1-images-s5-0-CatImageView.swift") {
+                    @Image(source: "cats-ch1-images-s5-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Use `if-let` to unwrap the `image` within the `CatImageManager` and display it in an `Image`.
+                @Code(name: "CatImageView.swift", file: "cats-ch1-images-s5-1-CatImageView.swift") {
+                    @Image(source: "cats-ch1-images-s5-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Within the `else`, add a `ProgressView` with a circular style.
+                > This progress view style should only be used if you are unsure how long a task might take. If you know how long a task would take, a progress bar would be more appropriate.
+                @Code(name: "CatImageView.swift", file: "cats-ch1-images-s5-2-CatImageView.swift") {
+                    @Image(source: "cats-ch1-images-s5-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run it and test it!
+                @Video(source: "cats-ch1-images-s5-3.mp4", posterFrame: "")
+            }
+        }
+    }
+}
