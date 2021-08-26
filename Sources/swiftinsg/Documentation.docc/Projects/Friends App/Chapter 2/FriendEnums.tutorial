@@ -8,7 +8,7 @@
     }
     
     @Section(title: "Creating an Enum") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create an enum for the `FriendType`. Think of an enum like a multiple choice field, the user is limited to certain predefined options (or `case`s). 
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -73,7 +73,7 @@
     }
     
     @Section(title: "Implementing the Enum") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Implement the `FriendType` enum by adding it to the `Friend` struct and updating every instance of the `Friend` struct.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -113,7 +113,7 @@
     }
     
     @Section(title: "Adding Friend's Type to FriendDetailView") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Use `HStack`, `ForEach` and `Label`s to create a View to display each `friend`'s `types`   
             
             @Image(source: "friends-ch2-enum-s3-Hero.png", alt: "<#accessible description#>")
@@ -162,7 +162,7 @@
     }
     
     @Section(title: "Adding Friend's Type to ContentView") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Display the `Friend`'s `types` icons in the `List` with a `Spacer`, `HStack` and `Image`.
             
             @Image(source: "friends-ch2-enum-s4-Hero", alt: "")

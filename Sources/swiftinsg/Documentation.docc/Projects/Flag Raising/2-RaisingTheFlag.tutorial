@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Raise the flag") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             In this section, you will use `@State` variables and `.offset(x: y:)` to set the position of the flag 🇸🇬. 
             
             @Image(source: "flag-ch1-raising-s1-hero.png", alt: "")

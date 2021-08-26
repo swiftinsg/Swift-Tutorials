@@ -1,0 +1,25 @@
+@Tutorials(name: "Cat App") {
+    @Intro(title: "Building a Cat App") {
+        Build an app that uses APIs to load data from images and JSON.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Chapter(name: "Basic Cat App") {
+        Create a basic cat app that can display call APIs and display results by decoding a JSON and downloading an image.    
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:TabViews")
+        @TutorialReference(tutorial: "doc:JSONAPI")
+        @TutorialReference(tutorial: "doc:ImageAPI")
+    }
+    
+    @Chapter(name: "Extensions") {
+        <#text#>
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:<#tutorial name#>")
+    }
+}

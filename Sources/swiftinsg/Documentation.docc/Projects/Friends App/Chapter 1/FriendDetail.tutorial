@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Understanding the Layout") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Before actually building the layout, it is important to understand how to build it and how to manipulate your `View`s.
             
             @Video(source: "friends-ch1-detail-s1-hero.mp4", poster: "")
@@ -54,7 +54,7 @@
     }
     
     @Section(title: "Creating a Banner") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             This is when the `slothImage` becomes useful. The `slothImage` is used for the banners because everyone needs a sloth.
             
             @Video(source: "friends-ch1-detail-s2-hero.mp4", poster: "")
@@ -120,7 +120,7 @@
     }
     
     @Section(title: "Creating a Profile Picture") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create a fancy circular profile picture bubble that floats on top of the actual banner `Image` with shadows!. 
             
             @Video(source: "friends-ch1-detail-s3-hero.mp4", poster: "")
@@ -226,7 +226,7 @@
     }
     
     @Section(title: "String/Image Interpolation") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             You can't tell a `Text` what it can and cannot be. If it wants an `Image`, it gets an `Image`. 
             
             @Video(source: "friends-ch1-detail-s4-hero.mp4", poster: "")

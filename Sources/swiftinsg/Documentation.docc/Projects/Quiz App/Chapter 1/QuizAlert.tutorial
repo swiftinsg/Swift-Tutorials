@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Presenting an Alert") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Use an alert to tell the user if they got it right or wrong and continue to the next question.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

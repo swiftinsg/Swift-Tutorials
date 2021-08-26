@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Creating a new SwiftUI View") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create the `NewTodoView`. 
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -42,7 +42,7 @@
     }
     
     @Section(title: "Building a Form") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Replace the placeholder `Text` with a `Form`.
             
             @Image(source: "todo-ch1-new-s2-hero.png", alt: "")
@@ -92,7 +92,7 @@
     }
     
     @Section(title: "Saving a Todo") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Use a `@Binding` variable to save the new `Todo` by appending it to the `todos` array.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -132,7 +132,7 @@
     }
     
     @Section(title: "Dismissing the Modal") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Use the `presentationMode` `@Environment` variable to dismiss the modal when the user saves the new todo.
             
             @Image(source: "todo-ch1-new-s4-hero.png", alt: "")
@@ -166,7 +166,7 @@
     }
     
     @Section(title: "Embedding in NavigationView") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Embed the `Form` in a `NavigationView` to show a fancy large title.
             
             @Image(source: "todo-ch1-new-s5-hero.png", alt: "")
@@ -200,7 +200,7 @@
     }
     
     @Section(title: "Presenting the Modal") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Use a `.sheet` and present the `NewTodoView` modal.
             
             @Image(source: "todo-ch1-new-s6-hero.png", alt: "")

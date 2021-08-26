@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Deleting a Todo") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Use `.onDelete` with `ForEach` to allow for swipe to delete.
             
             @Image(source: "todo-ch1-manipulation-s1-hero.png", alt: "")
@@ -43,7 +43,7 @@
     }
     
     @Section(title: "Moving Todos") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Add an `EditButton()` with `.onMove` to allow users to move todos to rearrange them.
             
             @Image(source: "todo-ch1-manipulation-s2-hero.png", alt: "")

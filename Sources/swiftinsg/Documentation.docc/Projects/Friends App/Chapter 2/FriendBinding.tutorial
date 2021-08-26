@@ -10,7 +10,7 @@
     }
     
     @Section(title: "@Binding Friends") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             In order to mutate or modify our `friends` when they are passed to another `View`. We will first need to bind them. 
             
             There will not be any visible changes in the preview after this section.
@@ -74,7 +74,7 @@
     }
     
     @Section(title: "Creating Sliders") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             The purpose of `@Binding` the `friends` earlier was to add `Slider()`s to the `friends`.
             
             The most important thing in friendship is a `friend`'s `attack` & `defence`. This will allow us to make more realistic `friends` in our app.
@@ -183,7 +183,7 @@
     }
         
     @Section(title: "Embedding in ScrollView") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             A ScrollView is, as the [documentation](https://developer.apple.com/documentation/swiftui/scrollview/) puts it, "A scrollable view".
             
             As our `FriendDetailView` is getting crowded, it can be especially hard for those with smaller screens (e.g. iPhone SE, 8 etc.) to use. Therefore, we can use a `ScrollView` to allow our elements in the `VStack` to scroll up and down allowing users to slide the sliders no matter the size of their device.

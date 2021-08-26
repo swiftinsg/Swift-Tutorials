@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Conforming to Codable") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             The `Codable` protocol combines 2 other protocols—`Encodable` and `Decodable`. 
             - `Encodable` allows data to be encoded, or converted to a form suitable for storage such as a JSON or a Property List.
             - `Decodable` allows data to be decoded from said JSON or Property List into the object itself
@@ -48,7 +48,7 @@
     }
     
     @Section(title: "Creating a Data Model") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create a class to serve as a data model.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
@@ -118,7 +118,7 @@
     }
     
     @Section(title: "Getting Archive URL") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Before we store our data, we need to figure out where to store the data. This is where the archive URL comes in. In iOS, all apps have a "sandbox" where documents and data can be stored and which is inaccessible by other apps. The archive URL is a URL within the app's sandbox that can be used to read and write data securely. With that said, this data storage method should not be used to store any sensitive information, like passwords, as it is unencrypted. If you're interested in securely storing sensitive information, see [here](https://developer.apple.com/documentation/security/certificate_key_and_trust_services/keys/storing_keys_in_the_keychain). 
             
             @Image(source: "friends-ch3-persistence-s3-hero.png", alt: "")
@@ -160,7 +160,7 @@
     }
     
     @Section(title: "Adding a Method to Save Data") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create a function to write data to a local file.
             
             @Image(source: "friends-ch3-persistence-s4-hero.png", alt: "")
@@ -204,7 +204,7 @@
     }
     
     @Section(title: "Adding a Method to Load Data") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Create a function to read data from a local file.
             
             @Image(source: "friends-ch3-persistence-s5-hero.png", alt: "")
@@ -265,7 +265,7 @@
     }
     
     @Section(title: "Load and Save Data") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             Put everything to gather and connect `FriendsData` to the `ContentView`.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")

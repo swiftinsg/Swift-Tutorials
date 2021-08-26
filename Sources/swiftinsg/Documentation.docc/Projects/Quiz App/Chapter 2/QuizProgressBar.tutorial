@@ -6,7 +6,7 @@
     }
     
     @Section(title: "Create Progress Bar") {
-        @ContentAndMedia(layout: horizontal) {
+        @ContentAndMedia {
             The `ProgressView` should update automatically as the user does the quiz. 
             
             The `ProgressView` has 2 inputs, the `value` and the `total` 
