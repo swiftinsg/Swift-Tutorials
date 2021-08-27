@@ -1,0 +1,60 @@
+@Tutorial(time: 5, projectFiles: "4 - Cats - Reload.zip") {
+    @Intro(title: "Reload Data") {
+        Add a reload button for even more cat facts/images!!
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Reloading Cat Facts") {
+        @ContentAndMedia {
+            Add an "Another one" `Button` for the user to get another cat fact. Your users are getting so well educated.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatFactView.swift`.
+                @Code(name: "CatFactView.swift", file: "cats-ch2-reload-s1-0-CatFactView.swift") {
+                    @Image(source: "cats-ch2-reload-s1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                There should be a "Another one" `Button` when the cat fact is shown to the user. Therefore, the "Another one" `Button` is placed within the if-condition.
+                @Code(name: "CatFactView.swift", file: "cats-ch2-reload-s1-1-CatFactView.swift") {
+                    @Image(source: "cats-ch2-reload-s1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Within the `Button`'s action, perform `getCatFact()`. This will get another cat fact.
+                @Code(name: "CatFactView.swift", file: "cats-ch2-reload-s1-2-CatFactView.swift") {
+                    @Image(source: "cats-ch2-reload-s1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code!
+                
+                @Video(source: "cats-ch2-reload-s1-Completed.mp4", posterFrame: "")
+            }
+            
+            @Step {
+                Try replicating this for the `CatImageManager`!
+                > What? You thought we giveaway free code? No, that's too much work. 
+            }
+            
+            ## Need Help?
+            - If you are lost, download the materials. Within the folder, there are 3 projects:
+                - **Starter**
+                    - This is the starting point for the project
+                - **Completed - JSON**
+                    - This covers how to add a "Another one" button for the JSON
+                - **Completed - Image**
+                    - This covers how to add a "Another one" button for the Image
+            
+            
+        }
+    }
+}

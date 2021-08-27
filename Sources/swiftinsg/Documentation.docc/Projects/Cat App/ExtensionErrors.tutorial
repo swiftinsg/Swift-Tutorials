@@ -1,0 +1,81 @@
+@Tutorial(time: 15, projectFiles: "5 - Cats - Errors.zip") {
+    @Intro(title: "Error Handling") {
+        When dealing with network requests, things can and will go wrong. Whether it's the request timing out, or the user not having a good internet connection, your app should be able to inform the user what has gone wrong so they can resolve the issue. In the basic app, if something went wrong, the app would still display the spinning loading indicator, that is not very useful to a user.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Handling Cat Fact Errors") {
+        @ContentAndMedia {
+            Present an alert when an error occurs.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatFactManager.swift`.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch2-errors-s1-0-CatFactManager.swift")
+            }
+            
+            @Step {
+                Create a `@Published` variable to store the error message.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch2-errors-s1-1-CatFactManager.swift")
+            }
+            
+            @Step {
+                Create another `@Published` variable to determine if the alert is presented or not.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch2-errors-s1-2-CatFactManager.swift")
+            }
+            
+            @Step {
+                If there is an error, set the error's description to `errorDescription` and present the alert.
+                
+                @Code(name: "CatFactManager.swift", file: "cats-ch2-errors-s1-3-CatFactManager.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Presenting the Alert") {
+        @ContentAndMedia {
+            Present an alert if there is an error while getting cat facts.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `CatFactView.swift`.
+                @Code(name: "CatFactView.swift", file: "cats-ch2-errors-s2-0-CatFactView.swift") {
+                    @Image(source: "cats-ch2-errors-s2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create an `Alert` and set the `isPresented` Binding to the one from the `CatFactManager` and the message to the error's description. 
+                
+                Add 2 `Button`s, one to `"Try again"` and another to `cancel`.
+                @Code(name: "CatFactView.swift", file: "cats-ch2-errors-s2-1-CatFactView.swift") {
+                    @Image(source: "cats-ch2-errors-s2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                When the user taps the `"Try again"` `Button` get another cat fact.
+                @Code(name: "CatFactView.swift", file: "cats-ch2-errors-s2-2-CatFactView.swift") {
+                    @Image(source: "cats-ch2-errors-s2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code!!
+                > To test this, you will need to turn off your wifi
+                
+                @Video(source: "cats-ch2-errors-s2-Completed.mp4", posterFrame: "")
+            }
+        }
+    }
+}

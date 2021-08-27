@@ -8,18 +8,19 @@
     @Chapter(name: "Basic Cat App") {
         Create a basic cat app that can display call APIs and display results by decoding a JSON and downloading an image.    
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "cats-ch1-hero.png", alt: "")
         
         @TutorialReference(tutorial: "doc:TabViews")
         @TutorialReference(tutorial: "doc:JSONAPI")
         @TutorialReference(tutorial: "doc:ImageAPI")
     }
     
-    @Chapter(name: "Extensions") {
-        <#text#>
+    @Chapter(name: "Extension") {
+        Here are some tutorials to explore APIs further. This will be especially useful if you need to integrate APIs into your final project. 
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "cats-ch2-hero.png", alt: "")
         
-        @TutorialReference(tutorial: "doc:<#tutorial name#>")
+        @TutorialReference(tutorial: "doc:ExtensionReload")
+        @TutorialReference(tutorial: "doc:ExtensionErrors")
     }
 }

@@ -38,7 +38,7 @@ Want to contribute? See [Contributing](contributing).
 }
 Author | Commits
 --- | ---
-**[jiachenyee](https://github.com/jiachenyee)** | 106
+**[jiachenyee](https://github.com/jiachenyee)** | 114
 **[yjsoon](https://github.com/yjsoon)** | 2
 @Comment {
     end-potato

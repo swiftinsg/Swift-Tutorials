@@ -2,7 +2,7 @@
     @Intro(title: "GETting Cat Facts") {
         Get JSON returned from an external API and display the data within your app.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "cats-ch1-json-hero.png", alt: "")
     }
     
     @Section(title: "Creating a Swift File") {

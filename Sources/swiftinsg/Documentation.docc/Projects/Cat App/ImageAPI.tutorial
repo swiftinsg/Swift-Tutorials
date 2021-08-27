@@ -2,12 +2,12 @@
     @Intro(title: "GETting Images") {
         Download images from an external API and display them within your app.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "cats-ch1-image-hero.png", alt: "")
     }
     
     @Section(title: "Creating a Swift File") {
         @ContentAndMedia {
-            Create a new Swift file for the CatImageManager.
+            Create a new Swift file for the `CatImageManager`.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
