@@ -22,6 +22,11 @@ In this tutorial, you will learn how to bind `Friend`s to pass them around and m
 ### Todo App
 [Open Tutorial](../../tutorials/todo)
 
+### Cat App
+Learn to interact with APIs and send HTTP GET requests to image and JSON based APIs.
+
+[Open Tutorial](../../tutorials/cat-app)
+
 ## Issues
 Spot an issue in the tutorial? Submit an issue on GitHub [here](https://github.com/swiftinsg/Swift-Tutorials/issues/).
 
@@ -38,7 +43,7 @@ Want to contribute? See [Contributing](contributing).
 }
 Author | Commits
 --- | ---
-**[jiachenyee](https://github.com/jiachenyee)** | 114
+**[jiachenyee](https://github.com/jiachenyee)** | 116
 **[yjsoon](https://github.com/yjsoon)** | 2
 @Comment {
     end-potato
