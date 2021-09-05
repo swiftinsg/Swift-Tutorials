@@ -1,13 +1,13 @@
-@Tutorial(time: 20, projectFiles: "2 - Firey - Flag Raising") {
+@Tutorial(time: 20, projectFiles: "2 - Firey - Flag Raising.zip") {
     @Intro(title: "Flag Raising") {
         We did it before, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again. This never gets old.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "firey-ch1-flagraising-hero.png", alt: "")
     }
     
     @Section(title: "Laying out Flag Raising") {
         @ContentAndMedia {
-            <#text#>
+            Lay out the basic flag raising. You know, the one we've been building for this entire curriculum.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
