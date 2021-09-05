@@ -1,0 +1,294 @@
+@Tutorial(time: 30, projectFiles: "3 - Firey - Flag Selector") {
+    @Intro(title: "Flag Selector") {
+        Using `ScrollView`s and `LazyVGrid`, create a grid of flags that allow the users to select and change the flag.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Creating Flag Model") {
+        @ContentAndMedia {
+            In order to keep track and load flags, you will need to create a `Flag` model.  
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Download [this JSON](https://cld.tk.sg/X6ulEnN9) file. It consists of flag emojis and their names.
+                
+                As you can see, within the flag data, there are 2 fields, the `emoji` and `description`. This is important for later.
+                @Code(name: "FlagData.json", file: "firey-ch1-selector-s1-0-FlagData.json")
+            }
+            
+            @Step {
+                Create another `Swift` file, this will be for the `Flag` model. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                @Image(source: "firey-ch1-selector-s1-new file.png", alt: "Creating new file")
+            }
+            
+            @Step {
+                Select new **Swift file**.
+                @Image(source: "shared-new swift file.png", alt: "New Swift file")
+            }
+            
+            @Step {
+                Name it `Flag.swift` and save it.
+                @Image(source: "firey-ch1-selector-s1-save.png", alt: "")
+            }
+            
+            @Step {
+                Open `Flag.swift`.
+                @Code(name: "Flag.swift", file: "firey-ch1-selector-s1-4-Flag.swift")
+            }
+            
+            @Step {
+                Create a `Flag` with an `emoji` and `description`. 
+                > These two are from the `FlagData.json` file from earlier, therefore, you cannot rename them without breaking it.
+                @Code(name: "Flag.swift", file: "firey-ch1-selector-s1-5-Flag.swift")
+            }
+            
+            @Step {
+                Make `Flag` conform to `Identifiable`. 
+                
+                Create a computed property called `id` which will just be the same as `emoji`.
+                @Code(name: "Flag.swift", file: "firey-ch1-selector-s1-6-Flag.swift")
+            }
+            
+            @Step {
+                Also, conform to `Decodable` and `Equatable`.
+                
+                These will be important for later on.
+                @Code(name: "Flag.swift", file: "firey-ch1-selector-s1-7-Flag.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Decoding FlagData.json") {
+        @ContentAndMedia {
+            Decode the data within the `FlagData.json` and convert it to an array of `Flag`s. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `FlagSelectorView.swift`.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s2-0-FlagSelectorView.swift")
+            }
+            
+            @Step {
+                Create a variable called `flags`. This will be a computed property.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s2-1-FlagSelectorView.swift")
+            }
+            
+            @Step {
+                Get the URL of `FlagData.json`. This will be used to locate the `FlagData.json` file.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s2-2-FlagSelectorView.swift")
+            }
+            
+            @Step {
+                Create a `JSONDecoder` and decode the `FlagData.json` file.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s2-3-FlagSelectorView.swift")
+            }
+            
+            @Step {
+                Finally, return the decoded `Flag`s.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s2-4-FlagSelectorView.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Creating Grid") {
+        @ContentAndMedia {
+            Create a `LazyVGrid` to display the flag information from the `flags`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `FlagSelectorView.swift`.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s3-0-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `NavigationView` with a `navigationTitle` of `"Flag Selector"`.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s3-1-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Replace the placeholder `Text` with a `ScrollView`.
+                
+                This ScrollView will be used to host the grid to make the grid scrollable.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s3-2-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `LazyVGrid`. The grid should have its cells with an adaptive width.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s3-3-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s3-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Iterate through the `flags` with a `ForEach`.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s3-4-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s3-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Display the flags in a `VStack`, providing a large font for the flag emoji.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s3-5-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s3-5-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Sharing a Flag") {
+        @ContentAndMedia {
+            Create a `selectedFlag` `@Binding` variable and `flag` `@State` variable to keep track of the flag.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `ContentView.swift`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-selector-s4-0-ContentView.swift") {
+                    @Image(source: "firey-ch1-selector-s4-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@State` variable to keep track of the `flag`. 
+                
+                This is in the `ContentView` to share the data with the `FlagRaisingView` later on.
+                @Code(name: "ContentView.swift", file: "firey-ch1-selector-s4-1-ContentView.swift") {
+                    @Image(source: "firey-ch1-selector-s4-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Open `FlagSelectorView.swift`.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s4-2-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s4-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@Binding` variable to pass the `flag` in.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s4-3-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s4-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a sample flag to the preview provider.  
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s4-4-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s4-4-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Open `ContentView.swift`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-selector-s4-5-ContentView.swift") {
+                    @Image(source: "firey-ch1-selector-s4-5-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Pass the flag into the `FlagSelectorView`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-selector-s4-6-ContentView.swift") {
+                    @Image(source: "firey-ch1-selector-s4-6-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Selecting Flags") {
+        @ContentAndMedia {
+            Allow the user to select flag, providing a blue background and changing the text color when selected.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `FlagSelectorView.swift`.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s5-0-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s5-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add some fancy styling to show which flag is selected.
+                > This is why the `Flag` needed to conform to `Equatable`.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s5-1-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s5-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                When the user taps a flag, set the `selectedFlag` to the current `Flag`.
+                @Code(name: "FlagSelectorView.swift", file: "firey-ch1-selector-s5-2-FlagSelectorView.swift") {
+                    @Image(source: "firey-ch1-selector-s5-2-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Updating Flag Raising View") {
+        @ContentAndMedia {
+            Finally, ensure that the `FlagRaisingView` updates whenever the `FlagSelectorView`'s selection changes. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `FlagRaisingView.swift`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-selector-s6-0-FlagRaisingView.swift") {
+                    @Image(source: <#file#>, alt: "<#accessible description#>")
+                }
+            }
+            
+            @Step {
+                Create a `@Binding` variable to pass in the `Flag`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-selector-s6-1-FlagRaisingView.swift")
+            }
+            
+            @Step {
+                Update the preview with a sample `Flag`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-selector-s6-2-FlagRaisingView.swift")
+            }
+            
+            @Step {
+                Pass the `flag`'s `.emoji` into the `Text` to display the flag emoji based on the `flag` `@Binding` variable.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-selector-s6-3-FlagRaisingView.swift")
+            }
+            
+            @Step {
+                Open `ContentView.swift`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-selector-s6-4-ContentView.swift")
+            }
+            
+            @Step {
+                Pass the `flag` into the `FlagRaisingView`. 
+                @Code(name: "ContentView.swift", file: "firey-ch1-selector-s6-5-ContentView.swift")
+            }
+            
+            @Step {
+                Run your code!!
+                @Video(source: "firey-ch1-selector-s6-6-Preview.mp4", posterFrame: "")
+            }
+        }
+    }
+}

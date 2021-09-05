@@ -1,0 +1,27 @@
+@Tutorials(name: "Firey Flag Raising") {
+    @Intro(title: "Building a Collaborative Flag Raising app") {
+        The only appropriate way to bring the curriculum to a close is a flag raising app. We've been building up to this moment for over 20 lessons, it all culminates in this, a collaborative, customisable, absolutely ridiculous flag raising app.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Chapter(name: "Customisable Flag Raising App") {
+        Create a customisable flag raising with a tab view for users to select a country flag from a grid of flags.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:Firey-TabView")
+        @TutorialReference(tutorial: "doc:Firey-FlagRaising")
+        @TutorialReference(tutorial: "doc:Firey-FlagSelector")
+    }
+    
+    @Chapter(name: "Interacting with Swift Packages") {
+        Learn to use Swift Package Manager add third-party libraries into your project. This tutorial uses a cloud service provider as an example of a Swift package.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:Firey-AddPackage")
+        @TutorialReference(tutorial: "doc:Firey-SettingUp")
+        @TutorialReference(tutorial: "doc:Firey-ReadWriteData")
+    }
+}

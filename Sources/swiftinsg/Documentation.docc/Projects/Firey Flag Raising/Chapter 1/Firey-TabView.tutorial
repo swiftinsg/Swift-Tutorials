@@ -1,0 +1,129 @@
+@Tutorial(time: 15, projectFiles: "1 - Firey - TabViews") {
+    @Intro(title: "Tab View") {
+        Use a `TabView` to display the 2 `View`s within the app, the flag raising and flag selector.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Creating a Project") {
+        @ContentAndMedia {
+            This section just covers how to set up and create a project. This is similar to what we have done in the other tutorials.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                In Xcode, **Create a new Xcode project**. 
+                
+                > Alternatively, you can go to **File → New → Project…** or **⌘⇧N** (Command-Shift-N)
+                
+                @Image(source: "shared-new project.png", alt: "Create new project")
+            }
+            
+            @Step {
+                Set the platform as **iOS** and select **App**.
+                @Image(source: "shared-select app.png", alt: "Select App")
+            }
+            
+            @Step {
+                Set the Product Name as **"Firey Flag Raising"**, and ensure that your interface is **SwiftUI** and your life cycle is **SwiftUI App**.
+                @Image(source: "fiery-ch1-tabview-s1-configuring project.png", alt: "Configure App")
+            }
+            
+            @Step {
+                You're all set!
+                @Image(source: "fiery-ch1-tabview-s1-create project.png", alt: "Project Created")
+            }
+        }
+    }
+    
+    @Section(title: "Creating up Views") {
+        @ContentAndMedia {
+            Create 2 new SwiftUI Views to host the `FlagRaisingView` and the `FlagSelectorView`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Create a new `SwiftUI View`. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                
+                @Image(source: "fiery-ch1-tabview-s2-0-new-file.png", alt: "")
+            }
+            
+            @Step {
+                Select **SwiftUI View**.
+                
+                @Image(source: "shared-new swiftui view.png", alt: "")
+            }
+            
+            @Step {
+                Name the view `FlagRaisingView`.
+                
+                @Image(source: "fiery-ch1-tabview-s2-2-Save.png", alt: "")
+            }
+            
+            @Step {
+                Repeat steps 1 to 3 to create `FlagSelectorView`.
+            }
+            
+            @Step {
+                This should be what your navigator looks like, with the 2 new files, `FlagRaisingView.swift` and `FlagSelectorView.swift`
+                
+                @Image(source: "fiery-ch1-tabbar-s2-4.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Creating a TabView") {
+        @ContentAndMedia {
+            Create a `TabView` with the 2 `View`s.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `ContentView.swift`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-tabviews-s3-0-ContentView.swift") {
+                    @Image(source: "firey-ch1-tabviews-s3-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `TabView`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-tabviews-s3-1-ContentView.swift") {
+                    @Image(source: "firey-ch1-tabviews-s3-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `FlagRasingView`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-tabviews-s3-2-ContentView.swift") {
+                    @Image(source: "firey-ch1-tabviews-s3-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `Label` to create the `systemImage` and `title` for the `FlagRaisingView`.
+                
+                In this case, the title is `"Flag Raising"` and system image is `"arrow.up"`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-tabviews-s3-3-ContentView.swift") {
+                    @Image(source: "firey-ch1-tabviews-s3-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add a `FlagSelectorView`, also with a `Label` providing the tab's icon and title.
+                
+                The tab title is `"Flag Selector"` and the system image is `flag.badge.ellipsis`. 
+                > If that systemImage does not show up, try using `flag`.
+                @Code(name: "ContentView.swift", file: "firey-ch1-tabviews-s3-4-ContentView.swift") {
+                    @Image(source: "firey-ch1-tabviews-s3-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+}
