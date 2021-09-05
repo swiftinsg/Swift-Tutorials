@@ -1,0 +1,130 @@
+@Tutorial(time: 20, projectFiles: "2 - Firey - Flag Raising") {
+    @Intro(title: "Flag Raising") {
+        We did it before, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again, and we'll do it again. This never gets old.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Laying out Flag Raising") {
+        @ContentAndMedia {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `FlagRaisingView.swift`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s1-0-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s1-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Text` with the flag and embed it in a `HStack`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s1-1-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s1-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `Rectangle`.
+                
+                This `Rectangle` will serve as the flag pole.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s1-2-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s1-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Set the `HStack` alignment to the bottom and a spacing of `-10` to ensure the flag is connected to the pole. 
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s1-3-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s1-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Embed everything in a `VStack` and create 2 `Button`s, one to `Raise Flag` and the other to `Reset`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s1-4-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s1-4-Preview.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Making things work") {
+        @ContentAndMedia {
+            Make a basic flag raising app.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `FlagRaisingView.swift`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s2-0-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `@State` variable named `offset` which is a `CGFloat`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s2-1-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s2-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Add an `.offset` to the flag and connect it to the newly created `offset` `@State` variable. 
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s2-2-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s2-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                When `reset` is pressed
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s2-3-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch1-flagraising-s2-3-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Run your code!
+                @Video(source: "firey-ch1-flagraising-s2-4.mp4", posterFrame: "")
+            }
+        }
+    }
+    
+    @Section(title: "Saving Data") {
+        @ContentAndMedia {
+            Save data using `AppStorage`.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `FlagRaisingView.swift`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s3-0-FlagRaisingView.swift")
+            }
+            
+            @Step {
+                Change the `@State` variable to an `@AppStorage` variable, with `"flagOffset"` as the key.
+                > The key is used to retrieve stored data. Think of it like a tag, the tag is important to tell SwiftUI which piece of data you want back.
+                
+                This method of storage only stores `String`s, `Int`s, `Double`s & `Bool`s. Therefore, we will need to convert the `Double` returned into a `CGFloat` later on.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s3-1-FlagRaisingView.swift")
+            }
+            
+            @Step {
+                Convert the `Double` to a `CGFloat`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch1-flagraising-s3-2-FlagRaisingView.swift")
+            }
+            
+            @Step {
+                That's it! Like we're actually done, the data is saved.
+                @Video(source: "firey-ch1-flagraising-s3-3.mp4", posterFrame: "")
+            }
+        }
+    }
+}

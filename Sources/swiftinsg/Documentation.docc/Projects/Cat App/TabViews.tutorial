@@ -38,7 +38,7 @@
         }
     }
     
-    @Section(title: "Creating up Views") {
+    @Section(title: "Creating Views") {
         @ContentAndMedia {
             Create 2 new SwiftUI Views to host the `CatFactView` and the `CatImageView`.
             
