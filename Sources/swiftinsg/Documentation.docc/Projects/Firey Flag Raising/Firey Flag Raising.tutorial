@@ -8,7 +8,7 @@
     @Chapter(name: "Customisable Flag Raising App") {
         Create a customisable flag raising with a tab view for users to select a country flag from a grid of flags.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "firey-ch1-hero.png", alt: "")
         
         @TutorialReference(tutorial: "doc:Firey-TabView")
         @TutorialReference(tutorial: "doc:Firey-FlagRaising")

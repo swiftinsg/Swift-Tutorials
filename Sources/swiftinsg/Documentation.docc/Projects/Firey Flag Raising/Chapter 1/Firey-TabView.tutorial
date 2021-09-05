@@ -1,8 +1,8 @@
-@Tutorial(time: 15, projectFiles: "1 - Firey - TabViews") {
+@Tutorial(time: 15, projectFiles: "1 - Firey - TabViews.zip") {
     @Intro(title: "Tab View") {
         Use a `TabView` to display the 2 `View`s within the app, the flag raising and flag selector.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "firey-ch1-tabbar-hero.png", alt: "")
     }
     
     @Section(title: "Creating a Project") {

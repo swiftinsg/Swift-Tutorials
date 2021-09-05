@@ -1,8 +1,10 @@
-@Tutorial(time: 30, projectFiles: "3 - Firey - Flag Selector") {
+@Tutorial(time: 30, projectFiles: "3 - Firey - Flag Selector.zip") {
     @Intro(title: "Flag Selector") {
-        Using `ScrollView`s and `LazyVGrid`, create a grid of flags that allow the users to select and change the flag.
+        Use `ScrollView`s and `LazyVGrid` to create a grid of flags that allow the users to select and change the flag.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        The flag selection information should also be passed back to `ContentView` and into the `FlagRaisingView` to ensure the data is updated. Therefore, you will need to use a `@Binding` variable to maintain a single source of truth. 
+        
+        @Image(source: "firey-ch1-selector-hero.png", alt: "")
     }
     
     @Section(title: "Creating Flag Model") {

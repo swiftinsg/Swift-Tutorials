@@ -27,6 +27,11 @@ Learn to interact with APIs and send HTTP GET requests to image and JSON based A
 
 [Open Tutorial](../../tutorials/cat-app)
 
+### Firey Flag Raising
+Create a collaborative, customisable Flag Raising app.
+
+[Open Tutorial](../../tutorials/firey-flag-raising)
+
 ## Issues
 Spot an issue in the tutorial? Submit an issue on GitHub [here](https://github.com/swiftinsg/Swift-Tutorials/issues/).
 
@@ -43,7 +48,7 @@ Want to contribute? See [Contributing](contributing).
 }
 Author | Commits
 --- | ---
-**[jiachenyee](https://github.com/jiachenyee)** | 118
+**[jiachenyee](https://github.com/jiachenyee)** | 120
 **[yjsoon](https://github.com/yjsoon)** | 2
 @Comment {
     end-potato
