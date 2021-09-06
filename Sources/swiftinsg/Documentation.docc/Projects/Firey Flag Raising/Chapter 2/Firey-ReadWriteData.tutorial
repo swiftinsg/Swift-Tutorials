@@ -1,28 +1,267 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 30, projectFiles: "5 - Firey - Read Write.zip") {
     @Intro(title: "Reading & Writing Data") {
-        <#text#>
+        Read and write data from a cloud database.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
-        @ContentAndMedia(layout: horizontal) {
-            <#text#>
+    @Section(title: "Create a FlagDataManager") {
+        @ContentAndMedia {
+            Create a `FlagDataManager` to keep track of the `flagOffset` and the selected `flag`.  
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
-                
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                Create a new `Swift` file. In the menubar, go to **File → New → File…**.
+                > Alternatively, you may use ⌘N (Command-N) to create a new file.
+                @Image(source: "firey-ch2-readwrite-s1-New File.png", alt: "Creating new file")
             }
             
             @Step {
-                <#text#>
+                Select new **Swift file**.
+                @Image(source: "shared-new swift file.png", alt: "New Swift file")
+            }
+            
+            @Step {
+                Name it `FlagDataManager.swift` and save it.
+                @Image(source: "firey-ch2-readwrite-s1-save.png", alt: "")
+            }
+            
+            @Step {
+                Open `FlagDataManager.swift`.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s1-3-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Import `FirebaseDatabase`, `FirebaseDatabaseSwift` and `SwiftUI`.
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                Importing `FirebaseDatabaseSwift` allows us to use Swift language-specific features such as `Codable` support.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s1-4-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Create an `ObservableObject` named `FlagDataManager`.
+                
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s1-5-FlagDataManager.swift")
+            }
+            
+            @Step {
+                The `FlagDataManager` will return 2 things, a `Flag` and the flag's offset. Therefore, those 2 are `@Published` variables. 
+                
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s1-6-FlagDataManager.swift")
+            }
+        }
+    }
+    
+    @Section(title: "Sharing a Flag and Offset") {
+        @ContentAndMedia {
+            Connecting the `FlagDataManager` to the `flagOffset` and the `flag` instead of relying on the `@AppStorage` or `@Binding` variables respectively.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `ContentView.swift`.
+                @Code(name: "ContentView.swift", file: "firey-ch2-readwrite-s2-0-ContentView.swift") {
+                    @Image(source: "firey-ch2-readwrite-s2-0-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Create a `flagDataManager` `@ObservedObject` for the `FlagDataManager`.
+                @Code(name: "ContentView.swift", file: "firey-ch2-readwrite-s2-1-ContentView.swift") {
+                    @Image(source: "firey-ch2-readwrite-s2-1-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Replace the `flag` `@State` variable with the new `flagDataManager`.
+                @Code(name: "ContentView.swift", file: "firey-ch2-readwrite-s2-2-ContentView.swift") {
+                    @Image(source: "firey-ch2-readwrite-s2-2-Preview.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Open `FlagRaisingView.swift`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch2-readwrite-s2-3-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch2-readwrite-s2-3-FlagRaisingView.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Remove the `@AppStorage` and change it for a `@Binding` variable.
+                
+                No need to persist on-device anymore since we're using Firebase.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch2-readwrite-s2-4-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch2-readwrite-s2-4-FlagRaisingView.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Update the PreviewProvider with the new `@Binding` `offset`.
+                @Code(name: "FlagRaisingView.swift", file: "firey-ch2-readwrite-s2-5-FlagRaisingView.swift") {
+                    @Image(source: "firey-ch2-readwrite-s2-5-FlagRaisingView.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Open `ContentView.swift`.
+                @Code(name: "ContentView.swift", file: "firey-ch2-readwrite-s2-6-ContentView.swift") {
+                    @Image(source: "firey-ch2-readwrite-s2-6-ContentView.png", alt: "")
+                }
+            }
+            
+            @Step {
+                Pass the offset into the `FlagRaisingView`.
+                @Code(name: "ContentView.swift", file: "firey-ch2-readwrite-s2-7-ContentView.swift") {
+                    @Image(source: "firey-ch2-readwrite-s2-7-ContentView.png", alt: "")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Set up Realtime Database") {
+        @ContentAndMedia {
+            Set up the Realtime Database in the Firebase Console.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Back in the Firebase console, expand the `Build` section and select **"Realtime Database"**.
+                @Image(source: "firey-ch2-readwrite-s3-0.png", alt: "")
+            }
+            
+            @Step {
+                Select **"Create Database"**.
+                @Image(source: "firey-ch2-readwrite-s3-1.png", alt: "")
+            }
+            
+            @Step {
+                Leave the location as `US-Central` as default and then press **Next**.
+                > It's a hassle to change to location to `Singapore` so just leave it as it is.
+                @Image(source: "firey-ch2-readwrite-s3-2.png", alt: "")
+            }
+            
+            @Step {
+                Finally, start it in **test mode** and press **Enable**.
+                @Image(source: "firey-ch2-readwrite-s3-3.png", alt: "")
+            }
+            
+            @Step {
+                This is what you should see.
+                @Image(source: "firey-ch2-readwrite-s3-4.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Writing Data") {
+        @ContentAndMedia {
+            Write data to Firebase!
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            ## Making Flag Conform to Codable
+            @Step {
+                Open `Flag.swift`.
+                @Code(name: "Flag.swift", file: "firey-ch2-readwrite-s4-0-Flag.swift")
+            }
+            
+            @Step {
+                Change `Decodable` to `Codable`. 
+                
+                This is required as we will need to encode data to write to Firebase.
+                @Code(name: "Flag.swift", file: "firey-ch2-readwrite-s4-1-Flag.swift")
+            }
+            
+            ## Writing to Firebase
+            @Step {
+                Open `FlagDataManager.swift`.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s4-2-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Create a database reference.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s4-3-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Create a function to `saveFlag`
+                
+                This function will save the `flag` to a child called `"flag"` within the Firebase Database.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s4-4-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Do the same for the `flagOffset`.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s4-5-FlagDataManager.swift")
+            }
+            
+            ## Observing Changes
+            @Step {
+                Open `ContentView.swift`.
+                @Code(name: "ContentView.swift", file: "firey-ch2-readwrite-s4-6-ContentView.swift")
+            }
+            
+            @Step {
+                When the `flag` changes, save the flag.
+                @Code(name: "ContentView.swift", file: "firey-ch2-readwrite-s4-7-ContentView.swift")
+            }
+            
+            @Step {
+                Likewise, when the `flagOffset` changes, save the `flagOffset`.
+                @Code(name: "ContentView.swift", file: "firey-ch2-readwrite-s4-8-ContentView.swift")
+            }
+            
+            ## aaaaand we're done
+            @Step {
+                Run your code, change the flag and raise the flag to see the changes reflected on your Firebase console! 
+                @Image(source: "firey-ch2-readwrite-s4-9.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Reading Data from Firebase") {
+        @ContentAndMedia {
+            Read data from Firebase!!
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Open `FlagDataManager.swift`.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s5-0-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Create a function to `fetchData`.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s5-1-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Observe for value changes within the database reference.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s5-2-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Get the `flag` data from the database and decode it.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s5-3-FlagDataManager.swift")
+            }
+            
+            @Step {
+                Likewise, get the `flagOffset` data from the database and decode it.
+                @Code(name: "FlagDataManager.swift", file: "firey-ch2-readwrite-s5-4-FlagDataManager.swift")
+            }
+            @Step {
+                Run your code and observe your Firebase Database console! And that's about it!! Good night!
+                @Video(source: "firey-ch2-readwrite-s5-8.mp4", posterFrame: "")
             }
         }
     }

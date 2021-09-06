@@ -1,28 +1,145 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 30, projectFiles: "4 - Firey - Add Package.zip") {
     @Intro(title: "Adding a Swift Package") {
-        <#text#>
+        Learn how to intergrate Swift Packages into your project.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
-        @ContentAndMedia(layout: horizontal) {
-            <#text#>
+    @Section(title: "Installing a Swift Package") {
+        @ContentAndMedia {
+            Install a Swift Package. These steps are fairly universal for any Swift Package you intend on installing in the future.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
+                Add package dependencies to the project. In the menubar, go to **File → Swift Packages → Add Package Dependency…**.
+                @Image(source: "firey-ch2-addpackage-s1-0.png", alt: "")
+            }
+            
+            
+            @Step {
+                Paste the git URL, in this case, it's "`https://github.com/firebase/firebase-ios-sdk.git`" into the field and press `Next`. 
                 
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                @Image(source: "firey-ch2-addpackage-s1-1.png", alt: "")
             }
             
             @Step {
-                <#text#>
+                Ensure the `Version` option is selected and then press Next. 
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                After pressing Next, you will start downloading Firebase SDK.
+                > This may take a while, depending on your internet connection and whether Xcode likes you or not.
+                
+                @Image(source: "firey-ch2-addpackage-s1-2.png", alt: "")
+            }
+            
+            
+            @Step {
+                Check `FirebaseDatabaseSwift-Beta` as we will be using the Firebase Real-Time Database.
+                
+                Press `Finish` and you just added a package to your project! 🎉🎉
+                > We will be using the `Beta` one as it provides things like `Codable` support and other SwiftUI-related improvements.
+                
+                @Image(source: "firey-ch2-addpackage-s1-3.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Setting up Firebase Project") {
+        @ContentAndMedia {
+            Set up the Firebase project from the Firebase console.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Go to [http://console.firebase.google.com](http://console.firebase.google.com) and create a new project.
+                @Image(source: "firey-ch2-addpackage-s2-0.png", alt: "")
+            }
+            
+            @Step {
+                Create a project named `"Firey Flag Raising"` and check **"I agree the Firebase terms"** before pressing **Continue**. 
+                @Image(source: "firey-ch2-addpackage-s2-1.png", alt: "")
+            }
+            
+            @Step {
+                Switch **Google Analytics** to off as we will not need it for this project and then press **Create Project**.
+                
+                > For students using their school's Google Workspace, Google Analytics might not be available so you can skip this step.
+                @Image(source: "firey-ch2-addpackage-s2-2.png", alt: "")
+            }
+        }
+    }
+    
+    @Section(title: "Connecting to your iOS app") {
+        @ContentAndMedia {
+            Add the app to the Firebase Console and configure the `GoogleService-Info.plist`. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                In the Firebase Console, click on **iOS**.
+                @Image(source: "firey-ch2-addpackage-s3-0.png", alt: "")
+            }
+            
+            @Step {
+                Back in Xcode, copy your `Bundle Identifier`.
+                
+                You can find it by going to the top-most `.xcodeproj` file in your project and selecting the top-most target. Refer to the screenshot.
+                @Image(source: "firey-ch2-addpackage-s3-1.png", alt: "")
+            }
+            
+            @Step {
+                Paste your Bundle Identifier into the Bundle ID field. 
+                > Do not copy the one in the screenshot! Use your own Bundle ID.
+                
+                @Image(source: "firey-ch2-addpackage-s3-2.png", alt: "")
+            }
+            
+            @Step {
+                Download the `GoogleService-Info.plist` file.
+                > Keep this file private! Do not share this file with anyone, don't even commit it.
+                
+                @Image(source: "firey-ch2-addpackage-s3-3.png", alt: "")
+            }
+            
+            @Step {
+                Drag and drop it into Xcode. This is similar to how we imported the JSON file into Xcode.
+                
+                @Video(source: "firey-ch2-addpackage-s3-4.mp4", posterFrame: "")
+            }
+            
+            @Step {
+                Open the app's top-most Swift file. 
+                @Image(source: "firey-ch2-addpackage-s3-5.png", alt: "")
+            }
+            
+            @Step {
+                This is what the file should roughly look like.
+                @Code(name: "Firey_Flag_RaisingApp.swift", file: "firey-ch2-addpackage-s3-6-Firey_Flag_RaisingApp.swift")
+            }
+            
+            @Step {
+                Import Firebase into the file.
+                @Code(name: "Firey_Flag_RaisingApp.swift", file: "firey-ch2-addpackage-s3-7-Firey_Flag_RaisingApp.swift")
+            }
+            
+            @Step {
+                Add this `init` into the `App`.
+                
+                The `init` is simply a block of code that runs when the struct is initialized.
+                @Code(name: "Firey_Flag_RaisingApp.swift", file: "firey-ch2-addpackage-s3-8-Firey_Flag_RaisingApp.swift")
+            }
+            
+            @Step {
+                Run your code!!
+                
+                Back on the Fireabse console, skip through the steps and on the last step, wait until you see this screen appears and press **Continue to console**.
+                @Image(source: "firey-ch2-addpackage-s3-9.png", alt: "")
             }
         }
     }
