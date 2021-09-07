@@ -2,7 +2,7 @@
     @Intro(title: "Reading & Writing Data") {
         Read and write data from a cloud database.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "firey-ch2-readwrite-hero.png", alt: "")
     }
     
     @Section(title: "Create a FlagDataManager") {

@@ -2,7 +2,7 @@
     @Intro(title: "Adding a Swift Package") {
         Learn how to intergrate Swift Packages into your project.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "firey-ch2-addpackage-hero.png", alt: "")
     }
     
     @Section(title: "Installing a Swift Package") {
