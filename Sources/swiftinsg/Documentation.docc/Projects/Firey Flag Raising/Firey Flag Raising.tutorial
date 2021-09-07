@@ -18,7 +18,7 @@
     @Chapter(name: "Interacting with Swift Packages") {
         Learn to use Swift Package Manager add third-party libraries into your project. This tutorial uses a cloud service provider as an example of a Swift package.
         
-        @Image(source: <#file#>, alt: "<#accessible description#>")
+        @Image(source: "firey-ch2-hero.png", alt: "")
         
         @TutorialReference(tutorial: "doc:Firey-AddPackage")
         @TutorialReference(tutorial: "doc:Firey-ReadWriteData")
