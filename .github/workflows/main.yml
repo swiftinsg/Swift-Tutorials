@@ -4,21 +4,21 @@ on:
     branches:
       - main
 jobs:
-#   build:
-#     runs-on: macos-11
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: jiachenyee/docc-action@master
-#         with:
-#           scheme-name: swiftinsg
-#           web-public: Web/public
-  deploy:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
-      - uses: amondnet/vercel-action@v20
+      - uses: jiachenyee/docc-action@master
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-          vercel-args: '--prod'
-          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
+          scheme-name: swiftinsg
+          web-public: Web/public
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: amondnet/vercel-action@v20
+#         with:
+#           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+#           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+#           vercel-args: '--prod'
+#           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
