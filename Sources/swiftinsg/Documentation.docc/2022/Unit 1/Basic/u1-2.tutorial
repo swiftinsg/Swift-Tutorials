@@ -1,4 +1,4 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 20) {
     @Intro(title: "Layout with Stacks") {
         In SwiftUI, our UI is reflected directly in our code. This means the first thing on the screen is often the first thing shown, at the top, then going down.
         

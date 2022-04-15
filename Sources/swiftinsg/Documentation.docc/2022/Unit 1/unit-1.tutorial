@@ -12,6 +12,8 @@
         
         @TutorialReference(tutorial: "doc:u1-1")
         @TutorialReference(tutorial: "doc:u1-2")
+        @TutorialReference(tutorial: "doc:u1-3")
+        @TutorialReference(tutorial: "doc:u1-4")
     }
     
     @Chapter(name: "Unit 1 Plus: Emoji Artwork") {
