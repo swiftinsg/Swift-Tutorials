@@ -23,6 +23,10 @@ module.exports = {
         destination: '/documentation/swiftinsg/contributing',
         permanent: true,
         },{
+        source: '/2022',
+        destination: '/documentation/swiftinsg/2022',
+        permanent: true,
+        },{
         source: '/more',
         destination: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         permanent: true,

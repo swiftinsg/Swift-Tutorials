@@ -1,0 +1,158 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Modifiers") {
+        To make our individual `View`s look better, we can add `View` Modifiers (or just modifiers).
+        
+        These are additional pieces of formatting and functionality “tacked on” to each `View`.
+        
+        We’ll introduce a variety of modifiers, and add them to various elements, to help enhance our app. 
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "View Modifiers") {
+        @ContentAndMedia {
+            These are modifiers that work with any `View`, whether they are `Image`s, `Text`s, `HStack`s, `VStack`s, `ZStack`s etc.  
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what your code should look like.
+                
+                @Code(name: "Contents.swift", file: u1-2-zstack-2.swift) {
+                    @Image(source: u1-2-zstack-2, alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                Changing the foreground color. When dealing with `Text`s, the foreground color refers to the text color.
+                
+                @Code(name: "Contents.swift", file: u1-3-viewmodifiers-2.swift) {
+                    @Image(source: u1-3-viewmodifiers-2, alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                Changing the background color.
+                
+                @Code(name: "Contents.swift", file: u1-3-viewmodifiers-3.swift) {
+                    @Image(source: u1-3-viewmodifiers-3, alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                Gives some space to any View. You can also include a number, to define how much padding to give
+                > If you add padding before a background, your padding will also receive that background. Try it out!
+                
+                @Code(name: "Contents.swift", file: u1-3-viewmodifiers-4.swift) {
+                    @Image(source: u1-3-viewmodifiers-4, alt: "Playground preview")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Text Modifiers") {
+        @ContentAndMedia {
+            These are modifiers that can only be applied to `Text`s.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what your code should look like.
+                
+                @Code(name: "Contents.swift", file: u1-3-textmodifiers-1.swift) {
+                    @Image(source: "u1-3-textmodifiers-1", alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                Make text **bold**.
+                > Important: These `Text` modifiers need to come before `View` modifiers.
+                
+                @Code(name: "Contents.swift", file: u1-3-textmodifiers-2.swift) {
+                    @Image(source: "u1-3-textmodifiers-2", alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                Make text *italic*.
+                
+                @Code(name: "Contents.swift", file: u1-3-textmodifiers-3.swift) {
+                    @Image(source: "u1-3-textmodifiers-3", alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                Change the font size with `.font`.
+                > The `.font` modifier actualy works on any `View`. If it is applied on a `HStack` or `VStack`, the `.font` modifier applies to the `Text` and `Image`s within it. 
+                
+                @Code(name: "Contents.swift", file: u1-3-textmodifiers-4.swift) {
+                    @Image(source: "u1-3-textmodifiers-4", alt: "Playground preview")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Image Modifiers") {
+        @ContentAndMedia {
+            These are modifiers that can only be applied to `Image`s. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what your code should look like.
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-1.swift) {
+                    @Image(source: "u1-3-textmodifiers-4", alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                Currently, the image is too large. You can't actually read the text. Make the `Image` `.resizable()` to allow it to shrink accordingly.
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-2.swift) {
+                    @Image(source: "u1-3-imagemodifiers-2", alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                Use `.scaledToFit()` to ensure the image resizes proportionally.
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-3.swift) {
+                    @Image(source: "u1-3-imagemodifiers-3", alt: "Playground preview")   
+                }
+            }
+            
+            @Step {
+                Set a `width` and `height` for the `Image`. with the `.frame` modifier.
+                > This modifier works on every `View`. 
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-4.swift) {
+                    @Image(source: "u1-3-imagemodifiers-4", alt: "Playground preview")   
+                }
+            }
+            
+            
+            @Step {
+                Masking with a `Circle`.
+                
+                You can mask a `View` with another `View` using the `.mask` modifier. For instance, you can make the `Image` a circle by masking it with the `Circle()` shape. To learn more about shapes, check out the *Pro* series. 
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-5.swift) {
+                    @Image(source: "u1-3-imagemodifiers-5", alt: "Playground preview")   
+                }
+            }
+            
+            @Step {
+                Alternatively, you can also use the `.cornerRadius()` modifier with a number between the `()` to get a nice rounded rectangle.
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-6.swift)
+            }
+        }
+    }
+}
