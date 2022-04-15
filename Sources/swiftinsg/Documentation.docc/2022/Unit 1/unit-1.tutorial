@@ -1,0 +1,39 @@
+@Tutorials(name: "Unit 1") {
+    @Intro(title: "Unit 1") {
+        Introduction to SwiftUI and Swift Playgrounds on Mac.
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Chapter(name: "Unit 1: Building a Namecard") {
+        Learn about `HStack`, `VStack`, `Image`, `Text` and more by creating a simple namecard!
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:u1-1")
+    }
+    
+    @Chapter(name: "Unit 1 Plus: Emoji Artwork") {
+        <#text#>
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:u1plus-1")
+    }
+    
+    @Chapter(name: "Unit 1 Pro: Shapes") {
+        <#text#>
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:u1pro-1")
+    }
+    
+    @Chapter(name: "Unit 1 Pro Max: Drawing with Paths") {
+        <#text#>
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+        
+        @TutorialReference(tutorial: "doc:u1promax-1")
+    }
+}

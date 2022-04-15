@@ -1,0 +1,129 @@
+@Tutorial(time: <#number#>) {
+    @Intro(title: "Swift Playgrounds and SwiftUI") {
+        <#text#>
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "Setting Up") {
+        @ContentAndMedia {
+            Setup Swift Playgrounds and all that!
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                Download [Swift Playgrounds](https://apps.apple.com/app/id1496833156) from the Mac App Store.
+                
+                @Image(source: "u1-1-playgrounds", alt: "Playgrounds on the Mac App Store")
+            }
+            
+            @Step {
+                Open Swift Playgrounds and create a new Playground. 
+                
+                @Image(source: "u1-1-newplaygrounds", alt: "Create new Playground")
+            }
+            
+            @Step {
+                Rename the Playground and call it `"Namecard"`.
+                
+                @Image(source: "u1-1-renameplayground", alt: "Rename Playground")
+            }
+            
+            @Step {
+                Paste in the Swift Playgrounds template [here](https://tk.sg/swiftpgtemplate) or the code on the right and press **▶ Run My Code**.
+                
+                @Code(name: "Contents.swift", file: u1-1-playgroundstemplate.swift) {
+                    @Image(source: "u1-1-playgroundstemplate", alt: "Playgrounds preview")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Adding Text") {
+        @ContentAndMedia {
+            Display a static piece of text on the screen.
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                There's a piece of `Text` in the starter code, which is the only `View` in our app. It looks like this right now: `Text("Hello world")`.
+                
+                @Code(name: "Contents.swift", file: u1-1-text-1.swift) {
+                    @Image(source: "u1-1-playgroundstemplate", alt: "Playgrounds preview")
+                }
+            }
+            
+            @Step {
+                Change the string — that’s the text inside the double quotes — to your name!. Run, and it’ll be reflected in the app. 
+                
+                @Code(name: "Contents.swift", file: u1-1-text-2.swift) {
+                    @Image(source: "u1-1-text-2", alt: "Playgrounds preview")
+                }
+            }
+            
+            @Step {
+                You can add more text underneath the existing one! Perhaps add what you do.
+                
+                @Code(name: "Contents.swift", file: u1-1-text-3.swift) {
+                    @Image(source: "u1-1-text-3", alt: "Playgrounds preview")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Adding Image") {
+        @ContentAndMedia {
+            Take a photo of yourself and upload it into the app!
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                The namecard looks a bit empty with just 2 `Text`s.
+                
+                @Code(name: "Contents.swift", file: u1-1-image-1.swift) {
+                    @Image(source: "u1-1-text-3", alt: "Playgrounds preview")
+                }
+            }
+            
+            - In order to add an image, use a `View` called `Image`. On Playgrounds, we can take a photo and show it on-screen using `Image(uiImage: )` with the photo after the colon `:`.
+                - `uiImage`, in this case, is a *parameter* to `Image`. The photo after that is called an *argument*, provided to the parameter. It’s providing more information to the `Image` `View`, to tell it how to render itself. 
+                - The `Text`s we saw had parameters too! They just weren’t explicitly *named*, unlike `uiImage`.  
+            
+            @Step {
+                Add an `Image`. 
+                > At this stage you will get an error. That's expected as you have not finished typing the entire line and Swift is a bit over-excited.
+                
+                @Code(name: "Contents.swift", file: u1-1-image-2.swift)
+            }
+            
+            ## Adding images into Playgrounds
+            
+            @Step {
+                Click on the `+` button in the navigation bar
+                
+                @Image(source: "u1-1-image-3", alt: "Plus button in Navigation Bar")
+            }
+            
+            @Step {
+                Choose the image icon and select **Take Photo**. 
+                
+                @Image(source: "u1-1-image-4", alt: "Take photo button")
+            }
+            
+            
+            @Step {
+                Add the image and you should see a giant image on screen 
+                
+                @Code(name: "Contents.swift", file: u1-1-image-5.swift) {
+                    @Image(source: "u1-1-image-5", alt: "Playgrounds preview")
+                }
+            }
+        }
+    }
+}
