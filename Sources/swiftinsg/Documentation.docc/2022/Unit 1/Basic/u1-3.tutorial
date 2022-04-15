@@ -127,6 +127,32 @@
                     @Image(source: "u1-3-imagemodifiers-3", alt: "Playground preview")   
                 }
             }
+            
+            @Step {
+                Set a `width` and `height` for the `Image`. with the `.frame` modifier.
+                > This modifier works on every `View`. 
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-4.swift) {
+                    @Image(source: "u1-3-imagemodifiers-4", alt: "Playground preview")   
+                }
+            }
+            
+            
+            @Step {
+                Masking with a `Circle`.
+                
+                You can mask a `View` with another `View` using the `.mask` modifier. For instance, you can make the `Image` a circle by masking it with the `Circle()` shape. To learn more about shapes, check out the *Pro* series. 
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-5.swift) {
+                    @Image(source: "u1-3-imagemodifiers-5", alt: "Playground preview")   
+                }
+            }
+            
+            @Step {
+                Alternatively, you can also use the `.cornerRadius()` modifier with a number between the `()` to get a nice rounded rectangle.
+                
+                @Code(name: "Contents.swift", file: u1-3-imagemodifiers-6.swift)
+            }
         }
     }
 }
