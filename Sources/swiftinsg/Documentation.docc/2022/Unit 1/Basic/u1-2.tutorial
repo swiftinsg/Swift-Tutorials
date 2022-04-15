@@ -39,44 +39,79 @@
     
     @Section(title: "HStack") {
         @ContentAndMedia {
-            <#text#>
+            We want our image to be on the left of the two pieces of text. 
+            
+            To do this, we can use a `HStack`, containing two `View`s:
+            - The `Image` itself, on the left
+            - The `VStack`, on the right. 
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
+            
             @Step {
-                <#text#>
+                This is what your code should look like.
                 
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                @Code(name: "Contents.swift", file: u1-2-hstack-1.swift) {
+                    @Image(source: "u1-1-image-5", alt: "Playground preview")
+                }
             }
             
             @Step {
-                <#text#>
+                Add a `HStack`.
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                @Code(name: "Contents.swift", file: u1-2-hstack-2.swift) {
+                    @Image(source: "u1-2-hstack-2", alt: "Playground preview")
+                }
+            }
+            
+            - `HStack` Parameters
+                - What if we want our image and our text to be nicely aligned at the top? 
+                - We can introduce parameters to our `HStack` — the way we did for `Image`, but before the curly braces `{}`.
+                - The parameter in question is called `alignment:`, and it can be `.top`, `.center`, `.bottom`.
+                    - The dots are because of something called enums, which we’ll talk about in the future. 
+                - There’s another parameter, called `spacing:`, which takes a number. Try it out if you have a chance!
+            
+            @Step {
+                Set the `HStack`'s alignment as `.top`.
+                
+                @Code(name: "Contents.swift", file: u1-2-hstack-3.swift) {
+                    @Image(source: "u1-2-hstack-3", alt: "Playground preview")
+                }
             }
         }
     }
     
     @Section(title: "ZStack") {
         @ContentAndMedia {
-            <#text#>
+            Let’s add some background colour to our app.
+            
+            A background colour will, naturally, go behind the `View`s. 
+            
+            In SwiftUI, a background colour is a `View`, that goes behind other `View`s, using a `ZStack`. 
+            
+            The `Color` View has a few built-in options you can use, such as `.blue`, `.red`, `.yellow`, `.green`. Try them out!
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
+            
+            
             @Step {
-                <#text#>
-                
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                This is what your code should look like.
+                @Code(name: "Contents.swift", file: u1-2-zstack-1.swift) {
+                    @Image(source: "u1-2-hstack-3", alt: "Playground preview")
+                }
             }
             
             @Step {
-                <#text#>
+                Add a `ZStack` around the entire `HStack` and a `Color.blue` behind it.
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                @Code(name: "Contents.swift", file: u1-2-zstack-2.swift) {
+                    @Image(source: "u1-2-zstack-2", alt: "Playground preview")
+                }
             }
         }
     }
