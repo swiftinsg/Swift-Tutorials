@@ -1,0 +1,83 @@
+@Tutorial(time: <#number#>) {
+    @Intro(title: "Layout with Stacks") {
+        In SwiftUI, our UI is reflected directly in our code. This means the first thing on the screen is often the first thing shown, at the top, then going down.
+        
+        What if we want to lay things out horizontally, or back-to-front?
+        
+        @Image(source: <#file#>, alt: "<#accessible description#>")
+    }
+    
+    @Section(title: "VStack") {
+        @ContentAndMedia {
+            We currently have three Views in our body. 
+            
+            In general, a body should only *return* one `View` — so we should wrap them all up in a `VStack`.
+            
+            To “wrap them up”, write `VStack` `{` above the three lines of code, and then `}` below it, as shown in the next slide. 
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is what your code should look like.
+                
+                @Code(name: "Contents.swift", file: u1-2-vstack-1.swift) {
+                    @Image(source: "u1-1-image-5", alt: "Playground preview")
+                }
+            }
+            
+            @Step {
+                This is what your code should look like.
+                
+                @Code(name: "Contents.swift", file: u1-2-vstack-2.swift) {
+                    @Image(source: "u1-1-image-5", alt: "Playground preview")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "HStack") {
+        @ContentAndMedia {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                <#text#>
+                
+                @Image(source: <#file#>, alt: "<#accessible description#>")
+            }
+            
+            @Step {
+                <#text#>
+                
+                @Code(name: "<#display name#>", file: <#filename.swift#>)
+            }
+        }
+    }
+    
+    @Section(title: "ZStack") {
+        @ContentAndMedia {
+            <#text#>
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                <#text#>
+                
+                @Image(source: <#file#>, alt: "<#accessible description#>")
+            }
+            
+            @Step {
+                <#text#>
+                
+                @Code(name: "<#display name#>", file: <#filename.swift#>)
+            }
+        }
+    }
+}
