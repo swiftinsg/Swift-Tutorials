@@ -1,29 +1,97 @@
-@Tutorial(time: <#number#>) {
+@Tutorial(time: 10) {
     @Intro(title: "Links and SF Symbols") {
-        <#text#>
+        Open links up to rickroll people!
+        - We’ll create some tappable icons, in a HStack, for users of our app to find out more about us. 
+        - We’ll use a View called `Link`, which takes a URL and an image. 
+        - For the image, we’ll use SF Symbols, Apple’s library of free icons for use in Swift. This is done with `Image(systemName:)`.
+        - If you have a Mac, open up [SF Symbols](https://developer.apple.com/sf-symbols), and find a couple of nice icons, noting down their names.
+        
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
     
-    @Section(title: "<#text#>") {
+    @Section(title: "Installing SF Symbols") {
         @ContentAndMedia {
-            <#text#>
+            SF Symbols is a library of icons designed by Apple to integrate nicely with Apple's interface design.
             
             @Image(source: <#file#>, alt: "<#accessible description#>")
         }
         
         @Steps {
             @Step {
-                <#text#>
+                Go to [developer.apple.com/sf-symbols/](https://developer.apple.com/sf-symbols/).
                 
-                @Image(source: <#file#>, alt: "<#accessible description#>")
+                @Image(source: u1-4-sfsymbols-1, alt: "SF Symbols on the web")
             }
             
             @Step {
-                <#text#>
+                Scroll down to the bottom and select the **Download** button.
                 
-                @Code(name: "<#display name#>", file: <#filename.swift#>)
+                @Image(source: u1-4-sfsymbols-2, alt: "SF Symbols download")
+            }
+            
+            @Step {
+                Open the SF Symbols `.dmg` file you downloaded and open the `SF Symbols.pkg` file.
+                
+                @Image(source: u1-4-sfsymbols-3, alt: "SF Symbols download")
+            }
+            
+            @Step {
+                Click **Continue** through the installer
+                
+                @Image(source: u1-4-sfsymbols-4, alt: "SF Symbols download")
+            }
+            
+            @Step {
+                At **Installation Type** and select **Install**
+                > You will need to enter your admin password.
+                
+                @Image(source: u1-4-sfsymbols-5, alt: "SF Symbols download")
+            }
+            
+            @Step {
+                Open the SF Symbols app!
+                
+                @Image(source: u1-4-sfsymbols-6, alt: "SF Symbols download")
             }
         }
     }
+    
+    @Section(title: "Links") {
+        @ContentAndMedia {
+            Add links to the app!
+            
+            @Image(source: <#file#>, alt: "<#accessible description#>")
+        }
+        
+        @Steps {
+            @Step {
+                This is the starting point for this section. 
+                
+                @Code(name: "Contents.swift", file: u1-4-links-1.swift) {
+                    @Image(source: "u1-4-links-1", alt: "Playground preview")   
+                }
+            }
+            
+            @Step {
+                Create a `HStack` with 2 `Link`s.
+                
+                After you add that… realise you made a terrible decision making your background `Color.blue` and your icons are now invisible.
+                
+                @Code(name: "Contents.swift", file: u1-4-links-2.swift) {
+                    @Image(source: "u1-4-links-2", alt: "Playground preview")   
+                }
+            }
+            
+            @Step {
+                Use the `.foregroundColor` modifier to change the color 
+                
+                @Code(name: "Contents.swift", file: u1-4-links-3.swift) {
+                    @Image(source: "u1-4-links-3", alt: "Playground preview")   
+                }
+            }
+        }
+    }
+    
+    
 }
