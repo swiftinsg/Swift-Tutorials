@@ -47,12 +47,12 @@ struct ContentView: View {
             }
             .padding()
         }
-        .alert(isPresented: $isAlertPresented) {
-            Alert(title: Text(isCorrect ? "Correct" : "Wrong"),
-                  message: Text(isCorrect ? "Congrats, you are kinda smart." : "How can you be getting this wrong?!"),
-                  dismissButton: .default(Text("OK")) {
+        .alert(isCorrect ? "Correct" : "Wrong", isPresented: $isAlertPresented) {
+            Button("OK") {
                 currentQuestion += 1
-            })
+            }
+        } message: {
+            Text(isCorrect ? "Congrats, you are kinda smart." : "How can you be getting this wrong?!")
         }
     }
     

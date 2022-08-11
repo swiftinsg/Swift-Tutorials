@@ -1,6 +1,6 @@
 @Tutorial(time: 15) {
     @Intro(title: "Presenting Alert") {
-        Use `Alert`s and `Sheet`s to show the user if they got the question right or not and their final score.
+        Use `.alert`s and `Sheet`s to show the user if they got the question right or not and their final score.
         
         @Image(source: <#file#>, alt: "<#accessible description#>")
     }
